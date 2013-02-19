@@ -1,0 +1,1 @@
+case class Blob(value: Array[Byte])
