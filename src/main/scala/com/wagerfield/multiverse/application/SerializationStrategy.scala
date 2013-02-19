@@ -13,9 +13,7 @@ trait SerializationStrategyComponent {
 		 * @param object The object to serialize.
 		 * @return Serialized BLOB.
 		 */
-		def serialize(
-
-		object: Any): Blob
+		def serialize(object: Any): Blob
 
 		/**
 		 * Maps the provided BLOB onto its originating object.
@@ -38,9 +36,7 @@ trait PBSerializationStrategyComponent extends SerializationStrategyComponent {
 		 * @param object The object to serialize.
 		 * @return Serialized BLOB.
 		 */
-		def serialize(
-
-		object: Any): Blob
+		def serialize(object: Any): Blob
 
 		/**
 		 * Maps the provided BLOB onto its originating object.
@@ -49,5 +45,4 @@ trait PBSerializationStrategyComponent extends SerializationStrategyComponent {
 		 */
 		def deserialize(blob: Blob): Any
 	}
-
 }
