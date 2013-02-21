@@ -1,5 +1,7 @@
 package com.wagerfield.multiverse.application
 
+import com.wagerfield.multiverse.domain.shared.Blob
+
 
 trait SerializationStrategyComponent {
 	def serializationStrategy: SerializationStrategy
@@ -10,10 +12,10 @@ trait SerializationStrategyComponent {
 	trait SerializationStrategy {
 		/**
 		 * Maps the provided object onto a deserializable BLOB.
-		 * @param object The object to serialize.
+		 * @param obj The object to serialize.
 		 * @return Serialized BLOB.
 		 */
-		def serialize(object: Any): Blob
+		def serialize(obj: Any): Blob
 
 		/**
 		 * Maps the provided BLOB onto its originating object.
@@ -26,17 +28,16 @@ trait SerializationStrategyComponent {
 }
 
 trait PBSerializationStrategyComponent extends SerializationStrategyComponent {
-
 	/**
 	 * Serializes and deserializes objects using Google Protocol Buffers.
 	 */
 	class PBSerializationStrategy extends SerializationStrategy {
 		/**
 		 * Maps the provided object onto a deserializable BLOB.
-		 * @param object The object to serialize.
+		 * @param obj The object to serialize.
 		 * @return Serialized BLOB.
 		 */
-		def serialize(object: Any): Blob
+		def serialize(obj: Any): Blob
 
 		/**
 		 * Maps the provided BLOB onto its originating object.
@@ -45,4 +46,5 @@ trait PBSerializationStrategyComponent extends SerializationStrategyComponent {
 		 */
 		def deserialize(blob: Blob): Any
 	}
+
 }
