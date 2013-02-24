@@ -36,6 +36,14 @@ case class SolarSystem private(uncommittedEvents: List[SolarSystemEvent], instan
 	def nameStar(name: String) = applyEvent(StarNamed(instanceId, id, name))
 
 	/**
+	 * Resolves a duplicate star name inconsistency.
+	 * @param conflictingStarId The conflicting star which is keeping its name.
+	 * @param newName The new name for this star.
+	 * @return Aggregate with resolved star name.
+	 */
+	def resolveDuplicateStarName(conflictingStarId:StarId, newName: String) = applyEvent(StarNameDuplicateRenamed(instanceId, id, conflictingStarId, newName))
+
+	/**
 	 * Informs the solar system of an inbound ship.
 	 * @param shipId The inbound ship.
 	 * @param journeyEvent The latest journey event for the ship which set its course for this solar system.

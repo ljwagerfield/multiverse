@@ -1,9 +1,7 @@
 package com.wagerfield.multiverse.domain.model.instance
 
 /**
- * Copyright (c) Wagerfield Ltd.
- *
- * Event relating to a specific instance.
+ * Event relating to an instance.
  */
 trait InstanceEvent {
 	val instanceId: InstanceId

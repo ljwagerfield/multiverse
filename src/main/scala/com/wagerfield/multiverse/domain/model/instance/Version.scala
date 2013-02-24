@@ -1,6 +1,6 @@
 package com.wagerfield.multiverse.domain.model.instance
 
 /**
- * Uniquely identifies a star entity.
+ * Application version number.
  */
 case class Version(value: Int)

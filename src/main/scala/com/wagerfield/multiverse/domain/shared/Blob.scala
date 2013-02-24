@@ -1,3 +1,3 @@
 package com.wagerfield.multiverse.domain.shared
 
-case class Blob(value: Array[Byte])
+case class Blob(hash:Hash, value: Array[Byte])
