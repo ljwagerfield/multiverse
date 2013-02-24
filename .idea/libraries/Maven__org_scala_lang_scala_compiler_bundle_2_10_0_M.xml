@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Maven: org.scala-lang:scala-compiler-bundle:2.10.0-M">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-compiler/2.10.0-M/scala-compiler-2.10.0-M.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-library/2.10.0-M/scala-library-2.10.0-M.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-reflect/2.10.0-M/scala-reflect-2.10.0-M.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
