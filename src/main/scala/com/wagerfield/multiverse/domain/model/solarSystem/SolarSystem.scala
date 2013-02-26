@@ -5,8 +5,6 @@ import com.wagerfield.multiverse.domain.model.ship.{ShipEvent, ShipId}
 import com.wagerfield.multiverse.domain.model.instance.InstanceId
 
 /**
- * Copyright (c) Wagerfield Ltd.
- *
  * A solar system composes a star and planets.
  */
 case class SolarSystem private(uncommittedEvents: List[SolarSystemEvent], instanceId:InstanceId, id: StarId, name:String)
@@ -56,8 +54,10 @@ case class SolarSystem private(uncommittedEvents: List[SolarSystemEvent], instan
 	 * @return Aggregate with event applied.
 	 */
 	def applyEvent(event: SolarSystemEvent) = {
-		case event: StarNamed => copy(uncommittedEvents = event.uncommittedEvents :: event, name = event.name)
-		case event => unhandled(event)
+		event match {
+			case event: StarNamed => copy(uncommittedEvents = event +: uncommittedEvents, name = event.name)
+			case event => unhandled(event)
+		}
 	}
 }
 
@@ -65,7 +65,9 @@ object SolarSystem extends AggregateFactory[SolarSystem, SolarSystemEvent] {
 	def create(instanceId:InstanceId, starId: StarId, nearStarIds: List[StarId], planetIds: List[PlanetId]) = applyEvent(SolarSystemCreated(instanceId, starId, nearStarIds, planetIds))
 
 	def applyEvent(event: SolarSystemEvent) = {
-		case event: SolarSystemCreated => SolarSystem(event :: Nil, event.instanceId, event.starId, null)
-		case event => unhandled(event)
+		event match {
+			case event: SolarSystemCreated => SolarSystem(event :: Nil, event.instanceId, event.starId, null)
+			case event => unhandled(event)
+		}
 	}
 }

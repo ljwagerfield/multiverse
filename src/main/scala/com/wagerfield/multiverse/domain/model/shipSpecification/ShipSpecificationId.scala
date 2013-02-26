@@ -4,5 +4,6 @@ import java.util.UUID
 
 /**
  * Uniquely identifies a ship specification.
+ * @param value Unique specification ID.
  */
-case class ShipSpecificationId(id: UUID)
+case class ShipSpecificationId(value: UUID)

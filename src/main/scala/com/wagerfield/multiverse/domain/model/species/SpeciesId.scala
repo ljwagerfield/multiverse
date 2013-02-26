@@ -3,6 +3,7 @@ package com.wagerfield.multiverse.domain.model.species
 import java.util.UUID
 
 /**
- * Uniquely identifies a star entity.
+ * Uniquely identifies a species entity.
+ * @param value Unique species ID.
  */
-case class SpeciesId(id: UUID) extends ValueObject
+case class SpeciesId(value: UUID)

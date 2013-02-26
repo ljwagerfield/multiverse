@@ -4,5 +4,6 @@ import java.util.UUID
 
 /**
  * Uniquely identifies researched armour.
+ * @param value Unique armour ID.
  */
-case class ArmourId(id: UUID)
+case class ArmourId(value: UUID)

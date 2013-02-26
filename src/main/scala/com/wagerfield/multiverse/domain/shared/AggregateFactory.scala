@@ -13,6 +13,6 @@ trait AggregateFactory[AR <: AggregateRoot[AR, Event], Event] extends EventSourc
 	 * @return Aggregate denormalized from the sequence of events.
 	 */
 	def loadFromHistory(history: Iterable[Event]): AR = {
-		history.foldLeft(applyEvent(history.head))(_.applyEvent(_)).markCommitted
+		(applyEvent(history.head)/:history)(_.applyEvent(_)).markCommitted // May need to skip head in folded history.
 	}
 }

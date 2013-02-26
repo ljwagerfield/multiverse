@@ -4,5 +4,6 @@ import java.util.UUID
 
 /**
  * Uniquely identifies a star entity.
+ * @param value Unique star ID.
  */
 case class StarId(value: UUID)

@@ -1,13 +1,15 @@
 package com.wagerfield.multiverse.domain.model.species
 
 import com.wagerfield.multiverse.domain.model.instance.InstanceId
-import com.wagerfield.multiverse.domain.model.solarSystem.PlanetId
+import com.wagerfield.multiverse.domain.model.solarSystem.{SolarSystemEvent, StarId, PlanetId}
 import com.wagerfield.multiverse.domain.model.speciesAssets.SpeciesAssetsId
 
 /**
  * Species evolved.
  * @param instanceId Instance the event occurred in.
  * @param speciesId The evolved species.
+ * @param name The name of the species.
+ * @param flag The species' flag.
  * @param speciesAssetsId The binary media assets for the species.
  * @param planetId The planet where the species originated.
  * @param baseBonus The base bonus applied.
@@ -18,6 +20,8 @@ import com.wagerfield.multiverse.domain.model.speciesAssets.SpeciesAssetsId
  */
 case class SpeciesEvolved(instanceId:InstanceId,
 													speciesId:SpeciesId,
+												  name:String,
+													flag:SpeciesFlag,
 													speciesAssetsId:SpeciesAssetsId,
 													planetId:PlanetId,
 													baseBonus:SpeciesBonus,
@@ -25,3 +29,12 @@ case class SpeciesEvolved(instanceId:InstanceId,
 													habitatTemperatureTolerance:Int,
 													resourceDependencies:List[ResourceDependency],
 													bonusResourceDependencies:List[BonusResourceDependency]) extends SpeciesEvent
+
+/**
+ * Species name duplicate renamed.
+ * @param instanceId Instance the event occurred in.
+ * @param speciesId The species being renamed.
+ * @param conflictingSpeciesId The conflicting species which is keeping their name.
+ * @param name The new name of the species.
+ */
+case class SpeciesNameDuplicateRenamed(instanceId:InstanceId, speciesId: SpeciesId, conflictingSpeciesId: SpeciesId, name: String) extends SpeciesEvent
