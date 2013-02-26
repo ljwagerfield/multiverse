@@ -1,6 +1,4 @@
-# Refactor comments [lawrence.wagerfield]
-
-# Bring project into a compilable state
+# Bring project into a compilable state [WIP]
 
 # Setup code quality checks on Maven verify
 
