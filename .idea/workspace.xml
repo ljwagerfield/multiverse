@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/0.0/Completed.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/0.0/Backlog.md" afterPath="$PROJECT_DIR$/docs/0.0/Backlog.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/0.0/Completed.md" afterPath="$PROJECT_DIR$/docs/0.0/Completed.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/application/EventLog.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/application/EventLog.scala" />
     </list>
     <ignored path="Multiverse.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,7 +60,7 @@
     <file path="/BonusResourceDependency.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361653025319" ignored="false" />
     <file path="/AggregateFactory.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361702615685" ignored="false" />
     <file path="/pom.xml" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361745161495" ignored="false" />
-    <file path="/EventLog.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361817052466" ignored="false" />
+    <file path="/EventLog.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361878852514" ignored="false" />
     <file path="/SpeciesFlag.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361741854078" ignored="false" />
     <file path="/SpeciesFlagEmblemVectorEvent.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361737396027" ignored="false" />
     <file path="/SpeciesFlagEmblemVectorEvents.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361741291899" ignored="false" />
@@ -67,7 +68,7 @@
     <file path="/SpeciesFlagBackgroundVectorEvent.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361741319847" ignored="false" />
     <file path="/SpeciesFlagBackgroundVectorEvents.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361741228208" ignored="false" />
     <file path="/a.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361744747801" ignored="false" />
-    <file path="/Backlog.md" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361837368734" ignored="false" />
+    <file path="/Backlog.md" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361866252765" ignored="false" />
     <file path="/PlanetIndustryEvents.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361783345227" ignored="false" />
     <file path="/ShipAssetsEvents.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361818188196" ignored="false" />
     <file path="/StarId.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361836360500" ignored="false" />
@@ -133,19 +134,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Backlog.md" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/docs/0.0/Backlog.md">
+      <file leaf-file-name="EventLog.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/application/EventLog.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="33" selection-start="381" selection-end="381" vertical-scroll-proportion="0.17857143">
+            <state line="38" column="3" selection-start="1549" selection-end="1549" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Completed.md" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Backlog.md" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/0.0/Backlog.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Completed.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/0.0/Completed.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0">
+            <state line="2" column="19" selection-start="60" selection-end="60" vertical-scroll-proportion="0.032467533">
               <folding />
             </state>
           </provider>
@@ -170,7 +180,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/EngineId.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ShieldId.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/SolarSystemEvents.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/PlanetId.scala" />
@@ -184,8 +193,9 @@
         <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/system/SystemEvents.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/EventToken.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/Hash.scala" />
-        <option value="$PROJECT_DIR$/docs/0.0/Completed.md" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/application/EventLog.scala" />
         <option value="$PROJECT_DIR$/docs/0.0/Backlog.md" />
+        <option value="$PROJECT_DIR$/docs/0.0/Completed.md" />
       </list>
     </option>
   </component>
@@ -592,7 +602,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24908201" sideWeight="0.32668066" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.6712185" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24908201" sideWeight="0.67016804" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24908201" sideWeight="0.6764706" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983193" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -665,13 +675,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesId.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="34" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesAssets/SpeciesAssetsEvent.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="6" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0">
@@ -763,16 +766,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/0.0/Completed.md">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/application/EventLog.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0">
+        <state line="38" column="3" selection-start="1549" selection-end="1549" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/0.0/Backlog.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="33" selection-start="381" selection-end="381" vertical-scroll-proportion="0.17857143">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/0.0/Completed.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="19" selection-start="60" selection-end="60" vertical-scroll-proportion="0.032467533">
           <folding />
         </state>
       </provider>

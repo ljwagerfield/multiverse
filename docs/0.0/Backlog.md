@@ -1,8 +1,9 @@
-# Bring project into a compilable state [WIP]
-
 # Setup code quality checks on Maven verify
 
 # Add aggregate roots for each aggregate namespace
+
+# Plan how deployment will work
+- Consider behavioral and structural changes, both internal and external (i.e. schema changes, tech changes, etc.)
 
 # Add eventually consistent queries
 - Determine best composition pattern. Cake pattern seems to add verbosity.

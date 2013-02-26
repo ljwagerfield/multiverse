@@ -35,9 +35,8 @@ trait EventLogComponent {
 		 * @param previousEvent Previous event for the given event's aggregate. Operation will fail if persistence store contains a different event.
 		 * @return True if successful, other false if a conflict occurred.
 		 */
-		def tryAppend(event: List[Event], previousEvent: EventToken = null):Boolean
+		def tryAppendMany(event: List[Event], previousEvent: EventToken = null):Boolean
 	}
-
 }
 
 trait MemoryEventLogComponent extends EventLogComponent {
@@ -72,7 +71,7 @@ trait MemoryEventLogComponent extends EventLogComponent {
 		 * @param previousEvent Previous event for the given event's aggregate. Operation will fail if persistence store contains a different event.
 		 * @return True if successful, other false if a conflict occurred.
 		 */
-		def tryAppend(event: Event, previousEvent: EventToken) {
+		def tryAppend(event: Event, previousEvent: EventToken):Boolean = {
 			lock.acquire()
 			try {
 				if (isConflict(previousEvent)) {
@@ -94,7 +93,7 @@ trait MemoryEventLogComponent extends EventLogComponent {
 		 * @param previousEvent Previous event for the given event's aggregate. Operation will fail if persistence store contains a different event.
 		 * @return True if successful, other false if a conflict occurred.
 		 */
-		def tryAppend(event: List[Event], previousEvent: EventToken) {
+		def tryAppendMany(event: List[Event], previousEvent: EventToken):Boolean = {
 			lock.acquire()
 			try {
 				if (isConflict(previousEvent)) {
