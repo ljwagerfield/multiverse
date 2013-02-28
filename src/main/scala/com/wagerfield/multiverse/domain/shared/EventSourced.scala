@@ -1,22 +1,22 @@
 package com.wagerfield.multiverse.domain.shared
 
 /**
- * Copyright (c) Wagerfield Ltd.
- *
  * Object with event sourced state.
+ * @tparam T The derived class type.
+ * @tparam E The event type.
  */
-trait EventSourced[ES <: EventSourced[ES, Event], Event] {
-	/**
-	 * Applies the given event as the head of the returned object's state.
-	 * @param event Event representing new head state.
-	 * @return
-	 */
-	def applyEvent(event: Event): ES
+trait EventSourced[T <: EventSourced[T, E], E] {
+  /**
+   * Applies the given event as the head of the returned object's state.
+   * @param event E representing new head state.
+   * @return
+   */
+  def applyEvent(event: E): T
 
-	/**
-	 * Convenience method for processing unhandled events.
-	 * @param event Unhandled event.
-	 * @return Nothing (exception always thrown).
-	 */
-	protected def unhandled(event: Event) = sys.error("Event " + event + " does not apply to " + this)
+  /**
+   * Convenience method for processing unhandled events.
+   * @param event Unhandled event.
+   * @return Nothing (exception always thrown).
+   */
+  protected def unhandled(event: E) = sys.error("Event " + event + " does not apply to " + this)
 }

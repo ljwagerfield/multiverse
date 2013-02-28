@@ -1,4 +1,4 @@
-# Setup code quality checks on Maven verify
+# Add unit tests
 
 # Add aggregate roots for each aggregate namespace
 

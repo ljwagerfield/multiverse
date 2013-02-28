@@ -7,5 +7,5 @@ import com.wagerfield.multiverse.domain.model.species.SpeciesId
  * Event relating to a species research on ships.
  */
 trait ShipResearchEvent extends InstanceEvent {
-	val speciesId: SpeciesId
+  val speciesId: SpeciesId
 }

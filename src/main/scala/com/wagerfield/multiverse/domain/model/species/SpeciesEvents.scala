@@ -19,16 +19,16 @@ import com.wagerfield.multiverse.domain.model.speciesAssets.SpeciesAssetsId
  * @param bonusResourceDependencies The optional dependencies; these provide additional bonuses when acquired.
  */
 case class SpeciesEvolved(instanceId:InstanceId,
-													speciesId:SpeciesId,
-												  name:String,
-													flag:SpeciesFlag,
-													speciesAssetsId:SpeciesAssetsId,
-													planetId:PlanetId,
-													baseBonus:SpeciesBonus,
-													habitatTemperature:Int,
-													habitatTemperatureTolerance:Int,
-													resourceDependencies:List[ResourceDependency],
-													bonusResourceDependencies:List[BonusResourceDependency]) extends SpeciesEvent
+                          speciesId:SpeciesId,
+                          name:String,
+                          flag:SpeciesFlag,
+                          speciesAssetsId:SpeciesAssetsId,
+                          planetId:PlanetId,
+                          baseBonus:SpeciesBonus,
+                          habitatTemperature:Int,
+                          habitatTemperatureTolerance:Int,
+                          resourceDependencies:List[ResourceDependency],
+                          bonusResourceDependencies:List[BonusResourceDependency]) extends SpeciesEvent
 
 /**
  * Species name duplicate renamed.

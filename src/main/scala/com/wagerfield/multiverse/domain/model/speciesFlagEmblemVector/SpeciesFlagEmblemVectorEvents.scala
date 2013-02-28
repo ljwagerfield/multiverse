@@ -9,4 +9,6 @@ import com.wagerfield.multiverse.domain.shared.Hash
  * @param speciesFlagEmblemVectorId Unique ID for the flag background vector.
  * @param hash Reference to the BLOB containing vector data.
  */
-case class SpeciesFlagEmblemVectorDefined(instanceId:InstanceId, speciesFlagEmblemVectorId:SpeciesFlagEmblemVectorId, hash:Hash) extends SpeciesFlagEmblemVectorEvent
+case class SpeciesFlagEmblemVectorDefined(instanceId:InstanceId,
+                                          speciesFlagEmblemVectorId:SpeciesFlagEmblemVectorId,
+                                          hash:Hash) extends SpeciesFlagEmblemVectorEvent

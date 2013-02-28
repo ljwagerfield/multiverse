@@ -18,4 +18,14 @@ import com.wagerfield.multiverse.domain.model.species.SpeciesId
  * @param effectiveness Percentage of production research spent on effectiveness.
  * @param maintainability Percentage of production research spent on maintainability.
  */
-case class ShipResearchFocused(instanceId:InstanceId, speciesId:SpeciesId, engines:Int, armour:Int, shields:Int, colonizingUnits:Int, weapons:Int, economy:Int, size:Int, effectiveness:Int, maintainability:Int) extends ShipResearchEvent
+case class ShipResearchFocused(instanceId:InstanceId,
+                               speciesId:SpeciesId,
+                               engines:Int,
+                               armour:Int,
+                               shields:Int,
+                               colonizingUnits:Int,
+                               weapons:Int,
+                               economy:Int,
+                               size:Int,
+                               effectiveness:Int,
+                               maintainability:Int) extends ShipResearchEvent

@@ -20,13 +20,13 @@ import com.wagerfield.multiverse.domain.model.shipResearch.{WeaponId, ShieldId, 
  * @param quantifiedColonizingUnitIds The colonizing units to use for ships built with this specification.
  */
 case class ShipSpecified(instanceId:InstanceId,
-												 shipSpecificationId:ShipSpecificationId,
-												 authorId:SpeciesId,
-												 shipAssetsId:ShipAssetsId,
-												 size:Int,
-												 name:String,
-												 engineId:EngineId,
-												 armourId:ArmourId,
-												 shieldId:ShieldId,
-												 quantifiedWeaponIds:Set[QuantifiedWeaponId],
-												 quantifiedColonizingUnitIds:Set[QuantifiedColonizingUnitId]) extends ShipSpecificationEvent
+                         shipSpecificationId:ShipSpecificationId,
+                         authorId:SpeciesId,
+                         shipAssetsId:ShipAssetsId,
+                         size:Int,
+                         name:String,
+                         engineId:EngineId,
+                         armourId:ArmourId,
+                         shieldId:ShieldId,
+                         quantifiedWeaponIds:Set[QuantifiedWeaponId],
+                         quantifiedColonizingUnitIds:Set[QuantifiedColonizingUnitId]) extends ShipSpecificationEvent

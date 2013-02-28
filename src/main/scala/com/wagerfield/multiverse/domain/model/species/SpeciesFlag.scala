@@ -12,7 +12,7 @@ import com.wagerfield.multiverse.domain.model.speciesFlagBackgroundVector.Specie
  * @param emblemVectorId Vector to be ued for the flag foreground.
  */
 case class SpeciesFlag(backgroundColor:Int,
-											 emblemPrimaryColor:Int,
-											 emblemSecondaryColor:Int,
-											 backgroundVectorId:SpeciesFlagBackgroundVectorId,
-											 emblemVectorId:SpeciesFlagEmblemVectorId)
+                       emblemPrimaryColor:Int,
+                       emblemSecondaryColor:Int,
+                       backgroundVectorId:SpeciesFlagBackgroundVectorId,
+                       emblemVectorId:SpeciesFlagEmblemVectorId)
