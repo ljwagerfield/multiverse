@@ -12,7 +12,7 @@
 - Each entry in the event log is associated with one aggregate using the ID of the aggregate root.
 - Optimistic concurrency used when committing new events for a given aggregate.
 - *Optimisation:* Single event aggregates (or 'atomic aggregates') do not require conflict checking. 
-
+- *Optimisation 2:* Aggregates which do not perform validation do not need to be loaded from history or a snapshot; there is no state within the aggregate.
 ### Scaling and Load Balancing
 - Sharding based on aggregate ID.
 - Queries spanning multiple aggregates are considered eventually consistent.
@@ -70,4 +70,10 @@ Reads are also tunable: one, quorum, all.
 - Certain queries can be duplicated client-side to remove need to keep polling server.
 
 ## Abstraction
-- Events, identities, entities *and* aggregates are concrete classes. All must be easily serializable and none contain non-domain-model implementation that is likel to change.
+- Events, identities, entities *and* aggregates are concrete classes. All must be easily serializable and none contain non-domain-model implementation that is likely to change.
+
+## Time
+- Ordering of event sequences is handled by the underlying persistence layer.
+- Timestamps still need to be present in certain events for reactions to be timed.
+- To support adding reactions to events which otherwise have no reactions, timestamps shall be present in all events.
+- **Important:** Timestamps are *not* present to support deferred commands. Commands produce events which represent immediate state change; a timestamp set for any time other than the present is a bug.

@@ -5,14 +5,16 @@ import com.wagerfield.multiverse.domain.model.instance.InstanceId
 /**
  * Entire game paused.
  * @param instanceId Instance the event occurred in.
- * @param systemId The system being paused.
- * @param message The message for users explaining why the game has been paused.
+ * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+ * @param systemId System being paused.
+ * @param message Message for users explaining why the game has been paused.
  */
-case class GamePaused(instanceId:InstanceId, systemId:SystemId, message:String) extends SystemEvent
+case class GamePaused(instanceId:InstanceId, timeStamp:Long, systemId:SystemId, message:String) extends SystemEvent
 
 /**
  * Entire game resumed.
  * @param instanceId Instance the event occurred in.
- * @param systemId The system being resumed.
+ * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+ * @param systemId System being resumed.
  */
-case class GameResumed(instanceId:InstanceId, systemId:SystemId) extends SystemEvent
+case class GameResumed(instanceId:InstanceId, timeStamp:Long, systemId:SystemId) extends SystemEvent

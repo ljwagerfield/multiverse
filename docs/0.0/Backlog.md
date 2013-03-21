@@ -1,6 +1,8 @@
-# Add unit tests
+# Re-evaluate ping events for write model [WIP]
 
-# Add aggregate roots for each aggregate namespace
+# Add validation to aggregate roots
+
+# Add unit tests
 
 # Plan how deployment will work
 - Consider behavioral and structural changes, both internal and external (i.e. schema changes, tech changes, etc.)
@@ -11,6 +13,10 @@
 - Add queries for set validation.
 
 # Add cargo to ship specification
+
+# Add population data
+- Ships contain a certain number of that population.
+- Decommissioning then requires a ship to go back to a particular planet.
 
 # Add player-to-player asset transfer
 - One-time transfers.

@@ -7,7 +7,7 @@ package com.wagerfield.multiverse.domain.shared
  */
 trait AggregateRoot[T <: AggregateRoot[T, E], E] extends EventSourced[T, E] {
   /**
-   * Events which are pending commitment into the aggregate.
+   * Events pending commitment.
    * @return Sequence of uncommitted events.
    */
   def uncommittedEvents: List[E]

@@ -7,9 +7,9 @@ package com.wagerfield.multiverse.domain.shared
  */
 trait EventSourced[T <: EventSourced[T, E], E] {
   /**
-   * Applies the given event as the head of the returned object's state.
-   * @param event E representing new head state.
-   * @return
+   * Applies the given event as the head of the returned aggregate's state.
+   * @param event Event representing new head state.
+   * @return Aggregate with event appended and new state applied.
    */
   def applyEvent(event: E): T
 

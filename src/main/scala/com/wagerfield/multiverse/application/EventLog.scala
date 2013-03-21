@@ -1,6 +1,5 @@
 package com.wagerfield.multiverse.application
 
-import com.wagerfield.multiverse.domain.shared.{EventToken, Event}
 import java.util.UUID
 import concurrent.Lock
 

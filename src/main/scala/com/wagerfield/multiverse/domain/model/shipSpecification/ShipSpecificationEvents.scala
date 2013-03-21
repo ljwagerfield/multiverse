@@ -8,25 +8,19 @@ import com.wagerfield.multiverse.domain.model.shipResearch.{WeaponId, ShieldId, 
 /**
  * Ship specified.
  * @param instanceId Instance the event occurred in.
- * @param shipSpecificationId ID for the new specification.
- * @param authorId The species who authored the specification.
+ * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+ * @param shipSpecificationId Unique ID for the new specification.
+ * @param authorId Species who authored the specification.
  * @param shipAssetsId Binary assets associated with the ship specification.
  * @param size Size of the ship this specification defines.
- * @param name The specification name.
- * @param engineId The engine to use for ships built with this specification.
- * @param armourId The armour to use for ships built with this specification.
- * @param shieldId The shield to use for ships built with this specification.
- * @param quantifiedWeaponIds The weapons to use for ships built with this specification.
- * @param quantifiedColonizingUnitIds The colonizing units to use for ships built with this specification.
+ * @param name Specification name.
+ * @param composition Composition of the specified ship type's component.
  */
 case class ShipSpecified(instanceId:InstanceId,
+                         timeStamp:Long,
                          shipSpecificationId:ShipSpecificationId,
                          authorId:SpeciesId,
                          shipAssetsId:ShipAssetsId,
                          size:Int,
                          name:String,
-                         engineId:EngineId,
-                         armourId:ArmourId,
-                         shieldId:ShieldId,
-                         quantifiedWeaponIds:Set[QuantifiedWeaponId],
-                         quantifiedColonizingUnitIds:Set[QuantifiedColonizingUnitId]) extends ShipSpecificationEvent
+                         composition:ShipComposition) extends ShipSpecificationEvent

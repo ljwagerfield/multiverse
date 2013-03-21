@@ -7,15 +7,16 @@ import com.wagerfield.multiverse.domain.model.instance.InstanceId
 /**
  * Ship bound for planet: ping event type; ignore if last order for ship does not match one provided.
  * @param instanceId Instance the event occurred in.
+ * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
  * @param planetId Planet the ship is bound for.
- * @param shipId The inbound ship.
- * @param shipOrder The order which set the ship inbound for this planet.
+ * @param inboundShipOrder Order which invoked the inbound ship.
  */
-case class ShipBoundForPlanet(instanceId:InstanceId, planetId:PlanetId, shipId:ShipId, shipOrder:ShipEvent) extends PlanetOwnershipEvent
+case class ShipBoundForPlanetOwnership(instanceId:InstanceId, timeStamp:Long, planetId:PlanetId, inboundShipOrder:ShipEvent) extends PlanetOwnershipEvent
 
 /**
  * Planet abandoned.
  * @param instanceId Instance the event occurred in.
+ * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
  * @param planetId The planet being abandoned by its last occupants.
  */
-case class PlanetAbandoned(instanceId:InstanceId, planetId:PlanetId) extends PlanetOwnershipEvent
+case class PlanetAbandoned(instanceId:InstanceId, timeStamp:Long, planetId:PlanetId) extends PlanetOwnershipEvent
