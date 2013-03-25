@@ -1,5 +1,3 @@
-# Re-evaluate ping events for write model [WIP]
-
 # Add validation to aggregate roots
 
 # Add unit tests

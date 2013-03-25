@@ -4,7 +4,7 @@ import com.wagerfield.multiverse.domain.shared.{ValidatedValueObjectAggregateFac
 import com.wagerfield.multiverse.domain.model.shipSpecification.ShipSpecificationId
 import com.wagerfield.multiverse.domain.model.ship.ShipId
 import com.wagerfield.multiverse.domain.model.instance.InstanceId
-import com.wagerfield.multiverse.domain.model.solarSystem.{SolarSystemEvent, PlanetId}
+import com.wagerfield.multiverse.domain.model.solarSystem.PlanetId
 
 /**
  * Industry for a particular planet.

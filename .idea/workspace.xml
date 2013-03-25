@@ -2,54 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/ComponentResearchFocus.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/instance/Instance.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustry.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustryEvent.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetOwnership/PlanetOwnership.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/ProductionResearchFocus.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/resource/Resource.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/Ship.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipAssets/ShipAssets.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipComposition.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ShipResearch.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipSpecification.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/Species.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesAssets/SpeciesAssets.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesCharacteristics.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesFlagBackgroundVector/SpeciesFlagBackgroundVector.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesFlagEmblemVector/SpeciesFlagBackgroundVector.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/system/System.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/ValidatedAggregateFactory.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/ValidatedEntityAggregateFactory.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/ValidatedValueObjectAggregateFactory.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/lawrence_wagerfield.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/AggregateFactory.scala" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/Event.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/application/Event.scala" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/EventToken.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/application/EventToken.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/AggregateRoot.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/AggregateRoot.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/Architecture Notes.md" afterPath="$PROJECT_DIR$/docs/Architecture Notes.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/0.0/Backlog.md" afterPath="$PROJECT_DIR$/docs/0.0/Backlog.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/0.0/Completed.md" afterPath="$PROJECT_DIR$/docs/0.0/Completed.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/application/EventLog.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/application/EventLog.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/EventSourced.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/EventSourced.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/instance/InstanceEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/instance/InstanceEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustryEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustryEvents.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustry.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustry.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetOwnership/PlanetOwnership.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetOwnership/PlanetOwnership.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetOwnership/PlanetOwnershipEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetOwnership/PlanetOwnershipEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/resource/ResourceEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/resource/ResourceEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipAssets/ShipAssetsEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipAssets/ShipAssetsEvents.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/Ship.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/Ship.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/ShipEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/ShipEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ShipResearchEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ShipResearchEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipSpecificationEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipSpecificationEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/SolarSystem.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/SolarSystem.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/SolarSystemEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/SolarSystemEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesAssets/SpeciesAssetsEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesAssets/SpeciesAssetsEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesFlagEmblemVector/SpeciesFlagEmblemVectorEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesFlagEmblemVector/SpeciesFlagEmblemVectorEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/system/SystemEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/system/SystemEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Multiverse.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,16 +19,16 @@
     <file path="/SolarSystem.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1363632040524" ignored="false" />
     <file path="/SolarSystemEvent.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361455119449" ignored="false" />
     <file path="/SolarSystemEvents.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1363112986395" ignored="false" />
-    <file path="/a.dummy" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1363164873022" ignored="false" />
+    <file path="/a.dummy" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1364202557623" ignored="false" />
     <file path="/Version.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361783211503" ignored="false" />
     <file path="/PlanetOwnershipEvent.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361486559901" ignored="false" />
-    <file path="/PlanetOwnershipEvents.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1363164097959" ignored="false" />
+    <file path="/PlanetOwnershipEvents.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1364202483359" ignored="false" />
     <file path="/InstanceEvents.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1362562070793" ignored="false" />
     <file path="/ShipEvent.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361455307825" ignored="false" />
     <file path="/ResourceId.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361816360024" ignored="false" />
     <file path="/ResourceEvents.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1362646343758" ignored="false" />
     <file path="/SolarSystemExternalRules.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361471308006" ignored="false" />
-    <file path="/ShipEvents.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1363441604992" ignored="false" />
+    <file path="/ShipEvents.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1364067977965" ignored="false" />
     <file path="/ShipSpecificationId.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361818582621" ignored="false" />
     <file path="/Events.md" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361484562276" ignored="false" />
     <file path="/ShipAssetsEvent.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361524060684" ignored="false" />
@@ -113,7 +72,7 @@
     <file path="/SpeciesFlagBackgroundVectorEvent.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361741319847" ignored="false" />
     <file path="/SpeciesFlagBackgroundVectorEvents.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1362595280227" ignored="false" />
     <file path="/a.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361882385748" ignored="false" />
-    <file path="/Backlog.md" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1363683741609" ignored="false" />
+    <file path="/Backlog.md" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1364066825012" ignored="false" />
     <file path="/PlanetIndustryEvents.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1362562218742" ignored="false" />
     <file path="/ShipAssetsEvents.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361818188196" ignored="false" />
     <file path="/StarId.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1361836360500" ignored="false" />
@@ -130,13 +89,13 @@
     <file path="/PlanetIndustry.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1363682536376" ignored="false" />
     <file path="/PlanetIndustryEvent.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1362162165521" ignored="false" />
     <file path="/ValueObjectAggregateFactory.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1362422276998" ignored="false" />
-    <file path="/PlanetOwnership.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1363164081688" ignored="false" />
+    <file path="/PlanetOwnership.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1364202707402" ignored="false" />
     <file path="/Architecture Notes.md" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1362560856036" ignored="false" />
     <file path="/ValidatedAggregateFactory.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1362472596951" ignored="false" />
     <file path="/ValidatedEntityAggregateFactory.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1362472976524" ignored="false" />
     <file path="/ValidatedValueObjectAggregateFactory.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1362472944137" ignored="false" />
     <file path="/Resource.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1363113699704" ignored="false" />
-    <file path="/Ship.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1363444909803" ignored="false" />
+    <file path="/Ship.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1364150743352" ignored="false" />
     <file path="/ShipAssets.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1363447468593" ignored="false" />
     <file path="/SpeciesAssets.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1363447630175" ignored="false" />
     <file path="/SpeciesFlagBackgroundVector.scala" changelist="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" time="1363447778397" ignored="false" />
@@ -206,66 +165,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ShipResearch.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ShipResearch.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="6" selection-start="1606" selection-end="1606" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#61#194#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShipSpecification.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipSpecification.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="19" selection-start="2436" selection-end="2436" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#66#161#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SolarSystem.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/SolarSystem.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="103" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SolarSystemEvents.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/SolarSystemEvents.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="45" selection-start="1086" selection-end="1086" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Species.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/Species.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="103" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpeciesEvents.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesEvents.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="31" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Completed.md" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/docs/0.0/Completed.md">
+      <file leaf-file-name="Backlog.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docs/0.0/Backlog.md">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -273,31 +174,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpeciesCharacteristics.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesCharacteristics.scala">
+      <file leaf-file-name="ShipEvents.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/ShipEvents.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="106" selection-start="538" selection-end="538" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShipSpecificationEvents.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipSpecificationEvents.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="73" selection-start="886" selection-end="886" vertical-scroll-proportion="0.0">
+            <state line="20" column="69" selection-start="885" selection-end="927" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#66#131#0" expanded="true" />
+                <element signature="e#53#118#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShipComposition.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipComposition.scala">
+      <file leaf-file-name="Ship.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/Ship.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="38" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0">
+            <state line="125" column="3" selection-start="5263" selection-end="5263" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlanetOwnership.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetOwnership/PlanetOwnership.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="45" selection-start="1787" selection-end="1787" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlanetIndustryEvents.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustryEvents.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="72" selection-start="914" selection-end="953" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlanetIndustry.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustry.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="3" selection-start="589" selection-end="589" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#63#163#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -321,13 +242,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/resource/Resource.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustryEvents.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/Ship.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustry.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/ProductionResearchFocus.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/ComponentResearchFocus.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ShipResearchEvents.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ShipResearch.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipComposition.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipSpecification.scala" />
@@ -337,6 +251,13 @@
         <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesCharacteristics.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/Species.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesEvents.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustry.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/ShipEvents.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/Ship.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetOwnership/PlanetOwnershipEvents.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetOwnership/PlanetOwnership.scala" />
+        <option value="$PROJECT_DIR$/docs/0.0/Backlog.md" />
+        <option value="$PROJECT_DIR$/docs/0.0/Completed.md" />
       </list>
     </option>
   </component>
@@ -737,6 +658,48 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="SolarSystemEvents.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solarSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="SolarSystem.scala" />
               <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
             </PATH_ELEMENT>
@@ -897,7 +860,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="planetIndustry" />
+              <option name="myItemId" value="shipResearch" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -935,11 +898,297 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="planetIndustry" />
+              <option name="myItemId" value="shipResearch" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PlanetIndustry.scala" />
+              <option name="myItemId" value="ShipResearchEvents.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shipResearch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShipResearch.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ship" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ship" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShipEvents.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ship" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ship.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="planetOwnership" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PlanetOwnershipEvents.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="planetOwnership" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="planetOwnership" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PlanetOwnership.scala" />
               <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1249,7 +1498,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914045" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39915967" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915967" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32878152" sideWeight="0.5030675" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24908201" sideWeight="0.32704404" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32878152" sideWeight="0.49263805" order="7" side_tool="false" content_ui="tabs" />
@@ -1330,59 +1579,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustryEvents.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="33" selection-start="988" selection-end="988" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/Ship.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="157" selection-end="157" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustry.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="35" selection-start="2622" selection-end="2622" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#63#163#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/ProductionResearchFocus.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="85" selection-start="489" selection-end="489" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/ComponentResearchFocus.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="68" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ShipResearchEvents.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="47" selection-start="665" selection-end="665" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ShipResearch.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="6" selection-start="1606" selection-end="1606" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#61#194#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipComposition.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="38" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0">
@@ -1429,21 +1625,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/Species.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustry.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="103" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
+        <state line="12" column="3" selection-start="589" selection-end="589" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#63#163#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustryEvents.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="72" selection-start="914" selection-end="953" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/ShipEvents.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="69" selection-start="885" selection-end="927" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#53#118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/Ship.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="125" column="3" selection-start="5263" selection-end="5263" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetOwnership/PlanetOwnershipEvents.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="20" selection-start="293" selection-end="293" vertical-scroll-proportion="0.083240844">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetOwnership/PlanetOwnership.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="45" selection-start="1787" selection-end="1787" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/0.0/Completed.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="41" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesEvents.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="31" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.0">
+        <state line="22" column="31" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.32467532">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/0.0/Completed.md">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/Species.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="103" selection-start="159" selection-end="159" vertical-scroll-proportion="0.032467533">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/0.0/Backlog.md">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />

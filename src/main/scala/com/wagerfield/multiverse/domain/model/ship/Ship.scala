@@ -121,7 +121,19 @@ case class Ship private(uncommittedEvents: List[ShipEvent],
    * @return Ship halted.
    */
   def decommission(instanceId:InstanceId, timeStamp:Long): Ship = {
-    applyEvent(ShipDecommissioned(instanceId, timeStamp, id))
+    val decommissioned = ShipDecommissioned(instanceId, timeStamp, id)
+    applyEvent(decommissioned).destroy(decommissioned, instanceId, timeStamp)
+  }
+
+  /**
+   * Immediately ends the ship's existence.
+   * @param destructionEvent Event resulting in the ship's destruction.
+   * @param instanceId Instance invoking the command.
+   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @return Ship halted.
+   */
+  def destroy(destructionEvent:ShipEvent, instanceId:InstanceId, timeStamp:Long): Ship = {
+    applyEvent(ShipDestroyed(instanceId, timeStamp, id, destructionEvent))
   }
 
   /**
@@ -147,8 +159,8 @@ object Ship extends ValidatedEntityAggregateFactory[Ship, ShipEvent] {
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return New ship.
    */
-  def build(canonicalEvent:ShipBuildCommissionedAtPlanet, instanceId:InstanceId, timeStamp:Long):Ship =
-    applyEvent(ShipBuildCommissioned(instanceId, timeStamp, canonicalEvent.shipId, canonicalEvent))
+  def finalizeBuild(canonicalEvent:ShipBuildCommissionedAtPlanet, instanceId:InstanceId, timeStamp:Long):Ship =
+    applyEvent(ShipBuilt(instanceId, timeStamp, canonicalEvent.shipId, canonicalEvent))
 
   /**
    * Applies the given event as the head of the returned aggregate's state.
@@ -157,7 +169,7 @@ object Ship extends ValidatedEntityAggregateFactory[Ship, ShipEvent] {
    */
   def applyEvent(event: ShipEvent):Ship = {
     event match {
-      case event: ShipBuildCommissioned => Ship(Nil :+ event, event.shipId)
+      case event: ShipBuilt => Ship(Nil :+ event, event.shipId)
       case event: ShipEvent => unhandled(event)
     }
   }

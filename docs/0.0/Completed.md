@@ -1,3 +1,7 @@
+# Re-evaluate ping events for write model
+
+# Add redundant validation events to aggregates
+
 # Add aggregate roots for each aggregate namespace
 
 # Add event timestamps to support reaction timing

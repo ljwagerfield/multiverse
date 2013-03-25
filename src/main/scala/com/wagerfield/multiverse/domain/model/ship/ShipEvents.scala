@@ -2,15 +2,25 @@ package com.wagerfield.multiverse.domain.model.ship
 
 import com.wagerfield.multiverse.domain.model.instance.InstanceId
 import com.wagerfield.multiverse.domain.model.solarSystem.{StarId, PlanetId}
-import com.wagerfield.multiverse.domain.model.planetIndustry.{ShipBuildCommissioned => ShipBuildCommissionedAtPlanet}
+import com.wagerfield.multiverse.domain.model.planetIndustry.{ShipBuildCommissioned}
 
 /**
- * Ping event for ship builds.
+ * Ship build completed.
  * @param instanceId Instance the event occurred in.
  * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
- * @param shipId Ship being built.
+ * @param shipId New unique ship ID.
+ * @param commissionEvent Event commissioning the completed build.
  */
-case class ShipBuildCommissioned(instanceId:InstanceId, timeStamp:Long, shipId:ShipId, canonicalEvent:ShipBuildCommissionedAtPlanet) extends ShipEvent
+case class ShipBuilt(instanceId:InstanceId, timeStamp:Long, shipId:ShipId, commissionEvent:ShipBuildCommissioned) extends ShipEvent
+
+/**
+ * Ship destroyed.
+ * @param instanceId Instance the event occurred in.
+ * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+ * @param shipId Destroyed ship.
+ * @param destructionEvent Event resulting in the ship's destruction.
+ */
+case class ShipDestroyed(instanceId:InstanceId, timeStamp:Long, shipId:ShipId, destructionEvent:ShipEvent) extends ShipEvent
 
 /**
  * Solar system entry ordered: ship orbits wormhole on arrival.

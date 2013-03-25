@@ -11,7 +11,8 @@ import com.wagerfield.multiverse.domain.model.solarSystem.PlanetId
  * @param planetId Planet whose industry this is.
  */
 case class PlanetOwnership private(uncommittedEvents: List[PlanetOwnershipEvent],
-                            planetId:PlanetId)
+                            planetId:PlanetId,
+                            isColonized:Boolean)
   extends AggregateRoot[PlanetOwnership, PlanetOwnershipEvent]
 {
   /**
@@ -22,13 +23,13 @@ case class PlanetOwnership private(uncommittedEvents: List[PlanetOwnershipEvent]
 
   /**
    * Informs the aggregate of a potential change in planet ownership.
-   * @param inboundShipOrder Order which invoked the inbound ship.
+   * @param colonizationOrder Order which invoked the inbound ship.
    * @param instanceId Instance invoking the command.
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Aggregate with inbound ship.
    */
-  def shipInboundForOwnership(inboundShipOrder: ShipEvent, instanceId:InstanceId, timeStamp:Long):PlanetOwnership =
-    applyEvent(ShipBoundForPlanetOwnership(instanceId, timeStamp, planetId, inboundShipOrder))
+  def colonize(colonizationOrder: ShipEvent, instanceId:InstanceId, timeStamp:Long):PlanetOwnership =
+    applyEvent(PlanetColonized(instanceId, timeStamp, planetId, colonizationOrder))
 
   /**
    * Abandons the current inhabitants from the planet.
@@ -37,7 +38,7 @@ case class PlanetOwnership private(uncommittedEvents: List[PlanetOwnershipEvent]
    * @return Aggregate with no inhabitants.
    */
   def abandon(instanceId:InstanceId, timeStamp:Long): PlanetOwnership = {
-    // TODO: Validate against reactions. ShipBoundForPlanetOwnership.Order == PlanetColonizationOrdered
+    assert(isColonized, "Abandoning a planet requires it to be colonized.")
     applyEvent(PlanetAbandoned(instanceId, timeStamp, planetId))
   }
 
@@ -48,8 +49,8 @@ case class PlanetOwnership private(uncommittedEvents: List[PlanetOwnershipEvent]
    */
   def applyEvent(event: PlanetOwnershipEvent): PlanetOwnership = {
     event match {
-      case event:ShipBoundForPlanetOwnership => copy(uncommittedEvents = uncommittedEvents :+ event)
-      case event:PlanetAbandoned => copy(uncommittedEvents = uncommittedEvents :+ event)
+      case event:PlanetColonized => copy(uncommittedEvents = uncommittedEvents :+ event, isColonized = true)
+      case event:PlanetAbandoned => copy(uncommittedEvents = uncommittedEvents :+ event, isColonized = false)
       case event:PlanetOwnershipEvent => unhandled(event)
     }
   }
@@ -65,7 +66,7 @@ object PlanetOwnership extends ValidatedValueObjectAggregateFactory[PlanetOwners
    * @return Aggregate representing the initialized planet industry.
    */
   def init(planetId:PlanetId):PlanetOwnership =
-    PlanetOwnership(Nil, planetId)
+    PlanetOwnership(Nil, planetId, false)
 
   /**
    * Gets the prototypical instance of an aggregate using the initial event from its history.
