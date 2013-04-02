@@ -3,7 +3,6 @@ package com.wagerfield.multiverse.domain.model.shipSpecification
 import com.wagerfield.multiverse.domain.model.instance.InstanceId
 import com.wagerfield.multiverse.domain.model.species.SpeciesId
 import com.wagerfield.multiverse.domain.model.shipAssets.ShipAssetsId
-import com.wagerfield.multiverse.domain.model.shipResearch.{WeaponId, ShieldId, ArmourId, EngineId}
 
 /**
  * Ship specified.
@@ -21,6 +20,6 @@ case class ShipSpecified(instanceId:InstanceId,
                          shipSpecificationId:ShipSpecificationId,
                          authorId:SpeciesId,
                          shipAssetsId:ShipAssetsId,
-                         size:Int,
+                         size:ShipSize,
                          name:String,
                          composition:ShipComposition) extends ShipSpecificationEvent

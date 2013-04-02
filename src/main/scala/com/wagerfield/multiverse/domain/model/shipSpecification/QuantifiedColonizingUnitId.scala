@@ -7,4 +7,6 @@ import com.wagerfield.multiverse.domain.model.shipResearch.ColonizingUnitId
  * @param colonizingUnitId The colonizing unit.
  * @param quantity The quantity of that unit.
  */
-case class QuantifiedColonizingUnitId(colonizingUnitId:ColonizingUnitId, quantity:Int)
+case class QuantifiedColonizingUnitId(colonizingUnitId:ColonizingUnitId, quantity:Int) {
+  require(quantity > 0)
+}

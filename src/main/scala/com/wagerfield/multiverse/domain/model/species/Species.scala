@@ -1,6 +1,6 @@
 package com.wagerfield.multiverse.domain.model.species
 
-import com.wagerfield.multiverse.domain.shared.{AggregateRoot, ValidatedEntityAggregateFactory, Entity}
+import com.wagerfield.multiverse.domain.shared.{ShortAlphabeticName, AggregateRoot, ValidatedEntityAggregateFactory, Entity}
 import com.wagerfield.multiverse.domain.model.instance.InstanceId
 import com.wagerfield.multiverse.domain.model.speciesAssets.SpeciesAssetsId
 import com.wagerfield.multiverse.domain.model.solarSystem.PlanetId
@@ -26,7 +26,7 @@ case class Species private(uncommittedEvents: List[SpeciesEvent], id: SpeciesId)
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Solar system with resolved star name.
    */
-  def resolveDuplicateSpeciesName(conflictingSpeciesId:SpeciesId, newName: String, instanceId:InstanceId, timeStamp:Long):Species =
+  def resolveDuplicateSpeciesName(conflictingSpeciesId:SpeciesId, newName:ShortAlphabeticName, instanceId:InstanceId, timeStamp:Long):Species =
     applyEvent(SpeciesNameDuplicateRenamed(instanceId, timeStamp, id, conflictingSpeciesId, newName))
 
   /**
@@ -59,7 +59,7 @@ object Species extends ValidatedEntityAggregateFactory[Species, SpeciesEvent] {
    * @return Newly evolved species.
    */
   def evolve(speciesId:SpeciesId,
-             name:String,
+             name:ShortAlphabeticName,
              flag:SpeciesFlag,
              speciesAssetsId:SpeciesAssetsId,
              planetId:PlanetId,

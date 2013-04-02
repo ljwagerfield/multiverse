@@ -7,13 +7,11 @@ import com.wagerfield.multiverse.domain.shared.{ValidatedEntityAggregateFactory,
  * Running instance of the application.
  * @param uncommittedEvents Events pending commitment.
  * @param id Unique instance ID.
- * @param version Application version running this instance.
- * @param signedInUser The signed-in user this instance represents.
+ * @param isUserSignedIn Flag indicating if a user is signed-in to this instance.
  */
 case class Instance private(uncommittedEvents: List[InstanceEvent],
                             id:InstanceId,
-                            version:Version,
-                            signedInUser:Option[SpeciesId])
+                            isUserSignedIn:Boolean)
   extends Entity[InstanceId] with AggregateRoot[Instance, InstanceEvent]
 {
   /**
@@ -29,7 +27,7 @@ case class Instance private(uncommittedEvents: List[InstanceEvent],
    * @return Aggregate with signed-in user.
    */
   def signIn(user:SpeciesId, timeStamp:Long): Instance = {
-    // TODO: Validate no-one is signed-in.
+    require(!isUserSignedIn, "Instances only support a single signed-in user.")
     applyEvent(UserSignedIn(id, timeStamp, user))
   }
 
@@ -39,7 +37,7 @@ case class Instance private(uncommittedEvents: List[InstanceEvent],
    * @return Aggregate without a signed-in user.
    */
   def signOut(timeStamp:Long): Instance = {
-    // TODO: Validate a user is signed-in.
+    require(isUserSignedIn, "Signing-out requires the instance to have a signed-in user.")
     applyEvent((UserSignedOut(id, timeStamp)))
   }
 
@@ -50,8 +48,9 @@ case class Instance private(uncommittedEvents: List[InstanceEvent],
    */
   def applyEvent(event: InstanceEvent): Instance = {
     event match {
-      case event:UserSignedIn => copy(uncommittedEvents = uncommittedEvents :+ event, signedInUser = Some(event.speciesId))
-      case event:UserSignedOut => copy(uncommittedEvents = uncommittedEvents :+ event, signedInUser = None)
+      case event:UserSignedIn => copy(uncommittedEvents = uncommittedEvents :+ event, isUserSignedIn = true)
+      case event:UserSignedOut => copy(uncommittedEvents = uncommittedEvents :+ event, isUserSignedIn = false)
+      case event: InstanceEvent => unhandled(event)
     }
   }
 }
@@ -77,7 +76,7 @@ object Instance extends ValidatedEntityAggregateFactory[Instance, InstanceEvent]
    */
   def applyEvent(event: InstanceEvent): Instance = {
     event match {
-      case event: InstanceCreated => Instance(Nil :+ event, event.instanceId, event.version, None)
+      case event: InstanceCreated => Instance(Nil :+ event, event.instanceId, false)
       case event: InstanceEvent => unhandled(event)
     }
   }

@@ -4,7 +4,6 @@ import com.wagerfield.multiverse.domain.shared.{ValidatedEntityAggregateFactory,
 import com.wagerfield.multiverse.domain.model.instance.InstanceId
 import com.wagerfield.multiverse.domain.model.species.SpeciesId
 import com.wagerfield.multiverse.domain.model.shipAssets.ShipAssetsId
-import com.wagerfield.multiverse.domain.model.shipResearch.{ShieldId, ArmourId, EngineId}
 
 /**
  * Binary media assets for the background of a species flag.
@@ -46,11 +45,13 @@ object ShipSpecification extends ValidatedEntityAggregateFactory[ShipSpecificati
   def define(shipSpecificationId:ShipSpecificationId,
              authorId:SpeciesId,
              shipAssetsId:ShipAssetsId,
-             size:Int,
+             size:ShipSize,
              name:String,
              composition:ShipComposition,
              instanceId:InstanceId,
-             timeStamp:Long):ShipSpecification =
+             timeStamp:Long):ShipSpecification = {
+    require(name.matches("([a-z][A-Z][0-9]){1,15}"), "Name must be between 1 and 15 characters containing only alphanumeric characters.")
+    // Note: specification aggregate could validate against size if individual components were represented by value objects.
     applyEvent(ShipSpecified(instanceId,
       timeStamp,
       shipSpecificationId,
@@ -59,6 +60,7 @@ object ShipSpecification extends ValidatedEntityAggregateFactory[ShipSpecificati
       size,
       name,
       composition))
+  }
 
   /**
    * Applies the given event as the head of the returned aggregate's state.

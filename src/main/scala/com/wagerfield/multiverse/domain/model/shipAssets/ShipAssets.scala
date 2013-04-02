@@ -2,6 +2,7 @@ package com.wagerfield.multiverse.domain.model.shipAssets
 
 import com.wagerfield.multiverse.domain.shared.{Hash, ValidatedEntityAggregateFactory, AggregateRoot}
 import com.wagerfield.multiverse.domain.model.instance.InstanceId
+import com.wagerfield.multiverse.domain.model.shipSpecification.ShipSize
 
 /**
  * Binary media assets for a particular type of ship.
@@ -31,13 +32,13 @@ object ShipAssets extends ValidatedEntityAggregateFactory[ShipAssets, ShipAssets
   /**
    * Defines new binary assets for use in ship specifications.
    * @param shipAssetsId Unique ID for new ship assets.
-   * @param size Ship size ranges 1 to 5 (scout, destroyer, transporter, carrier, leviathan).
+   * @param size Ship size.
    * @param hash References the binary assets.
    * @param instanceId Instance the event occurred in.
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return New ship assets.
    */
-  def define(shipAssetsId:ShipAssetsId, size:Int, hash:Hash, instanceId:InstanceId, timeStamp:Long):ShipAssets =
+  def define(shipAssetsId:ShipAssetsId, size:ShipSize, hash:Hash, instanceId:InstanceId, timeStamp:Long):ShipAssets =
     applyEvent(ShipAssetsDefined(instanceId, timeStamp, shipAssetsId, size, hash))
 
   /**

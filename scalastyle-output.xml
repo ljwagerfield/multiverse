@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<checkstyle version="5.0"></checkstyle>
+<checkstyle version="5.0">
+ <file name="/Users/lawrence.wagerfield/multiverse/src/main/scala/com/wagerfield/multiverse/domain/model/ship/Ship.scala">
+  <error line="138" severity="warning" message="Cyclomatic complexity exceeds 10" source="org.scalastyle.scalariform.CyclomaticComplexityChecker" column="6"></error>
+ </file>
+</checkstyle>

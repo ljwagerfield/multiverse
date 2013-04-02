@@ -1,6 +1,6 @@
 package com.wagerfield.multiverse.domain.model.resource
 
-import com.wagerfield.multiverse.domain.shared.{ValidatedEntityAggregateFactory, AggregateRoot}
+import com.wagerfield.multiverse.domain.shared.{ShortAlphabeticName, IntegralPercentage, ValidatedEntityAggregateFactory, AggregateRoot}
 import com.wagerfield.multiverse.domain.model.instance.InstanceId
 
 /**
@@ -31,15 +31,22 @@ object Resource extends ValidatedEntityAggregateFactory[Resource, ResourceEvent]
   /**
    * Defines a new resource within the universe.
    * @param resourceId Unique ID for new resource.
-   * @param name Unique resource name within the universe
-   * @param description Description of the resource's unique properties.
+   * @param name Unique resource name within the universe.
+   * @param description Description of the resource's unique attributes.
    * @param abundance Resource abundance, ranging from 0-100.
    * @param instanceId Instance the event occurred in.
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return New resource.
    */
-  def define(resourceId:ResourceId, name:String, description:String, abundance:Int, instanceId:InstanceId, timeStamp:Long):Resource =
+  def define(resourceId:ResourceId,
+             name:ShortAlphabeticName,
+             description:String,
+             abundance:IntegralPercentage,
+             instanceId:InstanceId,
+             timeStamp:Long):Resource = {
+    require(description.length > 100 && description.length < 150, "Description must be between 100 and 150 characters.")
     applyEvent(ResourceDefined(instanceId, timeStamp, resourceId, name, description, abundance))
+  }
 
   /**
    * Applies the given event as the head of the returned aggregate's state.

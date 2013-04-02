@@ -1,6 +1,8 @@
-# Add validation to aggregate roots
+# Add validation to aggregate roots [WIP]
 
-# Add unit tests
+# Add unit tests [WIP]
+
+# Refactor the application of events to overcome cyclomatic complexity
 
 # Plan how deployment will work
 - Consider behavioral and structural changes, both internal and external (i.e. schema changes, tech changes, etc.)

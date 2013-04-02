@@ -22,7 +22,7 @@ case class PlanetOwnership private(uncommittedEvents: List[PlanetOwnershipEvent]
   def markCommitted: PlanetOwnership = copy(uncommittedEvents = Nil)
 
   /**
-   * Informs the aggregate of a potential change in planet ownership.
+   * Sets the given species as the new owners of this planet. Any existing species are overthrown.
    * @param colonizationOrder Order which invoked the inbound ship.
    * @param instanceId Instance invoking the command.
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
@@ -38,7 +38,7 @@ case class PlanetOwnership private(uncommittedEvents: List[PlanetOwnershipEvent]
    * @return Aggregate with no inhabitants.
    */
   def abandon(instanceId:InstanceId, timeStamp:Long): PlanetOwnership = {
-    assert(isColonized, "Abandoning a planet requires it to be colonized.")
+    require(isColonized, "Abandoning a planet requires it to be colonized.")
     applyEvent(PlanetAbandoned(instanceId, timeStamp, planetId))
   }
 

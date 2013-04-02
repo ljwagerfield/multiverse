@@ -1,7 +1,7 @@
 package com.wagerfield.multiverse.domain.model.ship
 
 import com.wagerfield.multiverse.domain.shared.{AggregateRoot, ValidatedEntityAggregateFactory, Entity}
-import com.wagerfield.multiverse.domain.model.instance.InstanceId
+import com.wagerfield.multiverse.domain.model.instance.{UserSignedIn, InstanceId}
 import com.wagerfield.multiverse.domain.model.solarSystem.{StarId, SolarSystem, PlanetId}
 import com.wagerfield.multiverse.domain.model.planetIndustry.{ShipBuildCommissioned => ShipBuildCommissionedAtPlanet}
 import com.wagerfield.multiverse.domain.model.planetOwnership.PlanetOwnership
@@ -11,9 +11,13 @@ import com.wagerfield.multiverse.domain.model.planetOwnership.PlanetOwnership
  * @param uncommittedEvents Events pending commitment.
  * @param id Unique star ID. Solar systems are uniquely identified by their stars.
  */
-case class Ship private(uncommittedEvents: List[ShipEvent],
-                               id: ShipId)
+case class Ship private(uncommittedEvents: List[ShipEvent], id: ShipId)
   extends Entity[ShipId] with AggregateRoot[Ship, ShipEvent] {
+  /**
+   * Maximum absolute value of a solar system coordinate relative to its star.
+   */
+  val maxAbsCoordinate = 1000
+
   /**
    * Clears the backlog of uncommitted events.
    * @return Aggregate with no uncommitted events.
@@ -23,48 +27,40 @@ case class Ship private(uncommittedEvents: List[ShipEvent],
   /**
    * Orders the ship to attack the specified non-friendly ship.
    * @param shipId Non-friendly ship to attack.
-   * @param planetSolarSystem Solar system the planet exists in.
    * @param instanceId Instance invoking the command.
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Ship on-course to attack given ship.
    */
   def attack(shipId:ShipId,
-             planetSolarSystem:SolarSystem,
              instanceId:InstanceId,
              timeStamp:Long): Ship = {
-    val event = ShipAttackOrdered(instanceId, timeStamp, id, shipId)
-    applyEvent(event)
+    require(shipId != id, "Attacks must be against another ship.")
+    applyEvent(ShipAttackOrdered(instanceId, timeStamp, id, shipId))
   }
 
   /**
    * Orders the ship to attack the specified non-friendly planet.
-   * @param planet Non-friendly planet to attack.
+   * @param planetId Non-friendly planet to attack.
    * @param instanceId Instance invoking the command.
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Ship on-course to attack given planet. Updated planet ownership.
    */
-  def attack(planet:PlanetOwnership,
+  def attack(planetId:PlanetId,
              instanceId:InstanceId,
-             timeStamp:Long): (Ship, PlanetOwnership) = {
-    val event = PlanetAttackOrdered(instanceId, timeStamp, id, planet.planetId)
-    (applyEvent(event),
-      planet.shipInboundForOwnership(event, instanceId, timeStamp))
-  }
+             timeStamp:Long): Ship =
+    applyEvent(PlanetAttackOrdered(instanceId, timeStamp, id, planetId))
 
   /**
    * Orders the ship to colonize the specified vacant planet.
-   * @param planet Vacant planet to colonize.
+   * @param planetId Vacant planet to colonize.
    * @param instanceId Instance invoking the command.
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Ship on-course to colonize given planet. Updated planet ownership.
    */
-  def colonize(planet:PlanetOwnership,
+  def colonize(planetId:PlanetId,
                instanceId:InstanceId,
-               timeStamp:Long): (Ship, PlanetOwnership) = {
-    val event = PlanetColonizationOrdered(instanceId, timeStamp, id, planet.planetId)
-    (applyEvent(event),
-      planet.shipInboundForOwnership(event, instanceId, timeStamp))
-  }
+               timeStamp:Long): Ship =
+    applyEvent(PlanetColonizationOrdered(instanceId, timeStamp, id, planetId))
 
   /**
    * Orders the ship to orbit the specified non-hostile planet.
@@ -75,10 +71,8 @@ case class Ship private(uncommittedEvents: List[ShipEvent],
    */
   def orbit(planetId:PlanetId,
             instanceId:InstanceId,
-            timeStamp:Long): Ship = {
-    val event = PlanetOrbitOrdered(instanceId, timeStamp, id, planetId)
-    applyEvent(event)
-  }
+            timeStamp:Long): Ship =
+    applyEvent(PlanetOrbitOrdered(instanceId, timeStamp, id, planetId))
 
   /**
    * Orders the ship to an offset in a particular solar system.
@@ -90,6 +84,8 @@ case class Ship private(uncommittedEvents: List[ShipEvent],
    * @return Ship on-course to given coordinates.
    */
   def moveTo(starId:StarId, xOffset:Int, yOffset:Int, instanceId:InstanceId, timeStamp:Long): Ship = {
+    require(xOffset >= 0-maxAbsCoordinate && xOffset <= maxAbsCoordinate, "Star offsets must be within range.")
+    require(yOffset >= 0-maxAbsCoordinate && yOffset <= maxAbsCoordinate, "Star offsets must be within range.")
     applyEvent(ShipCoordinatesOrdered(instanceId, timeStamp, id, starId, xOffset, yOffset))
   }
 
@@ -100,25 +96,23 @@ case class Ship private(uncommittedEvents: List[ShipEvent],
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Ship on-course to given solar system.
    */
-  def moveTo(starId:StarId, instanceId:InstanceId, timeStamp:Long): Ship = {
+  def moveTo(starId:StarId, instanceId:InstanceId, timeStamp:Long): Ship =
     applyEvent(SolarSystemEntryOrdered(instanceId, timeStamp, id, starId))
-  }
 
   /**
    * Orders the ship to do nothing.
    * @param instanceId Instance invoking the command.
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
-   * @return Ship halted.
+   * @return Halted ship.
    */
-  def halt(instanceId:InstanceId, timeStamp:Long): Ship = {
+  def halt(instanceId:InstanceId, timeStamp:Long): Ship =
     applyEvent(ShipHaltOrdered(instanceId, timeStamp, id))
-  }
 
   /**
    * Orders the ship to self-destruct.
    * @param instanceId Instance invoking the command.
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
-   * @return Ship halted.
+   * @return Decommissioned ship.
    */
   def decommission(instanceId:InstanceId, timeStamp:Long): Ship = {
     val decommissioned = ShipDecommissioned(instanceId, timeStamp, id)
@@ -130,7 +124,7 @@ case class Ship private(uncommittedEvents: List[ShipEvent],
    * @param destructionEvent Event resulting in the ship's destruction.
    * @param instanceId Instance invoking the command.
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
-   * @return Ship halted.
+   * @return Destroyed ship.
    */
   def destroy(destructionEvent:ShipEvent, instanceId:InstanceId, timeStamp:Long): Ship = {
     applyEvent(ShipDestroyed(instanceId, timeStamp, id, destructionEvent))
@@ -143,7 +137,17 @@ case class Ship private(uncommittedEvents: List[ShipEvent],
    */
   def applyEvent(event: ShipEvent):Ship = {
     event match {
-      case event: ShipEvent => unhandled(event)
+      case event:PlanetAttackOrdered => copy(uncommittedEvents = uncommittedEvents :+ event)
+      case event:PlanetColonizationOrdered => copy(uncommittedEvents = uncommittedEvents :+ event)
+      case event:PlanetOrbitOrdered => copy(uncommittedEvents = uncommittedEvents :+ event)
+      case event:ShipAttackOrdered => copy(uncommittedEvents = uncommittedEvents :+ event)
+      case event:ShipBuilt => copy(uncommittedEvents = uncommittedEvents :+ event)
+      case event:ShipCoordinatesOrdered => copy(uncommittedEvents = uncommittedEvents :+ event)
+      case event:ShipDecommissioned => copy(uncommittedEvents = uncommittedEvents :+ event)
+      case event:ShipDestroyed => copy(uncommittedEvents = uncommittedEvents :+ event)
+      case event:ShipHaltOrdered => copy(uncommittedEvents = uncommittedEvents :+ event)
+      case event:SolarSystemEntryOrdered => copy(uncommittedEvents = uncommittedEvents :+ event)
+      case event:ShipEvent => unhandled(event)
     }
   }
 }

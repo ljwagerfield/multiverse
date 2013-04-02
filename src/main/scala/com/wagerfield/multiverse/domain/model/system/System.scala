@@ -8,7 +8,7 @@ import com.wagerfield.multiverse.domain.model.instance.InstanceId
  * @param uncommittedEvents Events pending commitment.
  * @param id Unique system ID.
  */
-case class System private(uncommittedEvents: List[SystemEvent], id:SystemId)
+case class System private(uncommittedEvents: List[SystemEvent], id:SystemId, isPaused:Boolean)
   extends Entity[SystemId] with AggregateRoot[System, SystemEvent]
 {
   /**
@@ -25,6 +25,7 @@ case class System private(uncommittedEvents: List[SystemEvent], id:SystemId)
    * @return System with game paused.
    */
   def pauseGame(message:String, instanceId:InstanceId, timeStamp:Long): System = {
+    require(!isPaused, "Game must be playing before it can be paused.")
     applyEvent(GamePaused(instanceId, timeStamp, id, message))
   }
 
@@ -35,6 +36,7 @@ case class System private(uncommittedEvents: List[SystemEvent], id:SystemId)
    * @return System with game paused.
    */
   def resumeGame(instanceId:InstanceId, timeStamp:Long): System = {
+    require(isPaused, "Game must be paused before it can be resumed.")
     applyEvent(GameResumed(instanceId, timeStamp, id))
   }
 
@@ -45,8 +47,8 @@ case class System private(uncommittedEvents: List[SystemEvent], id:SystemId)
    */
   def applyEvent(event: SystemEvent): System = {
     event match {
-      case event:GamePaused => copy(uncommittedEvents = uncommittedEvents :+ event)
-      case event:GameResumed => copy(uncommittedEvents = uncommittedEvents :+ event)
+      case event:GamePaused => copy(uncommittedEvents = uncommittedEvents :+ event, isPaused = true)
+      case event:GameResumed => copy(uncommittedEvents = uncommittedEvents :+ event, isPaused = false)
       case event:SystemEvent => unhandled(event)
     }
   }
@@ -62,7 +64,7 @@ object System extends ValidatedValueObjectAggregateFactory[System, SystemEvent] 
    * @return Aggregate representing the initialized system.
    */
   def init(systemId:SystemId):System =
-    System(Nil, systemId)
+    System(Nil, systemId, false)
 
   /**
    * Gets the prototypical instance of an aggregate using the initial event from its history.

@@ -11,8 +11,7 @@ import com.wagerfield.multiverse.domain.model.solarSystem.PlanetId
  * @param uncommittedEvents Events pending commitment.
  * @param planetId Planet whose industry this is.
  */
-case class PlanetIndustry private(uncommittedEvents: List[PlanetIndustryEvent],
-                            planetId:PlanetId)
+case class PlanetIndustry private(uncommittedEvents: List[PlanetIndustryEvent], planetId:PlanetId)
   extends AggregateRoot[PlanetIndustry, PlanetIndustryEvent]
 {
   /**

@@ -1,4 +1,4 @@
-package com.wagerfield.multiverse.domain.model.planetIndustry
+package com.wagerfield.multiverse.domain.model.shipResearch
 
 /**
  * Distribution of research efforts across the different areas of a ship.
@@ -8,4 +8,6 @@ package com.wagerfield.multiverse.domain.model.planetIndustry
  * @param colonizingUnits Percentage of component research spent on colonizing units.
  * @param weapons Percentage of component research spent on weapons.
  */
-case class ComponentResearchFocus(engines:Int, armour:Int, shields:Int, colonizingUnits:Int, weapons:Int)
+case class ComponentResearchFocus(engines:Int, armour:Int, shields:Int, colonizingUnits:Int, weapons:Int) {
+  require(engines + armour + shields + colonizingUnits + weapons == 100)
+}

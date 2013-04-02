@@ -1,4 +1,4 @@
-package com.wagerfield.multiverse.domain.model.planetIndustry
+package com.wagerfield.multiverse.domain.model.shipResearch
 
 /**
  * Distribution of research efforts across the fields relating to the improvement of production capabilities.
@@ -7,4 +7,6 @@ package com.wagerfield.multiverse.domain.model.planetIndustry
  * @param effectiveness Percentage of production research spent on effectiveness.
  * @param maintainability Percentage of production research spent on maintainability.
  */
-case class ProductionResearchFocus(economy:Int, size:Int, effectiveness:Int, maintainability:Int)
+case class ProductionResearchFocus(economy:Int, size:Int, effectiveness:Int, maintainability:Int) {
+  require(economy + size + effectiveness + maintainability == 100)
+}

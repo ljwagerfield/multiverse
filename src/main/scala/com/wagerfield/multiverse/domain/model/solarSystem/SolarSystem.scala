@@ -1,6 +1,6 @@
 package com.wagerfield.multiverse.domain.model.solarSystem
 
-import com.wagerfield.multiverse.domain.shared.{AggregateRoot, ValidatedEntityAggregateFactory, Entity}
+import com.wagerfield.multiverse.domain.shared.{Entity, ValidatedEntityAggregateFactory, AggregateRoot, ShortAlphanumericName, ShortAlphabeticName}
 import com.wagerfield.multiverse.domain.model.instance.InstanceId
 
 /**
@@ -11,7 +11,7 @@ import com.wagerfield.multiverse.domain.model.instance.InstanceId
  */
 case class SolarSystem private(uncommittedEvents: List[SolarSystemEvent],
                                id: StarId,
-                               namedPlanets:Map[PlanetId, String])
+                               namedPlanets:Map[ShortAlphanumericName, PlanetId])
   extends Entity[StarId] with AggregateRoot[SolarSystem, SolarSystemEvent] {
   /**
    * Clears the backlog of uncommitted events.
@@ -26,7 +26,7 @@ case class SolarSystem private(uncommittedEvents: List[SolarSystemEvent],
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Solar system with star renamed.
    */
-  def nameStar(name: String, instanceId:InstanceId, timeStamp:Long):SolarSystem =
+  def nameStar(name:ShortAlphabeticName, instanceId:InstanceId, timeStamp:Long):SolarSystem =
     applyEvent(StarNamed(instanceId, timeStamp, id, name))
 
   /**
@@ -37,8 +37,8 @@ case class SolarSystem private(uncommittedEvents: List[SolarSystemEvent],
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Solar system with planet renamed.
    */
-  def namePlanet(planetId: PlanetId, name: String, instanceId:InstanceId, timeStamp:Long):SolarSystem = {
-    // TODO: Validate uniqueness here. Type system cannot be used as contract is dependant on context. DbC?
+  def namePlanet(planetId:PlanetId, name:ShortAlphanumericName, instanceId:InstanceId, timeStamp:Long):SolarSystem = {
+    require(namedPlanets.get(name).forall(_ == planetId), "Planet name must be unique within this solar system.")
     applyEvent(PlanetNamed(instanceId, timeStamp, id, planetId, name))
   }
 
@@ -50,7 +50,7 @@ case class SolarSystem private(uncommittedEvents: List[SolarSystemEvent],
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Solar system with resolved star name.
    */
-  def resolveDuplicateStarName(conflictingStarId:StarId, newName: String, instanceId:InstanceId, timeStamp:Long):SolarSystem =
+  def resolveDuplicateStarName(conflictingStarId:StarId, newName:ShortAlphabeticName, instanceId:InstanceId, timeStamp:Long):SolarSystem =
     applyEvent(StarNameDuplicateRenamed(instanceId, timeStamp, id, conflictingStarId, newName))
 
   /**
@@ -61,7 +61,7 @@ case class SolarSystem private(uncommittedEvents: List[SolarSystemEvent],
   def applyEvent(event: SolarSystemEvent):SolarSystem = {
     event match {
       case event: StarNamed => copy(uncommittedEvents =  uncommittedEvents :+ event)
-      // case event: PlanetNamed => copy(uncommittedEvents = uncommittedEvents :+ event, namedPlanets :+ )
+      case event: PlanetNamed => copy(uncommittedEvents = uncommittedEvents :+ event, namedPlanets = namedPlanets + (event.name -> event.planetId))
       case event: StarNameDuplicateRenamed => copy(uncommittedEvents =  uncommittedEvents :+ event)
       case event: SolarSystemEvent => unhandled(event)
     }
@@ -81,8 +81,12 @@ object SolarSystem extends ValidatedEntityAggregateFactory[SolarSystem, SolarSys
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return New solar system.
    */
-  def create(starId: StarId, nearStarIds: List[StarId], planetIds: List[PlanetId], instanceId:InstanceId, timeStamp:Long):SolarSystem =
+  def create(starId: StarId, nearStarIds: List[StarId], planetIds: List[PlanetId], instanceId:InstanceId, timeStamp:Long):SolarSystem = {
+    require(nearStarIds.forall(_ != starId), "Near stars must reference other solar systems.")
+    require(nearStarIds.length < 5, "Stars must be near to fewer than 5 stars.")
+    require(planetIds.length > 1 && planetIds.length < 7, "Solar systems must contain between 2 and 6 planets, inclusively.")
     applyEvent(SolarSystemCreated(instanceId, timeStamp, starId, nearStarIds, planetIds))
+  }
 
   /**
    * Applies the given event as the head of the returned aggregate's state.

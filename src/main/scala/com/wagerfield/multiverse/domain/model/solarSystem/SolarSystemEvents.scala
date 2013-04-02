@@ -2,6 +2,7 @@ package com.wagerfield.multiverse.domain.model.solarSystem
 
 import com.wagerfield.multiverse.domain.model.ship.{ShipEvent, ShipId}
 import com.wagerfield.multiverse.domain.model.instance.InstanceId
+import com.wagerfield.multiverse.domain.shared.{ShortAlphanumericName, ShortAlphabeticName}
 
 /**
  * Solar system created.
@@ -29,7 +30,7 @@ case class SolarSystemCreated(instanceId:InstanceId,
  * @param planetId The planet being named.
  * @param name New name for the planet, unique within this solar system.
  */
-case class PlanetNamed(instanceId:InstanceId, timeStamp:Long, starId: StarId, planetId: PlanetId, name: String) extends SolarSystemEvent
+case class PlanetNamed(instanceId:InstanceId, timeStamp:Long, starId:StarId, planetId:PlanetId, name:ShortAlphanumericName) extends SolarSystemEvent
 
 /**
  * Star named.
@@ -38,7 +39,7 @@ case class PlanetNamed(instanceId:InstanceId, timeStamp:Long, starId: StarId, pl
  * @param starId The star being named.
  * @param name New name for the star. Eventually consistent across solar systems.
  */
-case class StarNamed(instanceId:InstanceId, timeStamp:Long, starId: StarId, name: String) extends SolarSystemEvent
+case class StarNamed(instanceId:InstanceId, timeStamp:Long, starId:StarId, name:ShortAlphabeticName) extends SolarSystemEvent
 
 /**
  * Star name duplicate renamed.
@@ -48,4 +49,8 @@ case class StarNamed(instanceId:InstanceId, timeStamp:Long, starId: StarId, name
  * @param conflictingStarId The conflicting star which is keeping its name.
  * @param name New name for the star.
  */
-case class StarNameDuplicateRenamed(instanceId:InstanceId, timeStamp:Long, starId: StarId, conflictingStarId: StarId, name: String) extends SolarSystemEvent
+case class StarNameDuplicateRenamed(instanceId:InstanceId,
+                                    timeStamp:Long,
+                                    starId:StarId,
+                                    conflictingStarId:StarId,
+                                    name:ShortAlphabeticName) extends SolarSystemEvent

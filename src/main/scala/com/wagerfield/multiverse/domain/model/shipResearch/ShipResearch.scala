@@ -1,10 +1,8 @@
 package com.wagerfield.multiverse.domain.model.shipResearch
 
-import com.wagerfield.multiverse.domain.shared.{ValidatedValueObjectAggregateFactory, ValidatedEntityAggregateFactory, AggregateRoot}
+import com.wagerfield.multiverse.domain.shared.{ValidatedValueObjectAggregateFactory, AggregateRoot}
 import com.wagerfield.multiverse.domain.model.instance.InstanceId
 import com.wagerfield.multiverse.domain.model.species.SpeciesId
-import com.wagerfield.multiverse.domain.model.planetIndustry.{ComponentResearchFocus, ProductionResearchFocus, PlanetIndustry, PlanetIndustryEvent}
-import com.wagerfield.multiverse.domain.model.solarSystem.PlanetId
 
 /**
  * Ship-specific research for a given species.

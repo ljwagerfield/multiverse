@@ -3,7 +3,6 @@ package com.wagerfield.multiverse.domain.model.shipResearch
 import com.wagerfield.multiverse.domain.model.instance.InstanceId
 import com.wagerfield.multiverse.domain.shared.Hash
 import com.wagerfield.multiverse.domain.model.species.SpeciesId
-import com.wagerfield.multiverse.domain.model.planetIndustry.{ProductionResearchFocus, ComponentResearchFocus}
 
 /**
  * Ship research focused.

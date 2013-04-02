@@ -3,6 +3,7 @@ package com.wagerfield.multiverse.domain.model.species
 import com.wagerfield.multiverse.domain.model.instance.InstanceId
 import com.wagerfield.multiverse.domain.model.solarSystem.{SolarSystemEvent, StarId, PlanetId}
 import com.wagerfield.multiverse.domain.model.speciesAssets.SpeciesAssetsId
+import com.wagerfield.multiverse.domain.shared.ShortAlphabeticName
 
 /**
  * Species evolved.
@@ -18,7 +19,7 @@ import com.wagerfield.multiverse.domain.model.speciesAssets.SpeciesAssetsId
 case class SpeciesEvolved(instanceId:InstanceId,
                           timeStamp:Long,
                           speciesId:SpeciesId,
-                          name:String,
+                          name:ShortAlphabeticName,
                           flag:SpeciesFlag,
                           speciesAssetsId:SpeciesAssetsId,
                           planetId:PlanetId,
@@ -36,4 +37,4 @@ case class SpeciesNameDuplicateRenamed(instanceId:InstanceId,
                                        timeStamp:Long,
                                        speciesId: SpeciesId,
                                        conflictingSpeciesId: SpeciesId,
-                                       name: String) extends SpeciesEvent
+                                       name:ShortAlphabeticName) extends SpeciesEvent
