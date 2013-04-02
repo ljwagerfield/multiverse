@@ -2,38 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0810a263-8d4e-4ba7-aa4f-5baa00cb187b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/IntegralPercentage.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipSize.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/ShortAlphabeticName.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/ShortAlphanumericName.scala" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/ComponentResearchFocus.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ComponentResearchFocus.scala" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/ProductionResearchFocus.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ProductionResearchFocus.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/0.0/Backlog.md" afterPath="$PROJECT_DIR$/docs/0.0/Backlog.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/instance/Instance.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/instance/Instance.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustry.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustry.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetOwnership/PlanetOwnership.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetOwnership/PlanetOwnership.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/QuantifiedColonizingUnitId.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/QuantifiedColonizingUnitId.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/QuantifiedWeaponId.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/QuantifiedWeaponId.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/resource/Resource.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/resource/Resource.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/ResourceDependency.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/ResourceDependency.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/resource/ResourceEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/resource/ResourceEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/Ship.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/Ship.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipAssets/ShipAssets.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipAssets/ShipAssets.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipAssets/ShipAssetsEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipAssets/ShipAssetsEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ShipResearch.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ShipResearch.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ShipResearchEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ShipResearchEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipSpecification.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipSpecification.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipSpecificationEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipSpecificationEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/SolarSystem.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/SolarSystem.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/SolarSystemEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/SolarSystemEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/Species.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/Species.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesBonus.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesBonus.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesCharacteristics.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesCharacteristics.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/system/System.scala" afterPath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/system/System.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scala_settings.xml" afterPath="$PROJECT_DIR$/.idea/scala_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scalastyle-output.xml" afterPath="$PROJECT_DIR$/scalastyle-output.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/0.0/Completed.md" afterPath="$PROJECT_DIR$/docs/0.0/Completed.md" />
     </list>
     <ignored path="Multiverse.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -219,7 +189,7 @@
       <file leaf-file-name="Backlog.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/0.0/Backlog.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="70" selection-start="137" selection-end="137" vertical-scroll-proportion="0.09787928">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -264,7 +234,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipAssets/ShipAssets.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipSpecificationEvents.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/ShortAlphabeticName.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/resource/ResourceEvents.scala" />
@@ -280,6 +249,7 @@
         <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesCharacteristics.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/SolarSystem.scala" />
         <option value="$PROJECT_DIR$/docs/0.0/Backlog.md" />
+        <option value="$PROJECT_DIR$/docs/0.0/Completed.md" />
       </list>
     </option>
   </component>
@@ -1467,15 +1437,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/resource/ResourceEvents.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="51" selection-start="782" selection-end="782" vertical-scroll-proportion="0.27597404">
-          <folding>
-            <element signature="e#57#122#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/ShortAlphanumericName.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="344" selection-end="344" vertical-scroll-proportion="0.14610389" />
@@ -1576,9 +1537,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/docs/0.0/Completed.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="35" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/docs/0.0/Backlog.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="70" selection-start="137" selection-end="137" vertical-scroll-proportion="0.09787928">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

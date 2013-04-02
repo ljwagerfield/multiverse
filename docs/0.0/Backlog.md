@@ -1,5 +1,3 @@
-# Add validation to aggregate roots [WIP]
-
 # Add unit tests [WIP]
 
 # Refactor the application of events to overcome cyclomatic complexity

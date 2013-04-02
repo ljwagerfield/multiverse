@@ -1,3 +1,5 @@
+# Add validation to aggregate roots
+
 # Re-evaluate ping events for write model
 
 # Add redundant validation events to aggregates
