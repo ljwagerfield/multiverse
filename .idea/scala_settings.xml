@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaProjectSettings">
-    <option name="importMembersUsingUnderScore" value="false" />
+    <option name="classCountToUseImportOnDemand" value="500" />
     <option name="importsWithPrefix">
       <array>
         <option value="exclude:scala.collection.mutable.ArrayBuffer" />
@@ -49,6 +49,12 @@
         <option value="scala.collection.mutable._" />
       </array>
     </option>
+    <option name="intInjectionMapping">
+      <map>
+        <entry key="xml" value="XML" />
+      </map>
+    </option>
+    <option name="sortImports" value="true" />
   </component>
 </project>
 

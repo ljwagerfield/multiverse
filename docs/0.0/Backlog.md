@@ -1,6 +1,8 @@
-# Add unit tests [WIP]
+# Add acceptance tests [WIP]
 
 # Refactor the application of events to overcome cyclomatic complexity
+
+# Add simple Web front-end to simulate game-play
 
 # Plan how deployment will work
 - Consider behavioral and structural changes, both internal and external (i.e. schema changes, tech changes, etc.)

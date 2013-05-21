@@ -1,0 +1,12 @@
+compile
+sbt
+run
+i
+reload
+sbt-versio
+sbt-version
+sbt
+reload
+clean
+reload
+clean

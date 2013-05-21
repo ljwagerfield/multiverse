@@ -3,4 +3,7 @@
  <file name="/Users/lawrence.wagerfield/multiverse/src/main/scala/com/wagerfield/multiverse/domain/model/ship/Ship.scala">
   <error line="138" severity="warning" message="Cyclomatic complexity exceeds 10" source="org.scalastyle.scalariform.CyclomaticComplexityChecker" column="6"></error>
  </file>
+ <file name="/Users/lawrence.wagerfield/multiverse/src/test/scala/index.scala">
+  <error line="5" severity="warning" message="Class name does not match the regular expression '[A-Z][A-Za-z]*'" source="org.scalastyle.scalariform.ClassNamesChecker" column="6"></error>
+ </file>
 </checkstyle>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.github.scala-incubator.io:scala-io-file_2.10:0.4.2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/scala-incubator/io/scala-io-file_2.10/0.4.2/scala-io-file_2.10-0.4.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/scala-incubator/io/scala-io-file_2.10/0.4.2/scala-io-file_2.10-0.4.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/scala-incubator/io/scala-io-file_2.10/0.4.2/scala-io-file_2.10-0.4.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
