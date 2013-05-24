@@ -1,6 +1,6 @@
 package io.multiverse.domain.model.speciesFlagEmblemVector
 
-import io.multiverse.domain.shared.{Hash, ValidatedEntityAggregateFactory, AggregateRoot}
+import io.multiverse.domain.shared.{Hash, ExplicitAggregateFactory, AggregateRoot}
 import io.multiverse.domain.model.instance.InstanceId
 
 /**
@@ -27,7 +27,7 @@ case class SpeciesFlagEmblemVector private(changes: List[SpeciesFlagEmblemVector
 /**
  * Species flag emblem vector factory.
  */
-object SpeciesFlagEmblemVector extends ValidatedEntityAggregateFactory[SpeciesFlagEmblemVector, SpeciesFlagEmblemVectorEvent] {
+object SpeciesFlagEmblemVector extends ExplicitAggregateFactory[SpeciesFlagEmblemVector, SpeciesFlagEmblemVectorEvent] {
   /**
    * Defines new binary assets for use in the emblems for species flags.
    * @param speciesFlagEmblemVectorId Unique ID for new species assets.

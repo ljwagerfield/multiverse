@@ -1,7 +1,7 @@
 package io.multiverse.application.persistence
 
-import io.multiverse.domain.model.species.SpeciesId
 import io.multiverse.domain.model.instance.InstanceId
+import io.multiverse.domain.model.user.UserId
 
 /**
  * Instance query interface.
@@ -17,7 +17,7 @@ abstract class InstanceQueries {
    * Gets all users who are currently signed-in.
    * @return Signed-in users.
    */
-  def getSignedInUsers: List[SpeciesId]
+  def getSignedInUsers: List[UserId]
 
   /**
    * Gets the count of users who are currently signed-in.
@@ -30,7 +30,7 @@ abstract class InstanceQueries {
    * @param user Signed-in user.
    * @return Instance the specified user is signed-into.
    */
-  def getUserInstance(user: SpeciesId): InstanceId
+  def getUserInstance(user: UserId): InstanceId
 }
 
 /**

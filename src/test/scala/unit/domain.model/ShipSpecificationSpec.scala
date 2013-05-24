@@ -25,8 +25,10 @@ import org.specs2.mutable.Specification
 class ShipSpecificationSpec extends Specification {
 	"ship specification" should {
 		"be defined" in new ShipSpecificationScope {
-			ShipSpecification.define(shipSpecificationId, speciesId, shipAssetsId, size, name, composition, instanceId, timestamp)
-				.changes must contain(ShipSpecified(instanceId, timestamp, shipSpecificationId, speciesId, shipAssetsId, size, name, composition))
+			ShipSpecification
+        .define(shipSpecificationId, speciesId, shipAssetsId, size, name, composition, instanceId, timestamp)
+				.changes must beEqualTo(List(
+          ShipSpecified(instanceId, timestamp, shipSpecificationId, speciesId, shipAssetsId, size, name, composition)))
 		}
 	}
 

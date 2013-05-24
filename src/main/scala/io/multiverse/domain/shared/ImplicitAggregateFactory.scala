@@ -1,15 +1,14 @@
 package io.multiverse.domain.shared
 
 /**
- * Loads validated value object aggregates from given histories. The resulting object collections are composed by a
- * single root instance derived from type [[io.multiverse.domain.shared.AggregateRoot]]. Aggregates without
- * validation rules do not contain denormalized state, since state in this context is only used for validation. Such
- * aggregates can be instantiated without a history or snapshot; factories for these aggregates will therefore not extend
- * this trait.
+ * Loads aggregates from given histories. The resulting object collections are composed by a single root instance derived
+ * from type [[io.multiverse.domain.shared.AggregateRoot]]. Aggregates without validation rules do not contain denormalized
+ * state, since state in this context is only used for validation. Such aggregates can be instantiated without a history
+ * or snapshot; factories for these aggregates will therefore not extend this trait.
  * @tparam A Aggregate root type.
  * @tparam E Event type.
  */
-trait ValidatedValueObjectAggregateFactory[A <: AggregateRoot[A, E], E] extends ValidatedAggregateFactory[A, E] {
+trait ImplicitAggregateFactory[A <: AggregateRoot[A, E], E] extends AggregateFactory[A, E] {
   /**
    * Gets the prototypical instance of an aggregate using the initial event from its history.
    * @param initialEvent Initial event in the aggregate's history.

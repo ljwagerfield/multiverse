@@ -1,6 +1,6 @@
 package io.multiverse.domain.model.system
 
-import io.multiverse.domain.shared.{Entity, ValidatedValueObjectAggregateFactory, AggregateRoot}
+import io.multiverse.domain.shared.{Entity, ImplicitAggregateFactory, AggregateRoot}
 import io.multiverse.domain.model.instance.InstanceId
 
 /**
@@ -52,9 +52,9 @@ case class System private(changes: List[SystemEvent], id:SystemId, isPaused:Bool
 }
 
 /**
- * Planet industry factory.
+ * System factory.
  */
-object System extends ValidatedValueObjectAggregateFactory[System, SystemEvent] {
+object System extends ImplicitAggregateFactory[System, SystemEvent] {
   /**
    * Initializes the system.
    * @param systemId Unique system ID.

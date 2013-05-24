@@ -1,6 +1,6 @@
 package io.multiverse.domain.model.ship
 
-import io.multiverse.domain.shared.{AggregateRoot, ValidatedEntityAggregateFactory, Entity}
+import io.multiverse.domain.shared.{AggregateRoot, ExplicitAggregateFactory, Entity}
 import io.multiverse.domain.model.instance.{UserSignedIn, InstanceId}
 import io.multiverse.domain.model.solarSystem.{StarId, SolarSystem, PlanetId}
 import io.multiverse.domain.model.planetIndustry.{ShipBuildCommissioned => ShipBuildCommissionedAtPlanet}
@@ -148,7 +148,7 @@ case class Ship private(changes: List[ShipEvent], id: ShipId)
 /**
  * Ship factory.
  */
-object Ship extends ValidatedEntityAggregateFactory[Ship, ShipEvent] {
+object Ship extends ExplicitAggregateFactory[Ship, ShipEvent] {
   /**
    * Maximum absolute value of a solar system coordinate relative to its star.
    */

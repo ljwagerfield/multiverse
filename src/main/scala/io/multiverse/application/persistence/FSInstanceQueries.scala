@@ -1,9 +1,9 @@
 package io.multiverse.application.persistence
 
-import io.multiverse.domain.model.species.SpeciesId
+import io.multiverse.domain.model.instance.InstanceId
+import io.multiverse.domain.model.user.UserId
 import java.io.File
 import java.util.UUID
-import io.multiverse.domain.model.instance.InstanceId
 import scala.io.Source
 
 /**
@@ -14,8 +14,8 @@ abstract class FSInstanceQueries extends InstanceQueries with FSInstancePaths {
    * Gets all users who are currently signed-in.
    * @return Signed-in users.
    */
-  def getSignedInUsers: List[SpeciesId] = {
-    new File(signedInUsersPath).list.map(f => SpeciesId(UUID.fromString(f))).toList
+  def getSignedInUsers: List[UserId] = {
+    new File(signedInUsersPath).list.map(f => UserId(UUID.fromString(f))).toList
   }
 
   /**
@@ -31,7 +31,7 @@ abstract class FSInstanceQueries extends InstanceQueries with FSInstancePaths {
    * @param user Signed-in user.
    * @return Instance the specified user is signed-into.
    */
-  def getUserInstance(user: SpeciesId): InstanceId = {
+  def getUserInstance(user: UserId): InstanceId = {
     val idSize = 36
     val userFile = signedInUsersPath + user.value
     val uuid = Source.fromFile(userFile).take(idSize).mkString

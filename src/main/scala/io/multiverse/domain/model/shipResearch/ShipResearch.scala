@@ -1,6 +1,6 @@
 package io.multiverse.domain.model.shipResearch
 
-import io.multiverse.domain.shared.{ValidatedValueObjectAggregateFactory, AggregateRoot}
+import io.multiverse.domain.shared.{ImplicitAggregateFactory, AggregateRoot}
 import io.multiverse.domain.model.instance.InstanceId
 import io.multiverse.domain.model.species.SpeciesId
 
@@ -52,7 +52,7 @@ case class ShipResearch private(changes: List[ShipResearchEvent], speciesId:Spec
 /**
  * Ship research factory.
  */
-object ShipResearch extends ValidatedValueObjectAggregateFactory[ShipResearch, ShipResearchEvent] {
+object ShipResearch extends ImplicitAggregateFactory[ShipResearch, ShipResearchEvent] {
   /**
    * Initializes ship research for the given species.
    * @param speciesId Species whose ship research this is.

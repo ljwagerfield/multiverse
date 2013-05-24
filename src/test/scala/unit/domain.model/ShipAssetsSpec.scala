@@ -16,8 +16,10 @@ class ShipAssetsSpec extends Specification {
 			val shipAssetsId = ShipAssetsId(UUID.randomUUID)
 			val size = ShipSize(1)
 			val assetsHash = Hash.empty
-			ShipAssets.define(shipAssetsId, size, assetsHash, instanceId, timestamp)
-				.changes must contain(ShipAssetsDefined(instanceId, timestamp, shipAssetsId, size, assetsHash))
+			ShipAssets
+        .define(shipAssetsId, size, assetsHash, instanceId, timestamp)
+				.changes must beEqualTo(List(
+          ShipAssetsDefined(instanceId, timestamp, shipAssetsId, size, assetsHash)))
 		}
 	}
 }

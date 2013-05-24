@@ -1,7 +1,7 @@
 package io.multiverse.application.persistence
 
-import io.multiverse.domain.model.species.SpeciesId
 import io.multiverse.domain.model.instance.InstanceId
+import io.multiverse.domain.model.user.UserId
 
 /**
  * Query interface for instance models hosted on the Google App Engine.
@@ -17,7 +17,7 @@ abstract class GAEInstanceQueries extends InstanceQueries {
    * Gets all users who are currently signed-in.
    * @return Signed-in users.
    */
-  def getSignedInUsers: List[SpeciesId] = {
+  def getSignedInUsers: List[UserId] = {
     sys.error("Not implemented")
   }
 
@@ -34,7 +34,7 @@ abstract class GAEInstanceQueries extends InstanceQueries {
    * @param user Signed-in user.
    * @return Instance the specified user is signed-into.
    */
-  def getUserInstance(user: SpeciesId): InstanceId = {
+  def getUserInstance(user: UserId): InstanceId = {
     sys.error("Not implemented")
   }
 }

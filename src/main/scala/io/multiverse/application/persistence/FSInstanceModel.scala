@@ -29,7 +29,7 @@ abstract class FSInstanceModel extends InstanceModel with FSInstancePaths {
       val instance = change.instanceId.value.toString
 
       if (changeType == classOf[UserSignedIn]) {
-        val user = change.asInstanceOf[UserSignedIn].speciesId.value.toString
+        val user = change.asInstanceOf[UserSignedIn].userId.value.toString
 
         // Create signed-in user file containing instance ID.
         instance saveTo usersPath + user

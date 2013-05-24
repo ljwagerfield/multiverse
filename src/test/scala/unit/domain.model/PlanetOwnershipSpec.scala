@@ -22,24 +22,34 @@ class PlanetOwnershipSpec extends Specification {
       val colonizationOrder = PlanetColonizationOrdered(instanceId, timestamp, ShipId(UUID.randomUUID), planetId)
       val invalidColonizationOrder = PlanetColonizationOrdered(instanceId, timestamp, ShipId(UUID.randomUUID), PlanetId(UUID.randomUUID))
 
-      planetOwnership.colonize(colonizationOrder, instanceId, timestamp)
-        .changes must contain(PlanetColonized(instanceId, timestamp, planetId, colonizationOrder))
-
-      planetOwnership.colonize(invalidColonizationOrder, instanceId, timestamp) must throwA[Exception]
-    }
-
-    "be abandoned by its inhabitants" in new InitializedPlanetOwnershipScope {
-      val colonizationOrder = PlanetColonizationOrdered(instanceId, timestamp, ShipId(UUID.randomUUID), planetId)
-
       planetOwnership
         .colonize(colonizationOrder, instanceId, timestamp)
+        .changes must beEqualTo(List(
+          PlanetColonized(instanceId, timestamp, planetId, colonizationOrder)))
+
+      planetOwnership
+        .colonize(invalidColonizationOrder, instanceId, timestamp) must throwA[Exception]
+    }
+
+    "be abandoned by its inhabitants" in new ColonizedPlanetOwnershipScope {
+      colonizedOwnership
         .abandon(instanceId, timestamp)
-        .changes must contain(PlanetAbandoned(instanceId, timestamp, planetId))
+        .changes must beEqualTo(List(
+          PlanetAbandoned(instanceId, timestamp, planetId)))
+    }
+
+    "support idempotent abandonment" in new ColonizedPlanetOwnershipScope {
+      colonizedOwnership
+        .abandon(instanceId, timestamp)
+        .markCommitted
+        .abandon(instanceId, timestamp + 1)
+        .changes must beEmpty
     }
 
     "be superfluously abandoned by no inhabitants" in new InitializedPlanetOwnershipScope {
-      planetOwnership.abandon(instanceId, timestamp)
-        .changes must contain(PlanetAbandoned(instanceId, timestamp, planetId))
+      planetOwnership
+        .abandon(instanceId, timestamp)
+        .changes must beEmpty
     }
   }
 
@@ -55,5 +65,13 @@ class PlanetOwnershipSpec extends Specification {
    */
   trait InitializedPlanetOwnershipScope extends PlanetOwnershipScope {
     val planetOwnership = PlanetOwnership.init(planetId)
+  }
+  
+  /**
+   * Predefined test values for colonized planet ownership.
+   */
+  trait ColonizedPlanetOwnershipScope extends InitializedPlanetOwnershipScope {
+    val colonizationOrder = PlanetColonizationOrdered(instanceId, timestamp, ShipId(UUID.randomUUID), planetId)
+    val colonizedOwnership = planetOwnership.colonize(colonizationOrder, instanceId, timestamp).markCommitted
   }
 }

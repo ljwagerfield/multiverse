@@ -1,6 +1,6 @@
 package io.multiverse.domain.model.species
 
-import io.multiverse.domain.shared.{ShortAlphabeticName, AggregateRoot, ValidatedEntityAggregateFactory, Entity}
+import io.multiverse.domain.shared.{ShortAlphabeticName, AggregateRoot, ExplicitAggregateFactory, Entity}
 import io.multiverse.domain.model.instance.InstanceId
 import io.multiverse.domain.model.speciesAssets.SpeciesAssetsId
 import io.multiverse.domain.model.solarSystem.PlanetId
@@ -45,7 +45,7 @@ case class Species private(changes: List[SpeciesEvent], id: SpeciesId)
 /**
  * Solar system factory.
  */
-object Species extends ValidatedEntityAggregateFactory[Species, SpeciesEvent] {
+object Species extends ExplicitAggregateFactory[Species, SpeciesEvent] {
   /**
    * Evolves a new species.
    * @param speciesId Unique new species ID.

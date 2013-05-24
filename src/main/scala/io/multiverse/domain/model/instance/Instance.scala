@@ -1,7 +1,8 @@
 package io.multiverse.domain.model.instance
 
 import io.multiverse.domain.model.species.SpeciesId
-import io.multiverse.domain.shared.{ValidatedEntityAggregateFactory, AggregateRoot, Entity}
+import io.multiverse.domain.shared.{ExplicitAggregateFactory, AggregateRoot, Entity}
+import io.multiverse.domain.model.user.UserId
 
 /**
  * Running instance of the application.
@@ -11,7 +12,7 @@ import io.multiverse.domain.shared.{ValidatedEntityAggregateFactory, AggregateRo
  */
 case class Instance private(changes: List[InstanceEvent],
                             id: InstanceId,
-                            signedInUser: Option[SpeciesId])
+                            signedInUser: Option[UserId])
   extends Entity[InstanceId] with AggregateRoot[Instance, InstanceEvent]
 {
   /**
@@ -26,9 +27,14 @@ case class Instance private(changes: List[InstanceEvent],
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Aggregate with signed-in user.
    */
-  def signIn(user:SpeciesId, timeStamp:Long): Instance = {
+  def signIn(user:UserId, timeStamp:Long): Instance = {
     require(signedInUser.forall(_ == user), "Instances only support a single signed-in user.")
-    applyEvent(UserSignedIn(id, timeStamp, user))
+    if (signedInUser.isDefined) {
+      this // Idempotent command.
+    }
+    else {
+      applyEvent(UserSignedIn(id, timeStamp, user))
+    }
   }
 
   /**
@@ -37,7 +43,12 @@ case class Instance private(changes: List[InstanceEvent],
    * @return Aggregate without a signed-in user.
    */
   def signOut(timeStamp:Long): Instance = {
-    applyEvent((UserSignedOut(id, timeStamp)))
+    if (signedInUser.isEmpty) {
+      this // Idempotent command.
+    }
+    else {
+      applyEvent((UserSignedOut(id, timeStamp)))
+    }
   }
 
   /**
@@ -47,7 +58,7 @@ case class Instance private(changes: List[InstanceEvent],
    */
   def applyEvent(event: InstanceEvent): Instance = {
     event match {
-      case event:UserSignedIn => copy(changes = changes :+ event, signedInUser = Some(event.speciesId))
+      case event:UserSignedIn => copy(changes = changes :+ event, signedInUser = Some(event.userId))
       case event:UserSignedOut => copy(changes = changes :+ event, signedInUser = None)
       case event: InstanceEvent => unhandled(event)
     }
@@ -57,7 +68,7 @@ case class Instance private(changes: List[InstanceEvent],
 /**
  * Instance factory.
  */
-object Instance extends ValidatedEntityAggregateFactory[Instance, InstanceEvent] {
+object Instance extends ExplicitAggregateFactory[Instance, InstanceEvent] {
   /**
    * Creates a new instance.
    * @param instanceId Unique ID for the new instance.

@@ -12,26 +12,34 @@ class SystemSpec extends Specification {
 
   "new system" should {
     "support pausing" in new SystemScope {
-      newSystem.pauseGame(pauseMessage, instanceId, timestamp)
-        .changes must contain(GamePaused(instanceId, timestamp, systemId, pauseMessage))
+      newSystem
+        .pauseGame(pauseMessage, instanceId, timestamp)
+        .changes must beEqualTo(List(
+          GamePaused(instanceId, timestamp, systemId, pauseMessage)))
     }
 
-    "support superflous resuming" in new SystemScope {
-      newSystem.resumeGame(instanceId, timestamp)
-        .changes must contain(GameResumed(instanceId, timestamp, systemId))
+    "support superfluous resuming" in new SystemScope {
+      newSystem
+        .resumeGame(instanceId, timestamp)
+        .changes must beEqualTo(List(
+          GameResumed(instanceId, timestamp, systemId)))
     }
   }
 
   "paused system" should {
     "support resuming" in new PausedSystemScope {
-      pausedSystem.resumeGame(instanceId, timestamp)
-        .changes must contain(GameResumed(instanceId, timestamp, systemId))
+      pausedSystem
+        .resumeGame(instanceId, timestamp)
+        .changes must beEqualTo(List(
+          GameResumed(instanceId, timestamp, systemId)))
     }
 
     "support idempotent pausing" in new PausedSystemScope {
       val updatedPauseMessage = "Paused for testing 2"
-      pausedSystem.pauseGame(updatedPauseMessage, instanceId, timestamp)
-        .changes must contain(GamePaused(instanceId, timestamp, systemId, updatedPauseMessage))
+      pausedSystem
+        .pauseGame(updatedPauseMessage, instanceId, timestamp)
+        .changes must beEqualTo(List(
+          GamePaused(instanceId, timestamp, systemId, updatedPauseMessage)))
     }
   }
 
@@ -48,6 +56,6 @@ class SystemSpec extends Specification {
    * Predefined test values for paused systems.
    */
   trait PausedSystemScope extends SystemScope {
-    val pausedSystem = newSystem.pauseGame(pauseMessage, instanceId, timestamp)
+    val pausedSystem = newSystem.pauseGame(pauseMessage, instanceId, timestamp).markCommitted
   }
 }

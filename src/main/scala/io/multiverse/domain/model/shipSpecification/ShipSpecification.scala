@@ -1,6 +1,6 @@
 package io.multiverse.domain.model.shipSpecification
 
-import io.multiverse.domain.shared.{ValidatedEntityAggregateFactory, AggregateRoot, ShortAlphanumericName}
+import io.multiverse.domain.shared.{ExplicitAggregateFactory, AggregateRoot, ShortAlphanumericName}
 import io.multiverse.domain.model.instance.InstanceId
 import io.multiverse.domain.model.species.SpeciesId
 import io.multiverse.domain.model.shipAssets.ShipAssetsId
@@ -29,7 +29,7 @@ case class ShipSpecification private(changes: List[ShipSpecificationEvent])
 /**
  * Ship specification factory.
  */
-object ShipSpecification extends ValidatedEntityAggregateFactory[ShipSpecification, ShipSpecificationEvent] {
+object ShipSpecification extends ExplicitAggregateFactory[ShipSpecification, ShipSpecificationEvent] {
   /**
    * Defines a new ship specification.
    * @param shipSpecificationId Unique ID for the new specification.

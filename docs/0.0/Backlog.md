@@ -1,5 +1,7 @@
 # Add acceptance tests [WIP]
 
+# Determine how offline users will be protected
+
 # Refactor the application of events to overcome cyclomatic complexity
 
 # Add simple Web front-end to simulate game-play

@@ -1,6 +1,6 @@
 package io.multiverse.domain.model.planetOwnership
 
-import io.multiverse.domain.shared.{ValidatedValueObjectAggregateFactory, AggregateRoot}
+import io.multiverse.domain.shared.{ImplicitAggregateFactory, AggregateRoot}
 import io.multiverse.domain.model.ship.PlanetColonizationOrdered
 import io.multiverse.domain.model.instance.InstanceId
 import io.multiverse.domain.model.solarSystem.PlanetId
@@ -10,7 +10,7 @@ import io.multiverse.domain.model.solarSystem.PlanetId
  * @param changes Events pending commitment.
  * @param planetId Planet whose industry this is.
  */
-case class PlanetOwnership private(changes: List[PlanetOwnershipEvent], planetId:PlanetId)
+case class PlanetOwnership private(changes: List[PlanetOwnershipEvent], planetId:PlanetId, isVacant: Boolean)
   extends AggregateRoot[PlanetOwnership, PlanetOwnershipEvent]
 {
   /**
@@ -38,7 +38,12 @@ case class PlanetOwnership private(changes: List[PlanetOwnershipEvent], planetId
    * @return Aggregate with no inhabitants.
    */
   def abandon(instanceId:InstanceId, timeStamp:Long): PlanetOwnership = {
-    applyEvent(PlanetAbandoned(instanceId, timeStamp, planetId))
+    if (isVacant) {
+      this
+    }
+    else {
+      applyEvent(PlanetAbandoned(instanceId, timeStamp, planetId))
+    }
   }
 
   /**
@@ -48,8 +53,8 @@ case class PlanetOwnership private(changes: List[PlanetOwnershipEvent], planetId
    */
   def applyEvent(event: PlanetOwnershipEvent): PlanetOwnership = {
     event match {
-      case event:PlanetColonized => copy(changes = changes :+ event)
-      case event:PlanetAbandoned => copy(changes = changes :+ event)
+      case event:PlanetColonized => copy(changes = changes :+ event, isVacant = false)
+      case event:PlanetAbandoned => copy(changes = changes :+ event, isVacant = true)
       case event:PlanetOwnershipEvent => unhandled(event)
     }
   }
@@ -58,14 +63,14 @@ case class PlanetOwnership private(changes: List[PlanetOwnershipEvent], planetId
 /**
  * Planet ownership factory.
  */
-object PlanetOwnership extends ValidatedValueObjectAggregateFactory[PlanetOwnership, PlanetOwnershipEvent] {
+object PlanetOwnership extends ImplicitAggregateFactory[PlanetOwnership, PlanetOwnershipEvent] {
   /**
    * Initializes ownership for the given planet.
    * @param planetId Planet whose ownership is to be initialised.
    * @return Aggregate representing the initialized planet industry.
    */
   def init(planetId:PlanetId):PlanetOwnership =
-    PlanetOwnership(Nil, planetId)
+    PlanetOwnership(Nil, planetId, isVacant = true)
 
   /**
    * Gets the prototypical instance of an aggregate using the initial event from its history.

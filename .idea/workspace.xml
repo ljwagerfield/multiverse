@@ -2,180 +2,72 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20706842-5430-49ce-99d8-77a47d4b410c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/shared/IntegralPercentageSpec.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_3_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_analysis_3_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_tree_3_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_util_3_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__classworlds_classworlds_1_1_alpha_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_scala_incubator_io_scala_io_core_2_10_0_4_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_scala_incubator_io_scala_io_file_2_10_0_4_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jsuereth_scala_arm_2_10_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mmakowski_maven_specs2_plugin_0_4_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_artifact_2_0_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_artifact_manager_2_0_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_model_2_0_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_plugin_api_2_0_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_plugin_registry_2_0_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_profile_2_0_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_project_2_0_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_repository_metadata_2_0_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_settings_2_0_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_wagon_wagon_provider_api_1_0_beta_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_container_default_1_0_alpha_9_stable_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_utils_1_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_parboiled_parboiled_core_1_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_parboiled_parboiled_java_1_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_pegdown_pegdown_1_0_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_tools_testing_test_interface_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_specs2_scalaz_core_2_10_7_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_specs2_scalaz_effect_2_10_7_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_specs2_specs2_2_10_1_14.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_specs2_specs2_scalaz_concurrent_2_10_7_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_specs2_specs2_scalaz_core_2_10_7_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/shared/ShortAlphabeticNameSpec.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/shared/ShortAlphanumericNameSpec.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SolarSystemSpec.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesAssetsSpec.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesFlagBackgroundVectorSpec.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesFlagEmblemVectorSpec.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesSpec.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SystemSpec.scala" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/ant.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_8_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_compiler_bundle_2_10_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_compiler_bundle_2_10_0_M.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_compiler_bundle_2_11_0_M1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Multiverse.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/scalastyle_config.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/application/App.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/application/Event.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/application/EventLog.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/application/EventToken.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/application/SolarSystemService.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/instance/Instance.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/instance/InstanceEvent.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/instance/InstanceEvents.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/instance/InstanceId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/instance/Version.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustry.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustryEvent.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetIndustry/PlanetIndustryEvents.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetOwnership/PlanetOwnership.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetOwnership/PlanetOwnershipEvent.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/planetOwnership/PlanetOwnershipEvents.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/resource/Resource.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/resource/ResourceEvent.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/resource/ResourceEvents.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/resource/ResourceId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/Ship.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/ShipEvent.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/ShipEvents.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/ship/ShipId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipAssets/ShipAssets.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipAssets/ShipAssetsEvent.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipAssets/ShipAssetsEvents.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipAssets/ShipAssetsId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ArmourId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ColonizingUnitId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ComponentResearchFocus.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/EngineId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ProductionResearchFocus.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ShieldId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ShipResearch.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ShipResearchEvent.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/ShipResearchEvents.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipResearch/WeaponId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/QuantifiedColonizingUnitId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/QuantifiedWeaponId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipComposition.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipSize.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipSpecification.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipSpecificationEvents.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/ShipSpecificationId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/shipSpecification/shipSpecificationEvent.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/PlanetId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/SolarSystem.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/SolarSystemEvent.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/SolarSystemEvents.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/solarSystem/StarId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/BonusResourceDependency.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/ResourceDependency.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/Species.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesBonus.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesCharacteristics.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesEvent.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesEvents.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesFlag.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/species/SpeciesId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesAssets/SpeciesAssets.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesAssets/SpeciesAssetsEvent.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesAssets/SpeciesAssetsEvents.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesAssets/SpeciesAssetsId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesFlagBackgroundVector/SpeciesFlagBackgroundVector.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorEvent.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorEvents.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesFlagEmblemVector/SpeciesFlagBackgroundVector.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesFlagEmblemVector/SpeciesFlagEmblemVectorEvent.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesFlagEmblemVector/SpeciesFlagEmblemVectorEvents.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/speciesFlagEmblemVector/SpeciesFlagEmblemVectorId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/system/System.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/system/SystemEvent.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/system/SystemEvents.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/model/system/SystemId.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/AggregateRoot.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/Blob.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/Entity.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/EventSourced.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/Hash.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/IntegralPercentage.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/ShortAlphabeticName.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/ShortAlphanumericName.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/ValidatedAggregateFactory.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/ValidatedEntityAggregateFactory.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/shared/ValidatedValueObjectAggregateFactory.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/com/wagerfield/multiverse/domain/views/DuplicateStarNameView.scala" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_compiler_2_11_0_M1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_compiler_2_10_0_M6.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_library_2_11_0_M1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_library_2_10_0_M6.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_reflect_2_11_0_M1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_reflect_2_10_0_M6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/learning/Snapshot Events.md" afterPath="$PROJECT_DIR$/docs/learning/Snapshot Events.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/shared/ValidatedAggregateFactory.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/shared/AggregateFactory.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/shared/ValidatedEntityAggregateFactory.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/shared/ExplicitAggregateFactory.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/shared/ValidatedValueObjectAggregateFactory.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/shared/ImplicitAggregateFactory.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/0.0/Backlog.md" afterPath="$PROJECT_DIR$/docs/0.0/Backlog.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/0.0/Completed.md" afterPath="$PROJECT_DIR$/docs/0.0/Completed.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/FSInstanceModel.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/FSInstanceModel.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/FSInstanceQueries.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/FSInstanceQueries.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/GAEInstanceQueries.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/GAEInstanceQueries.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/Instance.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/Instance.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/InstanceEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/InstanceEvents.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/acceptance/InstanceModelSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/acceptance/InstanceModelSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/InstanceQueries.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/InstanceQueries.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/unit/domain.model/InstanceSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/InstanceSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea_modules/Multiverse.iml" afterPath="$PROJECT_DIR$/.idea_modules/Multiverse.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/planetIndustry/PlanetIndustry.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/planetIndustry/PlanetIndustry.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/unit/domain.model/PlanetIndustrySpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/PlanetIndustrySpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/planetOwnership/PlanetOwnership.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/planetOwnership/PlanetOwnership.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/unit/domain.model/PlanetOwnershipSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/PlanetOwnershipSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/resource/Resource.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/resource/Resource.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/unit/domain.model/ResourceSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/ResourceSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/ship/Ship.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/ship/Ship.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipAssets/ShipAssets.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipAssets/ShipAssets.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/unit/domain.model/ShipAssetsSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/ShipAssetsSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipResearch/ShipResearch.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipResearch/ShipResearch.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/unit/domain.model/ShipResearchSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/ShipResearchSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/unit/domain.model/ShipSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/ShipSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipSpecification/ShipSpecification.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipSpecification/ShipSpecification.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/unit/domain.model/ShipSpecificationSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/ShipSpecificationSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/solarSystem/SolarSystem.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/solarSystem/SolarSystem.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SolarSystemSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SolarSystemSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/species/Species.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/species/Species.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesAssets/SpeciesAssets.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesAssets/SpeciesAssets.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesAssetsSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesAssetsSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesFlagBackgroundVector/SpeciesFlagBackgroundVector.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesFlagBackgroundVector/SpeciesFlagBackgroundVector.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesFlagEmblemVector/SpeciesFlagBackgroundVector.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesFlagEmblemVector/SpeciesFlagBackgroundVector.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesFlagBackgroundVectorSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesFlagBackgroundVectorSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesFlagEmblemVectorSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesFlagEmblemVectorSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/system/System.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/system/System.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SystemSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/unit/domain.model/SystemSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.sbt" afterPath="$PROJECT_DIR$/build.sbt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/lawrence_wagerfield.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/lawrence_wagerfield.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scala_settings.xml" afterPath="$PROJECT_DIR$/.idea/scala_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scalastyle-output.xml" afterPath="$PROJECT_DIR$/scalastyle-output.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Multiverse.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1368904675651" ignored="false" />
-    <file path="/ShipSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1367687324781" ignored="false" />
-    <file path="/ResourceSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1367603748855" ignored="false" />
-    <file path="/ShipResearchSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1367687273859" ignored="false" />
-    <file path="/ShipAssetsSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1367603801939" ignored="false" />
+    <file path="/Dummy.txt" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369337299502" ignored="false" />
+    <file path="/ShipSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369331397239" ignored="false" />
+    <file path="/ResourceSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369330714093" ignored="false" />
+    <file path="/ShipResearchSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369330949864" ignored="false" />
+    <file path="/ShipAssetsSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369330829522" ignored="false" />
     <file path="/ShipResearch.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1367162449370" ignored="false" />
     <file path="/ShortAlphabeticNameSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1367163667739" ignored="false" />
     <file path="/Resource.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1367222033483" ignored="false" />
-    <file path="/PlanetIndustrySpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1367603559692" ignored="false" />
-    <file path="/Backlog.md" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1367222931782" ignored="false" />
-    <file path="/a.dummy" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1368740106505" ignored="false" />
-    <file path="/InstanceSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1368640654545" ignored="false" />
+    <file path="/PlanetIndustrySpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369330117243" ignored="false" />
+    <file path="/Backlog.md" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369123732753" ignored="false" />
+    <file path="/a.dummy" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369256891968" ignored="false" />
+    <file path="/InstanceSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369329831839" ignored="false" />
     <file path="/PersistenceStore.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1367602319185" ignored="false" />
     <file path="/FileSystemStore.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1368553856901" ignored="false" />
     <file path="/GoogleAppEngineStore.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1368120660319" ignored="false" />
     <file path="/InstanceScope.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1367603621577" ignored="false" />
-    <file path="/PlanetOwnershipSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1367603719597" ignored="false" />
-    <file path="/ShipSpecificationSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1367687383464" ignored="false" />
-    <file path="/SolarSystemSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1367687880504" ignored="false" />
-    <file path="/SystemSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1367687758550" ignored="false" />
+    <file path="/PlanetOwnershipSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369330617510" ignored="false" />
+    <file path="/ShipSpecificationSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369331456217" ignored="false" />
+    <file path="/SolarSystemSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369334450299" ignored="false" />
+    <file path="/SystemSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369335260364" ignored="false" />
     <file path="/InstanceModel.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1368639904513" ignored="false" />
     <file path="/DuplicateId.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1368035588143" ignored="false" />
     <file path="/FSInstanceModel.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1368777520015" ignored="false" />
@@ -190,11 +82,23 @@
     <file path="/FSInstancePaths.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1368468287189" ignored="false" />
     <file path="/PersistenceModel.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1368639883832" ignored="false" />
     <file path="/PersistenceModelSpecification.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1368724673543" ignored="false" />
-    <file path="/InstanceModelSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1368727080532" ignored="false" />
+    <file path="/InstanceModelSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369417380364" ignored="false" />
     <file path="/PersistenceModelConflicts.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1368646650245" ignored="false" />
     <file path="/Loan.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1368734914522" ignored="false" />
     <file path="/SimpleIO.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1368779055779" ignored="false" />
-    <file path="/Instance.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369123345391" ignored="false" />
+    <file path="/Instance.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369329481555" ignored="false" />
+    <file path="/ExplicitAggregateFactory.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369158048544" ignored="false" />
+    <file path="/System.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369159122573" ignored="false" />
+    <file path="/User.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369255445620" ignored="false" />
+    <file path="/UserEvents.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369244670463" ignored="false" />
+    <file path="/Email.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369381502542" ignored="false" />
+    <file path="/PlanetOwnership.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369256558644" ignored="false" />
+    <file path="/InstanceEvents.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369256926899" ignored="false" />
+    <file path="/SpeciesFlagEmblemVectorSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369334841881" ignored="false" />
+    <file path="/SpeciesSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369335087121" ignored="false" />
+    <file path="/GIT &amp; SBT.md" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369337907902" ignored="false" />
+    <file path="/EmailSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369416116746" ignored="false" />
+    <file path="/UserSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1369417285701" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,28 +159,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="InstanceModelSpec.scala" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="InstanceModelSpec.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/scala/acceptance/InstanceModelSpec.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="42" selection-start="2046" selection-end="2046" vertical-scroll-proportion="0.0">
+            <state line="82" column="18" selection-start="3248" selection-end="3248" vertical-scroll-proportion="0.5616883">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InstanceSpec.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/unit/domain.model/InstanceSpec.scala">
+      <file leaf-file-name="UserEvents.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/UserEvents.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="10" selection-start="973" selection-end="973" vertical-scroll-proportion="0.0">
+            <state line="22" column="11" selection-start="1028" selection-end="1028" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Instance.scala" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/Instance.scala">
+      <file leaf-file-name="User.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/User.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="37" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.33261338">
+            <state line="10" column="11" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserSpec.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/unit/domain.model/UserSpec.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="5" selection-start="1236" selection-end="1236" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Hash.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/shared/Hash.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="7" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HashSpec.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/unit/domain.model/shared/HashSpec.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="41" selection-start="250" selection-end="273" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -300,22 +231,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/PersistenceModelConflicts.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/PersistenceModel.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/PersistenceModelWithConflicts.scala" />
-        <option value="$PROJECT_DIR$/src/test/scala/acceptance/PersistenceModelSpecification.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/InstanceQueries.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/GAEInstanceQueries.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/unit/domain.model/ShipResearchSpec.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/unit/domain.model/ShipSpec.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/unit/domain.model/ShipSpecificationSpec.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/unit/domain.model/SolarSystemSpec.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesFlagEmblemVectorSpec.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesFlagBackgroundVectorSpec.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesAssetsSpec.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesSpec.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/unit/domain.model/SystemSpec.scala" />
+        <option value="$PROJECT_DIR$/build.sbt" />
+        <option value="$PROJECT_DIR$/docs/learning/GIT &amp; SBT.md" />
+        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/shared/Email.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/unit/domain.model/shared/EmailSpec.scala" />
+        <option value="$PROJECT_DIR$/docs/learning/Snapshot Events.md" />
+        <option value="$PROJECT_DIR$/src/test/scala/unit/domain.model/UserSpec.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/acceptance/InstanceModelSpec.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/application/Loan.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/InstanceModel.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/GAEInstanceModel.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/application/SimpleIO.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/FSInstancePaths.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/FSInstanceQueries.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/FSInstanceModel.scala" />
-        <option value="$PROJECT_DIR$/src/test/scala/unit/domain.model/InstanceSpec.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/Instance.scala" />
       </list>
     </option>
   </component>
@@ -337,7 +268,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="0" />
+    <option name="STATE" value="2" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -352,7 +283,38 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Multiverse-build">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="project">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Multiverse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="multiverse">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -394,6 +356,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="domain.model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain.model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -508,6 +500,10 @@
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -543,109 +539,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="instance" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
+              <option name="myItemId" value="user" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="persistence" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="persistence" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GAEInstanceModel.scala" />
+              <option name="myItemId" value="UserEvents.scala" />
               <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -659,13 +557,133 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="User.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="multiverse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="learning" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -691,6 +709,9 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="io.multiverse.application.persistence" />
       <recent name="io.multiverse.domain.model.instance" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs" />
     </key>
   </component>
   <component name="RunManager" selected="Specs2.acceptance.InstanceModelSpec::support sign-ins">
@@ -812,6 +833,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -827,8 +849,7 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32878152" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32983193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32809225" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -900,94 +921,116 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_10.jdk/Contents/Home/src.zip!/java/nio/channels/FileLock.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_10.jdk/Contents/Home/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="298" column="37" selection-start="10970" selection-end="10970" vertical-scroll-proportion="0.43396226" />
+        <state line="2725" column="44" selection-start="108926" selection-end="108932" vertical-scroll-proportion="0.53662694">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_10.jdk/Contents/Home/src.zip!/java/nio/channels/FileChannel.java">
+    <entry file="file://$PROJECT_DIR$/src/test/scala/unit/domain.model/shared/EmailSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1050" column="20" selection-start="45622" selection-end="45622" vertical-scroll-proportion="0.33296338" />
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_10.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/cs/StreamEncoder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="153" selection-end="153" vertical-scroll-proportion="-0.06418919" />
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_10.jdk/Contents/Home/src.zip!/java/io/OutputStreamWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="24" selection-start="2289" selection-end="2289" vertical-scroll-proportion="0.33296338" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/application/SimpleIO.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="976" selection-end="976" vertical-scroll-proportion="0.5519481" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/FSInstancePaths.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="57" selection-start="647" selection-end="647" vertical-scroll-proportion="0.6909789" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/InstanceQueries.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="30" selection-start="221" selection-end="221" vertical-scroll-proportion="-0.2591171" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/application/Loan.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="5" selection-start="720" selection-end="720" vertical-scroll-proportion="0.80614203" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/FSInstanceQueries.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="5" selection-start="956" selection-end="956" vertical-scroll-proportion="0.6885246" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/FSInstanceModel.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="3" selection-start="1690" selection-end="1690" vertical-scroll-proportion="0.5779221" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/acceptance/PersistenceModelSpecification.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="30" selection-start="1352" selection-end="1352" vertical-scroll-proportion="0.6092206">
+        <state line="49" column="0" selection-start="1132" selection-end="1132" vertical-scroll-proportion="0.61709213">
           <folding>
-            <element signature="e#20#132#0" expanded="true" />
+            <element signature="e#34#74#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/application/persistence/PersistenceModel.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/shared/Email.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="6" selection-start="158" selection-end="158" vertical-scroll-proportion="0.097402595" />
+        <state line="8" column="0" selection-start="354" selection-end="354" vertical-scroll-proportion="0.13318536">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/unit/domain.model/SystemSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="18" selection-start="855" selection-end="855" vertical-scroll-proportion="0.38401777">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="5" selection-start="2238" selection-end="2238" vertical-scroll-proportion="0.7305195">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesFlagEmblemVectorSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="37" selection-start="692" selection-end="721" vertical-scroll-proportion="0.24350649">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesFlagBackgroundVectorSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="473" selection-end="473" vertical-scroll-proportion="0.048701297">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/unit/domain.model/SpeciesAssetsSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="6" selection-start="331" selection-end="331" vertical-scroll-proportion="0.11363637">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/unit/domain.model/SolarSystemSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="6" selection-start="698" selection-end="698" vertical-scroll-proportion="0.016233766">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/learning/Snapshot Events.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="57" selection-start="1924" selection-end="1935" vertical-scroll-proportion="0.47749725">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/UserEvents.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="11" selection-start="1028" selection-end="1028" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/User.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="11" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/unit/domain.model/shared/HashSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="41" selection-start="250" selection-end="273" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/shared/Hash.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="7" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/unit/domain.model/UserSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="5" selection-start="1236" selection-end="1236" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/acceptance/InstanceModelSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="42" selection-start="2046" selection-end="2046" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/system/System.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="11" selection-start="351" selection-end="351" vertical-scroll-proportion="0.14578834">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/unit/domain.model/InstanceSpec.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="10" selection-start="973" selection-end="973" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/Instance.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="37" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.33261338">
+        <state line="82" column="18" selection-start="3248" selection-end="3248" vertical-scroll-proportion="0.5616883">
           <folding />
         </state>
       </provider>

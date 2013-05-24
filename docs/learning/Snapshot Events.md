@@ -26,5 +26,5 @@ Introduce redundant validation state within each aggregate by utilising its snap
 
 Disadvantage: Aggregate snapshots must be persisted after such commands are issued; potentially confusing since aggregate will have no uncommitted events; not idiomatic to DDD (snapshots should be an optimisation, not essential for validation).
 
-# Ficticious constraints
+# Fictitious constraints
 - Pausing system example. Allow multiple pauses. Idempotency.

@@ -1,6 +1,6 @@
 package io.multiverse.domain.model.resource
 
-import io.multiverse.domain.shared.{ShortAlphabeticName, IntegralPercentage, ValidatedEntityAggregateFactory, AggregateRoot}
+import io.multiverse.domain.shared.{ShortAlphabeticName, IntegralPercentage, ExplicitAggregateFactory, AggregateRoot}
 import io.multiverse.domain.model.instance.InstanceId
 
 /**
@@ -27,7 +27,7 @@ case class Resource private(changes: List[ResourceEvent])
 /**
  * Resource factory.
  */
-object Resource extends ValidatedEntityAggregateFactory[Resource, ResourceEvent] {
+object Resource extends ExplicitAggregateFactory[Resource, ResourceEvent] {
   /**
    * Defines a new resource within the universe.
    * @param resourceId Unique ID for new resource.

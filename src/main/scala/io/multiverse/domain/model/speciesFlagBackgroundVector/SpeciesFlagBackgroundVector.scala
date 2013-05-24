@@ -1,6 +1,6 @@
 package io.multiverse.domain.model.speciesFlagBackgroundVector
 
-import io.multiverse.domain.shared.{Hash, ValidatedEntityAggregateFactory, AggregateRoot}
+import io.multiverse.domain.shared.{Hash, ExplicitAggregateFactory, AggregateRoot}
 import io.multiverse.domain.model.instance.InstanceId
 
 /**
@@ -27,7 +27,7 @@ case class SpeciesFlagBackgroundVector private(changes: List[SpeciesFlagBackgrou
 /**
  * Species flag background vector factory.
  */
-object SpeciesFlagBackgroundVector extends ValidatedEntityAggregateFactory[SpeciesFlagBackgroundVector, SpeciesFlagBackgroundVectorEvent] {
+object SpeciesFlagBackgroundVector extends ExplicitAggregateFactory[SpeciesFlagBackgroundVector, SpeciesFlagBackgroundVectorEvent] {
   /**
    * Defines new binary assets for use in the backgrounds for species flags.
    * @param speciesFlagBackgroundVectorId Unique ID for new species assets.

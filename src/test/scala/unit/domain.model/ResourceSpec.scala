@@ -12,8 +12,10 @@ import org.specs2.mutable.Specification
 class ResourceSpec extends Specification {
   "resource" should {
     "be defined" in new ResourceScope {
-      Resource.define(resourceId, name, description, abundance, instanceId, timestamp)
-        .changes must contain(ResourceDefined(instanceId, timestamp, resourceId, name, description, abundance))
+      Resource
+        .define(resourceId, name, description, abundance, instanceId, timestamp)
+        .changes must beEqualTo(List(
+          ResourceDefined(instanceId, timestamp, resourceId, name, description, abundance)))
     }
 
     "have descriptions between 100 and 150 characters" in new ResourceScope {

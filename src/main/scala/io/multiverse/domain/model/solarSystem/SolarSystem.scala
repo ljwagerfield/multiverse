@@ -1,8 +1,7 @@
 package io.multiverse.domain.model.solarSystem
 
-import io.multiverse.domain.shared.{Entity, ValidatedEntityAggregateFactory, AggregateRoot, ShortAlphanumericName, ShortAlphabeticName}
 import io.multiverse.domain.model.instance.InstanceId
-import collection.SortedSet
+import io.multiverse.domain.shared.{Entity, ExplicitAggregateFactory, AggregateRoot, ShortAlphanumericName, ShortAlphabeticName}
 
 /**
  * Solar system composing a star and planets.
@@ -61,7 +60,7 @@ case class SolarSystem private(changes: List[SolarSystemEvent],
    */
   def applyEvent(event: SolarSystemEvent):SolarSystem = {
     event match {
-      case event: StarNamed => copy(changes =  changes :+ event)
+      case event: StarNamed => copy(changes = changes :+ event)
       case event: PlanetNamed => copy(changes = changes :+ event, namedPlanets = namedPlanets + (event.name -> event.planetId))
       case event: StarNameDuplicateRenamed => copy(changes =  changes :+ event)
       case event: SolarSystemEvent => unhandled(event)
@@ -72,7 +71,7 @@ case class SolarSystem private(changes: List[SolarSystemEvent],
 /**
  * Solar system factory.
  */
-object SolarSystem extends ValidatedEntityAggregateFactory[SolarSystem, SolarSystemEvent] {
+object SolarSystem extends ExplicitAggregateFactory[SolarSystem, SolarSystemEvent] {
   /**
    * Creates a new solar system.
    * @param starId Unique ID for the new star.

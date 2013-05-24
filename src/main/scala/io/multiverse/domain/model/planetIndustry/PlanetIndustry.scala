@@ -1,6 +1,6 @@
 package io.multiverse.domain.model.planetIndustry
 
-import io.multiverse.domain.shared.{ValidatedValueObjectAggregateFactory, AggregateRoot}
+import io.multiverse.domain.shared.{ImplicitAggregateFactory, AggregateRoot}
 import io.multiverse.domain.model.shipSpecification.ShipSpecificationId
 import io.multiverse.domain.model.ship.ShipId
 import io.multiverse.domain.model.instance.InstanceId
@@ -28,9 +28,9 @@ case class PlanetIndustry private(changes: List[PlanetIndustryEvent], planetId:P
    * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Aggregate with new ship build commissioned.
    */
-  def buildShip(shipSpecificationId:ShipSpecificationId, shipId:ShipId, instanceId:InstanceId, timeStamp:Long): PlanetIndustry = {
+  def buildShip(shipSpecificationId:ShipSpecificationId, shipId:ShipId, instanceId:InstanceId, timeStamp:Long): PlanetIndustry =
     applyEvent(ShipBuildCommissioned(instanceId, timeStamp, planetId, shipSpecificationId, shipId))
-  }
+
 
   /**
    * Applies the given event as the head of the returned aggregate's state.
@@ -48,7 +48,7 @@ case class PlanetIndustry private(changes: List[PlanetIndustryEvent], planetId:P
 /**
  * Planet industry factory.
  */
-object PlanetIndustry extends ValidatedValueObjectAggregateFactory[PlanetIndustry, PlanetIndustryEvent] {
+object PlanetIndustry extends ImplicitAggregateFactory[PlanetIndustry, PlanetIndustryEvent] {
   /**
    * Initializes industry for the given planet.
    * @param planetId Planet whose industry this is.

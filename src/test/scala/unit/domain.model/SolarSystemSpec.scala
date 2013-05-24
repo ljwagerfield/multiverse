@@ -19,45 +19,61 @@ import org.specs2.mutable.Specification
 class SolarSystemSpec extends Specification {
   "new solar system" should {
     "be creatable in a new galaxy (no near stars)" in new SolarSystemScope {
-      SolarSystem.create(starId, noNearStars, twoPlanets, instanceId, timestamp)
-        .changes must contain(SolarSystemCreated(instanceId, timestamp, starId, noNearStars, twoPlanets))
+      SolarSystem
+        .create(starId, noNearStars, twoPlanets, instanceId, timestamp)
+        .changes must beEqualTo(List(
+          SolarSystemCreated(instanceId, timestamp, starId, noNearStars, twoPlanets)))
     }
 
     "be creatable in an existing galaxy near 1 star" in new SolarSystemScope {
-      SolarSystem.create(starId, oneNearStar, twoPlanets, instanceId, timestamp)
-        .changes must contain(SolarSystemCreated(instanceId, timestamp, starId, oneNearStar, twoPlanets))
+      SolarSystem
+        .create(starId, oneNearStar, twoPlanets, instanceId, timestamp)
+        .changes must beEqualTo(List(
+          SolarSystemCreated(instanceId, timestamp, starId, oneNearStar, twoPlanets)))
     }
 
     "be creatable in an existing galaxy near up-to 4 stars" in new SolarSystemScope {
-      SolarSystem.create(starId, fourNearStars, twoPlanets, instanceId, timestamp)
-        .changes must contain(SolarSystemCreated(instanceId, timestamp, starId, fourNearStars, twoPlanets))
+      SolarSystem
+        .create(starId, fourNearStars, twoPlanets, instanceId, timestamp)
+        .changes must beEqualTo(List(
+          SolarSystemCreated(instanceId, timestamp, starId, fourNearStars, twoPlanets)))
 
-      SolarSystem.create(starId, fourNearStars + StarId(UUID.randomUUID), twoPlanets, instanceId, timestamp) must throwA[Exception]
+      SolarSystem
+        .create(starId, fourNearStars + StarId(UUID.randomUUID), twoPlanets, instanceId, timestamp) must throwA[Exception]
     }
 
     "not be near to itself" in new SolarSystemScope {
       val nearStars = Set(StarId(UUID.randomUUID), starId, StarId(UUID.randomUUID), StarId(UUID.randomUUID))
-
-      SolarSystem.create(starId, nearStars, twoPlanets, instanceId, timestamp) must throwA[Exception]
+      SolarSystem
+        .create(starId, nearStars, twoPlanets, instanceId, timestamp) must throwA[Exception]
     }
 
     "have between 2 and 6 planets" in new SolarSystemScope {
-      SolarSystem.create(starId, noNearStars, twoPlanets, instanceId, timestamp)
-        .changes must contain(SolarSystemCreated(instanceId, timestamp, starId, noNearStars, twoPlanets))
+      SolarSystem
+        .create(starId, noNearStars, twoPlanets, instanceId, timestamp)
+        .changes must beEqualTo(List(
+          SolarSystemCreated(instanceId, timestamp, starId, noNearStars, twoPlanets)))
 
-      SolarSystem.create(starId, noNearStars, sixPlanets, instanceId, timestamp)
-        .changes must contain(SolarSystemCreated(instanceId, timestamp, starId, noNearStars, sixPlanets))
+      SolarSystem
+        .create(starId, noNearStars, sixPlanets, instanceId, timestamp)
+        .changes must beEqualTo(List(
+          SolarSystemCreated(instanceId, timestamp, starId, noNearStars, sixPlanets)))
 
-      SolarSystem.create(starId, noNearStars, sixPlanets + PlanetId(UUID.randomUUID), instanceId, timestamp) must throwA[Exception]
-      SolarSystem.create(starId, noNearStars, Set(PlanetId(UUID.randomUUID)), instanceId, timestamp) must throwA[Exception]
+      SolarSystem
+        .create(starId, noNearStars, sixPlanets + PlanetId(UUID.randomUUID), instanceId, timestamp) must throwA[Exception]
+
+      SolarSystem
+        .create(starId, noNearStars, Set(PlanetId(UUID.randomUUID)), instanceId, timestamp) must throwA[Exception]
     }
   }
 
   "solar system" should {
     "be nameable" in new ExistingSolarSystemScope {
       val firstExplicitName = ShortAlphabeticName("Sun")
-      solarSystem.nameStar(firstExplicitName, instanceId, timestamp)
-        .changes must contain(StarNamed(instanceId, timestamp, starId, firstExplicitName))
+      solarSystem
+        .nameStar(firstExplicitName, instanceId, timestamp)
+        .changes must beEqualTo(List(
+          StarNamed(instanceId, timestamp, starId, firstExplicitName)))
     }
 
     "be rename-able" in new ExistingSolarSystemScope {
@@ -66,7 +82,9 @@ class SolarSystemSpec extends Specification {
       solarSystem
         .nameStar(firstExplicitName, instanceId, timestamp)
         .nameStar(secondExplicitName, instanceId, timestamp)
-        .changes must contain(StarNamed(instanceId, timestamp, starId, secondExplicitName))
+        .changes must beEqualTo(List(
+          StarNamed(instanceId, timestamp, starId, firstExplicitName),
+          StarNamed(instanceId, timestamp, starId, secondExplicitName)))
     }
   }
 
@@ -78,22 +96,27 @@ class SolarSystemSpec extends Specification {
       solarSystem
         .nameStar(duplicateName, instanceId, timestamp)
         .resolveDuplicateStarName(conflictingStarId, resolvedName, instanceId, timestamp)
-        .changes must contain(StarNameDuplicateRenamed(instanceId, timestamp, starId, conflictingStarId, resolvedName))
+        .changes must beEqualTo(List(
+          StarNamed(instanceId, timestamp, starId, duplicateName),
+          StarNameDuplicateRenamed(instanceId, timestamp, starId, conflictingStarId, resolvedName)))
     }
   }
 
   "planet" should {
     "be nameable" in new ExistingSolarSystemScope {
       val firstPlanetName = ShortAlphanumericName("Earth")
-      solarSystem.namePlanet(firstPlanetId, firstPlanetName, instanceId, timestamp)
-        .changes must contain(PlanetNamed(instanceId, timestamp, starId, firstPlanetId, firstPlanetName))
+      solarSystem
+        .namePlanet(firstPlanetId, firstPlanetName, instanceId, timestamp)
+        .changes must beEqualTo(List(
+          PlanetNamed(instanceId, timestamp, starId, firstPlanetId, firstPlanetName)))
     }
 
-    "be renam-eable" in new NamedFirstPlanetScope {
+    "be rename-able" in new NamedFirstPlanetScope {
       val newPlanetName = ShortAlphanumericName("Mars")
       solarSystemWithNamedPlanet
         .namePlanet(firstPlanetId, newPlanetName, instanceId, timestamp)
-        .changes must contain(PlanetNamed(instanceId, timestamp, starId, firstPlanetId, newPlanetName))
+        .changes must beEqualTo(List(
+          PlanetNamed(instanceId, timestamp, starId, firstPlanetId, newPlanetName)))
     }
 
     "have unique name" in new NamedFirstPlanetScope {
@@ -121,7 +144,7 @@ class SolarSystemSpec extends Specification {
    * Predefined test values for existing solar systems.
    */
   trait ExistingSolarSystemScope extends SolarSystemScope {
-    val solarSystem = SolarSystem.create(starId, noNearStars, sixPlanets, instanceId, timestamp)
+    val solarSystem = SolarSystem.create(starId, noNearStars, sixPlanets, instanceId, timestamp).markCommitted
   }
 
   /**
@@ -129,6 +152,6 @@ class SolarSystemSpec extends Specification {
    */
   trait NamedFirstPlanetScope extends ExistingSolarSystemScope {
     val firstPlanetName = ShortAlphanumericName("Earth")
-    val solarSystemWithNamedPlanet = solarSystem.namePlanet(firstPlanetId, firstPlanetName, instanceId, timestamp)
+    val solarSystemWithNamedPlanet = solarSystem.namePlanet(firstPlanetId, firstPlanetName, instanceId, timestamp).markCommitted
   }
 }

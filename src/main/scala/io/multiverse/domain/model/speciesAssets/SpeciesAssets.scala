@@ -1,6 +1,6 @@
 package io.multiverse.domain.model.speciesAssets
 
-import io.multiverse.domain.shared.{Hash, ValidatedEntityAggregateFactory, AggregateRoot}
+import io.multiverse.domain.shared.{Hash, ExplicitAggregateFactory, AggregateRoot}
 import io.multiverse.domain.model.instance.InstanceId
 
 /**
@@ -27,7 +27,7 @@ case class SpeciesAssets private(changes: List[SpeciesAssetsEvent])
 /**
  * Species assets factory.
  */
-object SpeciesAssets extends ValidatedEntityAggregateFactory[SpeciesAssets, SpeciesAssetsEvent] {
+object SpeciesAssets extends ExplicitAggregateFactory[SpeciesAssets, SpeciesAssetsEvent] {
   /**
    * Defines new binary assets for use in new species.
    * @param speciesAssetsId Unique ID for new species assets.

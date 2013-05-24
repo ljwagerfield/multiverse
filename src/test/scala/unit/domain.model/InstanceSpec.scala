@@ -5,23 +5,33 @@ import org.specs2.specification.Scope
 import io.multiverse.domain.model.instance.{UserSignedOut, UserSignedIn, InstanceCreated, Version, Instance, InstanceId}
 import java.util.UUID
 import io.multiverse.domain.model.species.SpeciesId
+import io.multiverse.domain.model.user.UserId
 
 /**
  * Instance specification.
  */
 class InstanceSpec extends Specification {
-  "instance" should {
+  "new instance" should {
     "be created" in new InstanceScope {
       Instance
         .create(instanceId, timestamp, version)
-        .changes must contain(InstanceCreated(instanceId, timestamp, version))
+        .changes must beEqualTo(List(
+          InstanceCreated(instanceId, timestamp, version)))
+    }
+  }
+
+  "instance" should {
+    "support signed-ins" in new CreatedInstanceScope {
+      createdInstance
+        .signIn(user, timestamp)
+        .changes must beEqualTo(List(
+          UserSignedIn(instanceId, timestamp, user)))
     }
 
-    "be signed-into by a user" in new InstanceScope {
-      Instance
-        .create(instanceId, timestamp, version)
-        .signIn(user, timestamp)
-        .changes must contain(UserSignedIn(instanceId, timestamp, user))
+    "support superfluous signed-outs" in new CreatedInstanceScope {
+      createdInstance
+        .signOut(timestamp)
+        .changes must beEmpty
     }
   }
 
@@ -29,25 +39,27 @@ class InstanceSpec extends Specification {
     "support idempotent sign-ins from the same user" in new SignedInInstanceScope {
       signedInInstance
         .signIn(user, timestamp + 1)
-        .changes must contain(UserSignedIn(instanceId, timestamp, user))
+        .changes must beEmpty
     }
 
     "not support sign-ins from a different user" in new SignedInInstanceScope {
-      val differentUser = SpeciesId(UUID.randomUUID)
+      val differentUser = UserId(UUID.randomUUID)
       signedInInstance.signIn(differentUser, timestamp) must throwA[Exception]
     }
 
     "support sign-outs" in new SignedInInstanceScope {
       signedInInstance
         .signOut(timestamp)
-        .changes must contain(UserSignedOut(instanceId, timestamp))
+        .changes must beEqualTo(List(
+          UserSignedOut(instanceId, timestamp)))
     }
 
     "support idempotent sign-outs" in new SignedInInstanceScope {
       signedInInstance
         .signOut(timestamp)
         .signOut(timestamp + 1)
-        .changes must contain(UserSignedOut(instanceId, timestamp))
+        .changes must beEqualTo(List(
+          UserSignedOut(instanceId, timestamp)))
     }
   }
 
@@ -58,15 +70,20 @@ class InstanceSpec extends Specification {
     val timestamp = 0
     val instanceId = InstanceId(UUID.randomUUID)
     val version = Version(0)
-    val user = SpeciesId(UUID.randomUUID)
+    val user = UserId(UUID.randomUUID)
+  }
+
+  /**
+   * Predefined test values for created instance.
+   */
+  trait CreatedInstanceScope extends InstanceScope {
+    val createdInstance = Instance.create(instanceId, timestamp, version).markCommitted
   }
 
   /**
    * Predefined test values for a signed-in instance.
    */
-  trait SignedInInstanceScope extends InstanceScope {
-    val signedInInstance = Instance
-      .create(instanceId, timestamp, version)
-      .signIn(user, timestamp)
+  trait SignedInInstanceScope extends CreatedInstanceScope {
+    val signedInInstance = createdInstance.signIn(user, timestamp).markCommitted
   }
 }

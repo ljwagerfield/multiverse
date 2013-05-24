@@ -1,6 +1,6 @@
 package io.multiverse.domain.model.shipAssets
 
-import io.multiverse.domain.shared.{Hash, ValidatedEntityAggregateFactory, AggregateRoot}
+import io.multiverse.domain.shared.{Hash, ExplicitAggregateFactory, AggregateRoot}
 import io.multiverse.domain.model.instance.InstanceId
 import io.multiverse.domain.model.shipSpecification.ShipSize
 
@@ -28,7 +28,7 @@ case class ShipAssets private(changes: List[ShipAssetsEvent])
 /**
  * Ship assets factory.
  */
-object ShipAssets extends ValidatedEntityAggregateFactory[ShipAssets, ShipAssetsEvent] {
+object ShipAssets extends ExplicitAggregateFactory[ShipAssets, ShipAssetsEvent] {
   /**
    * Defines new binary assets for use in ship specifications.
    * @param shipAssetsId Unique ID for new ship assets.

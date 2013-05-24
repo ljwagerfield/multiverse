@@ -12,7 +12,8 @@ import org.specs2.mutable.Specification
 class ShipResearchSpec extends Specification {
 	"ship research" should {
 		"support initialization" in new ShipResearchScope {
-			ShipResearch.init(speciesId)
+			ShipResearch
+        .init(speciesId)
 				.changes must beEmpty
 		}
 
@@ -23,7 +24,8 @@ class ShipResearchSpec extends Specification {
 			ShipResearch
 				.init(speciesId)
 				.focus(componentResearch, productionResearch, instanceId, timestamp)
-				.changes must contain(ShipResearchFocused(instanceId, timestamp, speciesId, componentResearch, productionResearch))
+				.changes must beEqualTo(List(
+          ShipResearchFocused(instanceId, timestamp, speciesId, componentResearch, productionResearch)))
 		}
 
 		"support being refocused" in new ShipResearchScope {
@@ -36,7 +38,9 @@ class ShipResearchSpec extends Specification {
 				.init(speciesId)
 				.focus(componentResearch, productionResearch, instanceId, timestamp)
 				.focus(componentResearch2, productionResearch2, instanceId, timestamp)
-				.changes must contain(ShipResearchFocused(instanceId, timestamp, speciesId, componentResearch2, productionResearch2))
+				.changes must beEqualTo(List(
+          ShipResearchFocused(instanceId, timestamp, speciesId, componentResearch, productionResearch),
+          ShipResearchFocused(instanceId, timestamp, speciesId, componentResearch2, productionResearch2)))
 		}
 	}
 
