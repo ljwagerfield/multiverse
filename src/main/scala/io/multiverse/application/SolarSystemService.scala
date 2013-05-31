@@ -1,6 +1,6 @@
 package io.multiverse.application
 
-import io.multiverse.domain.model.solarSystem.SolarSystem
+import io.multiverse.domain.aggregates.solarSystem.SolarSystem
 
 trait SolarSystemServiceComponent {
   def solarSystemService: SolarSystemService

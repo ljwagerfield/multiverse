@@ -1,3 +1,7 @@
+# Add repositories for storing and retrieving aggregates [WIP]
+
+# Add command classes for optimistic (re)writes and compensations [WIP]
+
 # Add acceptance tests [WIP]
 
 # Determine how offline users will be protected
@@ -26,7 +30,7 @@
 - Resources can include: resources; cash; ships
 
 # Add statistical queries
-- The most violent players. Vigilantes could use this list to hunt down troublesome players that target trade ships.
+- The most violent players. Vigilantes could use this list to hunt down troublesome players that target trade ships. Add bounties!
 - Security of each region. Similarly to above, self-proclaimed security forces could aim to keep this value high.
 
 # Add sophisticated cost variance on resources

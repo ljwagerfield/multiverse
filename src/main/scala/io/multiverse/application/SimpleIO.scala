@@ -1,6 +1,7 @@
 package io.multiverse.application
 
 import io.multiverse.application.Loan._
+import scala.language.implicitConversions
 import java.io.{OutputStreamWriter, FileOutputStream}
 
 class Content
@@ -26,6 +27,7 @@ object SimpleIO {
       val stream = new FileOutputStream(filePath)
       loan (new OutputStreamWriter(stream)) to (writer => {
         loan(stream.getChannel.lock()) to(lock => {
+          stream.getChannel.truncate(0) // Ensure contents is wiped as part of the file transaction.
           writer.write(content)
         })
       })

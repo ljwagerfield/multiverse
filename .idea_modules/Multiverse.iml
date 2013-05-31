@@ -29,6 +29,7 @@
     <orderEntry type="library" name="SBT: commons-beanutils:commons-beanutils:1.8.3" level="project" />
     <orderEntry type="library" name="SBT: commons-logging:commons-logging:1.1.1" level="project" />
     <orderEntry type="library" name="SBT: commons-digester:commons-digester:1.8" level="project" />
+    <orderEntry type="library" name="SBT: commons-codec:commons-codec:1.8" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: org.specs2:specs2_2.10:1.12.3:test" level="project" />
     <orderEntry type="library" scope="TEST" name="SBT: org.specs2:specs2-scalaz-core_2.10.0-RC3:6.0.1:test" level="project" />
   </component>
