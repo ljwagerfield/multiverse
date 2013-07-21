@@ -2,10 +2,11 @@ package io.multiverse.domain.aggregates.common
 
 /**
  * Root object marshaling mutations to the coherent collection of all module objects (i.e. the aggregate).
- * @tparam T The derived class type.
- * @tparam E The event type.
+ * @tparam A Aggregate subtype.
+ * @tparam E Event type.
  */
-trait AggregateRoot[T <: AggregateRoot[T, E], E] extends EventSourced[T, E] {
+trait AggregateRoot[A <: AggregateRoot[A, E], E] extends EventSourced[A, E] {
+
   /**
    * Events pending commitment.
    * @return Sequence of uncommitted events.
@@ -16,5 +17,5 @@ trait AggregateRoot[T <: AggregateRoot[T, E], E] extends EventSourced[T, E] {
    * Processes uncommitted events.
    * @return Aggregate with no uncommitted events.
    */
-  def markCommitted: T
+  def markCommitted: A
 }

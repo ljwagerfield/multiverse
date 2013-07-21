@@ -4,8 +4,6 @@ import io.multiverse.application.Loan._
 import scala.language.implicitConversions
 import java.io.{OutputStreamWriter, FileOutputStream}
 
-class Content
-
 object SimpleIO {
   /**
    * Converts the given string into content.

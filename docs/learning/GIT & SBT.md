@@ -1,7 +1,7 @@
 # SBT
 
 ## Adding library dependencies
-These are added to build.sbt. These are not added to plugins.sbt as this is purely the build project, not *your* actual project.
+These are added to build.sbt. These are not added to plugins.sbt as this is purely the build project, not your product's actual project.
 
 The following commands must be issued to SBT once the dependency has been added:
 - reload (Causes SBT to re-read the *.sbt files.)

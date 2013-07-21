@@ -19,7 +19,7 @@ class ShipAssetsSpec extends Specification {
 			ShipAssets
         .define(shipAssetsId, size, assetsHash, instanceId, timestamp)
 				.changes must beEqualTo(List(
-          ShipAssetsDefined(instanceId, timestamp, shipAssetsId, size, assetsHash)))
+          ShipAssetsDefined(shipAssetsId, size, assetsHash, instanceId, timestamp)))
 		}
 	}
 }

@@ -20,21 +20,21 @@ case class System private(changes: List[SystemEvent], id:SystemId, isPaused:Bool
   /**
    * Pauses the game.
    * @param instanceId Instance the event occurred in.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @param message Message for users explaining why the game has been paused.
    * @return System with game paused.
    */
-  def pauseGame(message:String, instanceId:InstanceId, timeStamp:Long): System =
-    applyEvent(GamePaused(instanceId, timeStamp, id, message))
+  def pauseGame(message:String, instanceId:InstanceId, timestamp:Long): System =
+    apply(GamePaused(id, message, instanceId, timestamp))
 
   /**
    * Resumes the game.
    * @param instanceId Instance the event occurred in.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return System with game paused.
    */
-  def resumeGame(instanceId:InstanceId, timeStamp:Long): System = {
-    applyEvent(GameResumed(instanceId, timeStamp, id))
+  def resumeGame(instanceId:InstanceId, timestamp:Long): System = {
+    apply(GameResumed(id, instanceId, timestamp))
   }
 
   /**
@@ -42,11 +42,11 @@ case class System private(changes: List[SystemEvent], id:SystemId, isPaused:Bool
    * @param event Event representing new head state.
    * @return Aggregate with event appended and new state applied.
    */
-  def applyEvent(event: SystemEvent): System = {
+  def apply(event: SystemEvent): System = {
     event match {
       case event:GamePaused => copy(changes = changes :+ event, isPaused = true)
       case event:GameResumed => copy(changes = changes :+ event, isPaused = false)
-      case event:SystemEvent => unhandled(event)
+      case event:SystemEvent => unhandledEvent(event)
     }
   }
 }

@@ -7,17 +7,17 @@ import io.multiverse.domain.aggregates.ship.PlanetColonizationOrdered
 
 /**
  * Planet colonized.
- * @param instanceId Instance the event occurred in.
- * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
  * @param planetId Planet the ship is bound for.
  * @param colonizationOrder Order which invoked the inbound ship.
+ * @param instanceId Instance the event occurred in.
+ * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
  */
-case class PlanetColonized(instanceId:InstanceId, timeStamp:Long, planetId:PlanetId, colonizationOrder:PlanetColonizationOrdered) extends PlanetOwnershipEvent
+case class PlanetColonized(planetId:PlanetId, colonizationOrder:PlanetColonizationOrdered, instanceId:InstanceId, timestamp:Long) extends PlanetOwnershipEvent
 
 /**
  * Planet abandoned.
- * @param instanceId Instance the event occurred in.
- * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
  * @param planetId The planet being abandoned by its last occupants.
+ * @param instanceId Instance the event occurred in.
+ * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
  */
-case class PlanetAbandoned(instanceId:InstanceId, timeStamp:Long, planetId:PlanetId) extends PlanetOwnershipEvent
+case class PlanetAbandoned(planetId:PlanetId, instanceId:InstanceId, timestamp:Long) extends PlanetOwnershipEvent

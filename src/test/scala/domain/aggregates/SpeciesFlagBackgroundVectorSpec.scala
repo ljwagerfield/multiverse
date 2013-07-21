@@ -20,7 +20,7 @@ class SpeciesFlagBackgroundVectorSpec extends Specification {
       SpeciesFlagBackgroundVector
         .define(flagBackgroundId, vectorHash, instanceId, timestamp)
         .changes must beEqualTo(List(
-          SpeciesFlagBackgroundVectorDefined(instanceId, timestamp, flagBackgroundId, vectorHash)))
+          SpeciesFlagBackgroundVectorDefined(flagBackgroundId, vectorHash, instanceId, timestamp)))
     }
   }
 }

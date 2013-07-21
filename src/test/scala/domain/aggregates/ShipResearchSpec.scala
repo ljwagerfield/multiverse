@@ -25,7 +25,7 @@ class ShipResearchSpec extends Specification {
 				.init(speciesId)
 				.focus(componentResearch, productionResearch, instanceId, timestamp)
 				.changes must beEqualTo(List(
-          ShipResearchFocused(instanceId, timestamp, speciesId, componentResearch, productionResearch)))
+          ShipResearchFocused(speciesId, componentResearch, productionResearch, instanceId, timestamp)))
 		}
 
 		"support being refocused" in new ShipResearchScope {
@@ -39,8 +39,8 @@ class ShipResearchSpec extends Specification {
 				.focus(componentResearch, productionResearch, instanceId, timestamp)
 				.focus(componentResearch2, productionResearch2, instanceId, timestamp)
 				.changes must beEqualTo(List(
-          ShipResearchFocused(instanceId, timestamp, speciesId, componentResearch, productionResearch),
-          ShipResearchFocused(instanceId, timestamp, speciesId, componentResearch2, productionResearch2)))
+          ShipResearchFocused(speciesId, componentResearch, productionResearch, instanceId, timestamp),
+          ShipResearchFocused(speciesId, componentResearch2, productionResearch2, instanceId, timestamp)))
 		}
 	}
 

@@ -16,6 +16,6 @@ trait ExplicitAggregateFactory[A <: AggregateRoot[A, E], E] extends AggregateFac
    * @return Aggregate denormalized from the sequence of events.
    */
   def from(history: Iterable[E]): A = {
-    (applyEvent(history.head)/:history)(_.applyEvent(_)).markCommitted // May need to skip head in folded history.
+    (apply(history.head)/:history.tail)(_.apply(_)).markCommitted
   }
 }

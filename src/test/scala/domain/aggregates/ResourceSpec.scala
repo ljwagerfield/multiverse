@@ -15,7 +15,7 @@ class ResourceSpec extends Specification {
       Resource
         .define(resourceId, name, description, abundance, instanceId, timestamp)
         .changes must beEqualTo(List(
-          ResourceDefined(instanceId, timestamp, resourceId, name, description, abundance)))
+          ResourceDefined(resourceId, name, description, abundance, instanceId, timestamp)))
     }
 
     "have descriptions between 100 and 150 characters" in new ResourceScope {

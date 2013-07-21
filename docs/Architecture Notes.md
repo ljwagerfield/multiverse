@@ -1,5 +1,7 @@
 # Architecture Notes
 
+Rough notes on infrastructure and application architecture.
+
 ## CAP
 - Multiverse requires partition tolerance for horizontal scalability.
 - Consistency and availability requirements vary between subsystems. E.g. battles must be consistent, whereas trade does not.
@@ -13,11 +15,11 @@
 - Optimistic concurrency used when committing new events for a given aggregate.
 - *Optimisation:* Single event aggregates (or 'atomic aggregates') do not require conflict checking. 
 - *Optimisation 2:* Aggregates which do not perform validation do not need to be loaded from history or a snapshot; there is no state within the aggregate.
+
 ### Scaling and Load Balancing
 - Sharding based on aggregate ID.
 - Queries spanning multiple aggregates are considered eventually consistent.
 - Queries on single aggregates are considered strongly consistent.
-- Provides horizontal scalability - load balancing across comodity hardware.
 
 ### Redundancy and Geolocation
 - Latency reduced for users by introducing replicas in near datacenters.
@@ -48,12 +50,12 @@ Reads are also tunable: one, quorum, all.
 #### Weak consistency
 - No sync writes.
 - Impacted by non-server failures. 
-- Ideal if write is never gauranteed.
+- Ideal if write is never guaranteed.
 - Memcache will provide this, which is provided by GAE.
 
 ## Ping Events
 - Users subscribe to receive events from a subset of servers, since subscribing to all servers is not scalable.
-- Sometimes interesting events occur on unsubscribed servers.
+- Sometimes interesting events occur on un-subscribed servers.
 - These events are relayed to subscribed servers by raising *ping* events against aggregates which are known to be subscribed against by interested parties.
 - See ship journey events and the *GetShipsInSolarSystem* query for an example.
 
@@ -77,3 +79,9 @@ Reads are also tunable: one, quorum, all.
 - Timestamps still need to be present in certain events for reactions to be timed.
 - To support adding reactions to events which otherwise have no reactions, timestamps shall be present in all events.
 - **Important:** Timestamps are *not* present to support deferred commands. Commands produce events which represent immediate state change; a timestamp set for any time other than the present is a bug.
+
+## Command types
+- ConstantTailCommand. Unconditional command relating to an existing aggregate which evokes the same events on every evaluation.
+- UnconditionalTailCommand. Command relating to an existing aggregate with an evaluation that is always valid.
+- ConditionalTailCommand. Command relating to an existing aggregate with an evaluation that is conditionally valid.
+- HeadCommand. Command with an evaluation that describes the creation of a new aggregate. These commands are constant and unconditional by nature.

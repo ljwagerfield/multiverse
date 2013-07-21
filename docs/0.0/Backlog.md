@@ -1,8 +1,12 @@
+# Refactor aggregate commands into command classes with prerequisites [WIP]
+
 # Add repositories for storing and retrieving aggregates [WIP]
 
 # Add command classes for optimistic (re)writes and compensations [WIP]
 
 # Add acceptance tests [WIP]
+
+# Add pre-conditions to commands for aggregate ID
 
 # Determine how offline users will be protected
 

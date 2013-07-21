@@ -21,7 +21,7 @@ case class SpeciesFlagBackgroundVector private(changes: List[SpeciesFlagBackgrou
    * @param event Event representing new head state.
    * @return Species flag background vector with event appended and new state applied.
    */
-  def applyEvent(event: SpeciesFlagBackgroundVectorEvent): SpeciesFlagBackgroundVector = unhandled(event)
+  def apply(event: SpeciesFlagBackgroundVectorEvent): SpeciesFlagBackgroundVector = unhandledEvent(event)
 }
 
 /**
@@ -33,21 +33,21 @@ object SpeciesFlagBackgroundVector extends ExplicitAggregateFactory[SpeciesFlagB
    * @param speciesFlagBackgroundVectorId Unique ID for new species assets.
    * @param hash References the binary assets.
    * @param instanceId Instance the event occurred in.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return New species assets.
    */
-  def define(speciesFlagBackgroundVectorId:SpeciesFlagBackgroundVectorId, hash:Hash, instanceId:InstanceId, timeStamp:Long):SpeciesFlagBackgroundVector =
-    applyEvent(SpeciesFlagBackgroundVectorDefined(instanceId, timeStamp, speciesFlagBackgroundVectorId, hash))
+  def define(speciesFlagBackgroundVectorId:SpeciesFlagBackgroundVectorId, hash:Hash, instanceId:InstanceId, timestamp:Long):SpeciesFlagBackgroundVector =
+    apply(SpeciesFlagBackgroundVectorDefined(speciesFlagBackgroundVectorId, hash, instanceId, timestamp))
 
   /**
    * Applies the given event as the head of the returned aggregate's state.
    * @param event Event representing new head state.
    * @return Species flag background vector with event appended and new state applied.
    */
-  def applyEvent(event: SpeciesFlagBackgroundVectorEvent):SpeciesFlagBackgroundVector = {
+  def apply(event: SpeciesFlagBackgroundVectorEvent):SpeciesFlagBackgroundVector = {
     event match {
       case event: SpeciesFlagBackgroundVectorDefined => SpeciesFlagBackgroundVector(Nil :+ event)
-      case event: SpeciesFlagBackgroundVectorEvent => unhandled(event)
+      case event: SpeciesFlagBackgroundVectorEvent => unhandledEvent(event)
     }
   }
 }

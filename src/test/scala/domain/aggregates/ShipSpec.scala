@@ -14,11 +14,11 @@ import org.specs2.mutable.Specification
 class ShipSpec extends Specification {
 	"un-built ship" should {
 		"have its build finalized" in new ShipScope {
-			val shipBuildEvent = ShipBuildCommissioned(instanceId, timestamp, PlanetId(UUID.randomUUID), ShipSpecificationId(UUID.randomUUID), shipId)
+			val shipBuildEvent = ShipBuildCommissioned(PlanetId(UUID.randomUUID), ShipSpecificationId(UUID.randomUUID), shipId, instanceId, timestamp)
 			Ship
         .finalizeBuild(shipBuildEvent, instanceId, timestamp)
 				.changes must beEqualTo(List(
-          ShipBuilt(instanceId, timestamp, shipId, shipBuildEvent)))
+          ShipBuilt(shipId, shipBuildEvent, instanceId, timestamp)))
 		}
 	}
 
@@ -28,7 +28,7 @@ class ShipSpec extends Specification {
 			ship
         .attack(nonFriendlyShipId, instanceId, timestamp)
 				.changes must beEqualTo(List(
-          ShipAttackOrdered(instanceId, timestamp, shipId, nonFriendlyShipId)))
+          ShipAttackOrdered(shipId, nonFriendlyShipId, instanceId, timestamp)))
 		}
 
 		"not attack itself" in new BuiltShipScope {
@@ -40,7 +40,7 @@ class ShipSpec extends Specification {
 			ship
         .attack(nonFriendlyPlanetId, instanceId, timestamp)
 				.changes must beEqualTo(List(
-          PlanetAttackOrdered(instanceId, timestamp, shipId, nonFriendlyPlanetId)))
+          PlanetAttackOrdered(shipId, nonFriendlyPlanetId, instanceId, timestamp)))
 		}
 
 		"colonize vacant planet" in new BuiltShipScope {
@@ -48,7 +48,7 @@ class ShipSpec extends Specification {
 			ship
         .colonize(vacantPlanetId, instanceId, timestamp)
 				.changes must beEqualTo(List(
-          PlanetColonizationOrdered(instanceId, timestamp, shipId, vacantPlanetId)))
+          PlanetColonizationOrdered(shipId, vacantPlanetId, instanceId, timestamp)))
 		}
 
 		"orbit non-hostile planet" in new BuiltShipScope {
@@ -56,7 +56,7 @@ class ShipSpec extends Specification {
 			ship
         .orbit(nonHostilePlanetId, instanceId, timestamp)
 				.changes must beEqualTo(List(
-          PlanetOrbitOrdered(instanceId, timestamp, shipId, nonHostilePlanetId)))
+          PlanetOrbitOrdered(shipId, nonHostilePlanetId, instanceId, timestamp)))
 		}
 
 		"move to star offset" in new BuiltShipScope {
@@ -65,7 +65,7 @@ class ShipSpec extends Specification {
 			ship
         .moveTo(starId, offset, instanceId, timestamp)
 				.changes must beEqualTo(List(
-          ShipCoordinatesOrdered(instanceId, timestamp, shipId, starId, offset)))
+          ShipCoordinatesOrdered(shipId, starId, offset, instanceId, timestamp)))
 		}
 
     "move to star" in new BuiltShipScope {
@@ -73,23 +73,23 @@ class ShipSpec extends Specification {
       ship
         .moveTo(starId, instanceId, timestamp)
         .changes must beEqualTo(List(
-          SolarSystemEntryOrdered(instanceId, timestamp, shipId, starId)))
+          SolarSystemEntryOrdered(shipId, starId, instanceId, timestamp)))
     }
 
     "halt" in new BuiltShipScope {
       ship
         .halt(instanceId, timestamp)
         .changes must beEqualTo(List(
-          ShipHaltOrdered(instanceId, timestamp, shipId)))
+          ShipHaltOrdered(shipId, instanceId, timestamp)))
     }
 
     "decommission" in new BuiltShipScope {
-      val decommissionedEvent = ShipDecommissioned(instanceId, timestamp, shipId)
+      val decommissionedEvent = ShipDecommissioned(shipId, instanceId, timestamp)
       ship
         .decommission(instanceId, timestamp)
         .changes must beEqualTo(List(
           decommissionedEvent,
-          ShipDestroyed(instanceId, timestamp, shipId, decommissionedEvent)))
+          ShipDestroyed(shipId, decommissionedEvent, instanceId, timestamp)))
     }
 	}
 
@@ -104,7 +104,7 @@ class ShipSpec extends Specification {
 	 * Predefined test values for built ships.
 	 */
 	trait BuiltShipScope extends ShipScope {
-		val shipBuildEvent = ShipBuildCommissioned(instanceId, timestamp, PlanetId(UUID.randomUUID), ShipSpecificationId(UUID.randomUUID), shipId)
+		val shipBuildEvent = ShipBuildCommissioned(PlanetId(UUID.randomUUID), ShipSpecificationId(UUID.randomUUID), shipId, instanceId, timestamp)
 		val ship = Ship.finalizeBuild(shipBuildEvent, instanceId, timestamp).markCommitted
 	}
 }

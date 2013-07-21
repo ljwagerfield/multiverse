@@ -1,7 +1,6 @@
 package domain.aggregates
 
 import io.multiverse.domain.aggregates.instance.{UserSignedOut, UserSignedIn, InstanceCreated, Version, Instance, InstanceId}
-import io.multiverse.domain.aggregates.species.SpeciesId
 import io.multiverse.domain.aggregates.user.UserId
 import java.util.UUID
 import org.specs2.mutable.Specification
@@ -16,7 +15,7 @@ class InstanceSpec extends Specification {
       Instance
         .create(instanceId, timestamp, version)
         .changes must beEqualTo(List(
-          InstanceCreated(instanceId, timestamp, version)))
+          InstanceCreated(instanceId, version, timestamp)))
     }
   }
 
@@ -25,7 +24,7 @@ class InstanceSpec extends Specification {
       createdInstance
         .signIn(user, timestamp)
         .changes must beEqualTo(List(
-          UserSignedIn(instanceId, timestamp, user)))
+          UserSignedIn(instanceId, user, timestamp)))
     }
 
     "support superfluous signed-outs" in new CreatedInstanceScope {

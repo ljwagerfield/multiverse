@@ -19,13 +19,13 @@ class PlanetOwnershipSpec extends Specification {
     }
 
     "be colonized by a ship" in new InitializedPlanetOwnershipScope {
-      val colonizationOrder = PlanetColonizationOrdered(instanceId, timestamp, ShipId(UUID.randomUUID), planetId)
-      val invalidColonizationOrder = PlanetColonizationOrdered(instanceId, timestamp, ShipId(UUID.randomUUID), PlanetId(UUID.randomUUID))
+      val colonizationOrder = PlanetColonizationOrdered(ShipId(UUID.randomUUID), planetId, instanceId, timestamp)
+      val invalidColonizationOrder = PlanetColonizationOrdered(ShipId(UUID.randomUUID), PlanetId(UUID.randomUUID), instanceId, timestamp)
 
       planetOwnership
         .colonize(colonizationOrder, instanceId, timestamp)
         .changes must beEqualTo(List(
-          PlanetColonized(instanceId, timestamp, planetId, colonizationOrder)))
+          PlanetColonized(planetId, colonizationOrder, instanceId, timestamp)))
 
       planetOwnership
         .colonize(invalidColonizationOrder, instanceId, timestamp) must throwA[Exception]
@@ -35,7 +35,7 @@ class PlanetOwnershipSpec extends Specification {
       colonizedOwnership
         .abandon(instanceId, timestamp)
         .changes must beEqualTo(List(
-          PlanetAbandoned(instanceId, timestamp, planetId)))
+          PlanetAbandoned(planetId, instanceId, timestamp)))
     }
 
     "support idempotent abandonment" in new ColonizedPlanetOwnershipScope {
@@ -71,7 +71,7 @@ class PlanetOwnershipSpec extends Specification {
    * Predefined test values for colonized planet ownership.
    */
   trait ColonizedPlanetOwnershipScope extends InitializedPlanetOwnershipScope {
-    val colonizationOrder = PlanetColonizationOrdered(instanceId, timestamp, ShipId(UUID.randomUUID), planetId)
+    val colonizationOrder = PlanetColonizationOrdered(ShipId(UUID.randomUUID), planetId, instanceId, timestamp)
     val colonizedOwnership = planetOwnership.colonize(colonizationOrder, instanceId, timestamp).markCommitted
   }
 }

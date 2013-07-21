@@ -23,7 +23,7 @@ case class ShipSpecification private(changes: List[ShipSpecificationEvent])
    * @param event Event representing new head state.
    * @return Species flag background vector with event appended and new state applied.
    */
-  def applyEvent(event: ShipSpecificationEvent): ShipSpecification = unhandled(event)
+  def apply(event: ShipSpecificationEvent): ShipSpecification = unhandledEvent(event)
 }
 
 /**
@@ -39,7 +39,7 @@ object ShipSpecification extends ExplicitAggregateFactory[ShipSpecification, Shi
    * @param name Specification name.
    * @param composition Composition of the specified ship type's component.
    * @param instanceId Instance the event occurred in.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return New ship specification.
    */
   def define(shipSpecificationId:ShipSpecificationId,
@@ -49,16 +49,17 @@ object ShipSpecification extends ExplicitAggregateFactory[ShipSpecification, Shi
              name:ShortAlphanumericName,
              composition:ShipComposition,
              instanceId:InstanceId,
-             timeStamp:Long):ShipSpecification = {
+             timestamp:Long):ShipSpecification = {
     // Note: specification aggregate could validate against size if individual components were represented by value objects.
-    applyEvent(ShipSpecified(instanceId,
-      timeStamp,
+    apply(ShipSpecified(
       shipSpecificationId,
       authorId,
       shipAssetsId,
       size,
       name,
-      composition))
+      composition,
+      instanceId,
+      timestamp))
   }
 
   /**
@@ -66,10 +67,10 @@ object ShipSpecification extends ExplicitAggregateFactory[ShipSpecification, Shi
    * @param event Event representing new head state.
    * @return Species flag background vector with event appended and new state applied.
    */
-  def applyEvent(event: ShipSpecificationEvent):ShipSpecification = {
+  def apply(event: ShipSpecificationEvent):ShipSpecification = {
     event match {
       case event: ShipSpecified => ShipSpecification(Nil :+ event)
-      case event: ShipSpecificationEvent => unhandled(event)
+      case event: ShipSpecificationEvent => unhandledEvent(event)
     }
   }
 }

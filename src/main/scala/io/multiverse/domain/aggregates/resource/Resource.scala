@@ -21,7 +21,7 @@ case class Resource private(changes: List[ResourceEvent])
    * @param event Event representing new head state.
    * @return Resource with event appended and new state applied.
    */
-  def applyEvent(event: ResourceEvent): Resource = unhandled(event)
+  def apply(event: ResourceEvent): Resource = unhandledEvent(event)
 }
 
 /**
@@ -35,7 +35,7 @@ object Resource extends ExplicitAggregateFactory[Resource, ResourceEvent] {
    * @param description Description of the resource's unique attributes.
    * @param abundance Resource abundance, ranging from 0-100.
    * @param instanceId Instance the event occurred in.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return New resource.
    */
   def define(resourceId:ResourceId,
@@ -43,9 +43,9 @@ object Resource extends ExplicitAggregateFactory[Resource, ResourceEvent] {
              description:String,
              abundance:IntegralPercentage,
              instanceId:InstanceId,
-             timeStamp:Long):Resource = {
+             timestamp:Long):Resource = {
     require(description.length >= 100 && description.length <= 150, "Description must be between 100 and 150 characters, inclusive.")
-    applyEvent(ResourceDefined(instanceId, timeStamp, resourceId, name, description, abundance))
+    apply(ResourceDefined(resourceId, name, description, abundance, instanceId, timestamp))
   }
 
   /**
@@ -53,10 +53,10 @@ object Resource extends ExplicitAggregateFactory[Resource, ResourceEvent] {
    * @param event Event representing new head state.
    * @return Resource with event appended and new state applied.
    */
-  def applyEvent(event: ResourceEvent):Resource = {
+  def apply(event: ResourceEvent):Resource = {
     event match {
       case event: ResourceDefined => Resource(Nil :+ event)
-      case event: ResourceEvent => unhandled(event)
+      case event: ResourceEvent => unhandledEvent(event)
     }
   }
 }

@@ -1,11 +1,18 @@
 package io.multiverse.domain.aggregates.user
 
-import io.multiverse.domain.aggregates.instance.InstanceCommand
+import io.multiverse.domain.aggregates.instance.InstanceId
 
 /**
- * Command relating to a registered user within the game.
+ * Command relating to a user of the game.
  */
-trait UserCommand extends InstanceCommand {
+trait UserCommand {
+  /**
+   * Instance invoking the command.
+   */
+  val instanceId: InstanceId
+
+  /**
+   * User the command will be issued against.
+   */
   val userId: UserId
-  val prerequisites: List[User => Boolean]
 }

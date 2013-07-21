@@ -18,7 +18,7 @@ class SpeciesAssetsSpec extends Specification {
       SpeciesAssets
         .define(speciesAssetsId, assetsHash, instanceId, timestamp)
         .changes must beEqualTo(List(
-          SpeciesAssetsDefined(instanceId, timestamp, speciesAssetsId, assetsHash)))
+          SpeciesAssetsDefined(speciesAssetsId, assetsHash, instanceId, timestamp)))
     }
   }
 }

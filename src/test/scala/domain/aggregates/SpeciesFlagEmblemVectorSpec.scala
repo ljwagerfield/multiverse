@@ -18,7 +18,7 @@ class SpeciesFlagEmblemVectorSpec extends Specification {
       SpeciesFlagEmblemVector
         .define(flagEmblemId, vectorHash, instanceId, timestamp)
         .changes must beEqualTo(List(
-          SpeciesFlagEmblemVectorDefined(instanceId, timestamp, flagEmblemId, vectorHash)))
+          SpeciesFlagEmblemVectorDefined(flagEmblemId, vectorHash, instanceId, timestamp)))
     }
   }
 }

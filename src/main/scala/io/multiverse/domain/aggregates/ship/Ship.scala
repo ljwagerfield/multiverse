@@ -23,103 +23,103 @@ case class Ship private(changes: List[ShipEvent], id: ShipId)
    * Orders the ship to attack the specified non-friendly ship.
    * @param shipId Non-friendly ship to attack.
    * @param instanceId Instance invoking the command.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Ship on-course to attack given ship.
    */
   def attack(shipId:ShipId,
              instanceId:InstanceId,
-             timeStamp:Long): Ship = {
+             timestamp:Long): Ship = {
     require(shipId != id, "Attacks must be against another ship.")
-    applyEvent(ShipAttackOrdered(instanceId, timeStamp, id, shipId))
+    apply(ShipAttackOrdered(id, shipId, instanceId, timestamp))
   }
 
   /**
    * Orders the ship to attack the specified non-friendly planet.
    * @param planetId Non-friendly planet to attack.
    * @param instanceId Instance invoking the command.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Ship on-course to attack given planet. Updated planet ownership.
    */
   def attack(planetId:PlanetId,
              instanceId:InstanceId,
-             timeStamp:Long): Ship =
-    applyEvent(PlanetAttackOrdered(instanceId, timeStamp, id, planetId))
+             timestamp:Long): Ship =
+    apply(PlanetAttackOrdered(id, planetId, instanceId, timestamp))
 
   /**
    * Orders the ship to colonize the specified vacant planet.
    * @param planetId Vacant planet to colonize.
    * @param instanceId Instance invoking the command.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Ship on-course to colonize given planet. Updated planet ownership.
    */
   def colonize(planetId:PlanetId,
                instanceId:InstanceId,
-               timeStamp:Long): Ship =
-    applyEvent(PlanetColonizationOrdered(instanceId, timeStamp, id, planetId))
+               timestamp:Long): Ship =
+    apply(PlanetColonizationOrdered(id, planetId, instanceId, timestamp))
 
   /**
    * Orders the ship to orbit the specified non-hostile planet.
    * @param planetId Non-hostile planet to orbit.
    * @param instanceId Instance invoking the command.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Ship on-course to orbit given planet.
    */
   def orbit(planetId:PlanetId,
             instanceId:InstanceId,
-            timeStamp:Long): Ship =
-    applyEvent(PlanetOrbitOrdered(instanceId, timeStamp, id, planetId))
+            timestamp:Long): Ship =
+    apply(PlanetOrbitOrdered(id, planetId, instanceId, timestamp))
 
   /**
    * Orders the ship to an offset in a particular solar system.
    * @param starId Solar system the offset is relative to.
    * @param offset Coordinates the ship should move to.
    * @param instanceId Instance invoking the command.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Ship on-course to given coordinates.
    */
-  def moveTo(starId:StarId, offset:StarOffset, instanceId:InstanceId, timeStamp:Long): Ship = {
-    applyEvent(ShipCoordinatesOrdered(instanceId, timeStamp, id, starId, offset))
+  def moveTo(starId:StarId, offset:StarOffset, instanceId:InstanceId, timestamp:Long): Ship = {
+    apply(ShipCoordinatesOrdered(id, starId, offset, instanceId, timestamp))
   }
 
   /**
    * Orders the ship to orbit the entry wormhole in a particular solar system.
    * @param starId Solar system to enter.
    * @param instanceId Instance invoking the command.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Ship on-course to given solar system.
    */
-  def moveTo(starId:StarId, instanceId:InstanceId, timeStamp:Long): Ship =
-    applyEvent(SolarSystemEntryOrdered(instanceId, timeStamp, id, starId))
+  def moveTo(starId:StarId, instanceId:InstanceId, timestamp:Long): Ship =
+    apply(SolarSystemEntryOrdered(id, starId, instanceId, timestamp))
 
   /**
    * Orders the ship to do nothing.
    * @param instanceId Instance invoking the command.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Halted ship.
    */
-  def halt(instanceId:InstanceId, timeStamp:Long): Ship =
-    applyEvent(ShipHaltOrdered(instanceId, timeStamp, id))
+  def halt(instanceId:InstanceId, timestamp:Long): Ship =
+    apply(ShipHaltOrdered(id, instanceId, timestamp))
 
   /**
    * Orders the ship to self-destruct.
    * @param instanceId Instance invoking the command.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Decommissioned ship.
    */
-  def decommission(instanceId:InstanceId, timeStamp:Long): Ship = {
-    val decommissioned = ShipDecommissioned(instanceId, timeStamp, id)
-    applyEvent(decommissioned).destroy(decommissioned, instanceId, timeStamp)
+  def decommission(instanceId:InstanceId, timestamp:Long): Ship = {
+    val decommissioned = ShipDecommissioned(id, instanceId, timestamp)
+    apply(decommissioned).destroy(decommissioned, instanceId, timestamp)
   }
 
   /**
    * Immediately ends the ship's existence.
    * @param destructionEvent Event resulting in the ship's destruction.
    * @param instanceId Instance invoking the command.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Destroyed ship.
    */
-  def destroy(destructionEvent:ShipEvent, instanceId:InstanceId, timeStamp:Long): Ship = {
-    applyEvent(ShipDestroyed(instanceId, timeStamp, id, destructionEvent))
+  def destroy(destructionEvent:ShipEvent, instanceId:InstanceId, timestamp:Long): Ship = {
+    apply(ShipDestroyed(id, destructionEvent, instanceId, timestamp))
   }
 
   /**
@@ -127,7 +127,7 @@ case class Ship private(changes: List[ShipEvent], id: ShipId)
    * @param event Event representing new head state.
    * @return Ship with event appended and new state applied.
    */
-  def applyEvent(event: ShipEvent):Ship = {
+  def apply(event: ShipEvent):Ship = {
     event match {
       case event:PlanetAttackOrdered => copy(changes = changes :+ event)
       case event:PlanetColonizationOrdered => copy(changes = changes :+ event)
@@ -139,7 +139,7 @@ case class Ship private(changes: List[ShipEvent], id: ShipId)
       case event:ShipDestroyed => copy(changes = changes :+ event)
       case event:ShipHaltOrdered => copy(changes = changes :+ event)
       case event:SolarSystemEntryOrdered => copy(changes = changes :+ event)
-      case event:ShipEvent => unhandled(event)
+      case event:ShipEvent => unhandledEvent(event)
     }
   }
 }
@@ -157,21 +157,21 @@ object Ship extends ExplicitAggregateFactory[Ship, ShipEvent] {
    * Creates a new solar system.
    * @param canonicalEvent Original build event.
    * @param instanceId Instance the event occurred in.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return New ship.
    */
-  def finalizeBuild(canonicalEvent:ShipBuildCommissionedAtPlanet, instanceId:InstanceId, timeStamp:Long):Ship =
-    applyEvent(ShipBuilt(instanceId, timeStamp, canonicalEvent.shipId, canonicalEvent))
+  def finalizeBuild(canonicalEvent:ShipBuildCommissionedAtPlanet, instanceId:InstanceId, timestamp:Long):Ship =
+    apply(ShipBuilt(canonicalEvent.shipId, canonicalEvent, instanceId, timestamp))
 
   /**
    * Applies the given event as the head of the returned aggregate's state.
    * @param event Event representing new head state.
    * @return Aggregate with event appended and new state applied.
    */
-  def applyEvent(event: ShipEvent):Ship = {
+  def apply(event: ShipEvent):Ship = {
     event match {
       case event: ShipBuilt => Ship(Nil :+ event, event.shipId)
-      case event: ShipEvent => unhandled(event)
+      case event: ShipEvent => unhandledEvent(event)
     }
   }
 }

@@ -23,28 +23,29 @@ case class ShipResearch private(changes: List[ShipResearchEvent], speciesId:Spec
    * @param components Component research focus.
    * @param production Production research focus.
    * @param instanceId Instance the event occurred in.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return New ship research.
    */
   def focus(components:ComponentResearchFocus,
             production:ProductionResearchFocus,
             instanceId:InstanceId,
-            timeStamp:Long): ShipResearch =
-    applyEvent(ShipResearchFocused(instanceId,
-      timeStamp,
+            timestamp:Long): ShipResearch =
+    apply(ShipResearchFocused(
       speciesId,
       components,
-      production))
+      production,
+      instanceId,
+      timestamp))
 
   /**
    * Applies the given event as the head of the returned aggregate's state.
    * @param event Event representing new head state.
    * @return Species flag background vector with event appended and new state applied.
    */
-  def applyEvent(event: ShipResearchEvent): ShipResearch = {
+  def apply(event: ShipResearchEvent): ShipResearch = {
     event match {
       case event: ShipResearchFocused => copy(changes = changes :+ event)
-      case event: ShipResearchEvent => unhandled(event)
+      case event: ShipResearchEvent => unhandledEvent(event)
     }
   }
 }

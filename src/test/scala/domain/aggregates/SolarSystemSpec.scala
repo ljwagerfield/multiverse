@@ -21,21 +21,21 @@ class SolarSystemSpec extends Specification {
       SolarSystem
         .create(starId, noNearStars, twoPlanets, instanceId, timestamp)
         .changes must beEqualTo(List(
-          SolarSystemCreated(instanceId, timestamp, starId, noNearStars, twoPlanets)))
+          SolarSystemCreated(starId, noNearStars, twoPlanets, instanceId, timestamp)))
     }
 
     "be creatable in an existing galaxy near 1 star" in new SolarSystemScope {
       SolarSystem
         .create(starId, oneNearStar, twoPlanets, instanceId, timestamp)
         .changes must beEqualTo(List(
-          SolarSystemCreated(instanceId, timestamp, starId, oneNearStar, twoPlanets)))
+          SolarSystemCreated(starId, oneNearStar, twoPlanets, instanceId, timestamp)))
     }
 
     "be creatable in an existing galaxy near up-to 4 stars" in new SolarSystemScope {
       SolarSystem
         .create(starId, fourNearStars, twoPlanets, instanceId, timestamp)
         .changes must beEqualTo(List(
-          SolarSystemCreated(instanceId, timestamp, starId, fourNearStars, twoPlanets)))
+          SolarSystemCreated(starId, fourNearStars, twoPlanets, instanceId, timestamp)))
 
       SolarSystem
         .create(starId, fourNearStars + StarId(UUID.randomUUID), twoPlanets, instanceId, timestamp) must throwA[Exception]
@@ -51,12 +51,12 @@ class SolarSystemSpec extends Specification {
       SolarSystem
         .create(starId, noNearStars, twoPlanets, instanceId, timestamp)
         .changes must beEqualTo(List(
-          SolarSystemCreated(instanceId, timestamp, starId, noNearStars, twoPlanets)))
+          SolarSystemCreated(starId, noNearStars, twoPlanets, instanceId, timestamp)))
 
       SolarSystem
         .create(starId, noNearStars, sixPlanets, instanceId, timestamp)
         .changes must beEqualTo(List(
-          SolarSystemCreated(instanceId, timestamp, starId, noNearStars, sixPlanets)))
+          SolarSystemCreated(starId, noNearStars, sixPlanets, instanceId, timestamp)))
 
       SolarSystem
         .create(starId, noNearStars, sixPlanets + PlanetId(UUID.randomUUID), instanceId, timestamp) must throwA[Exception]
@@ -72,7 +72,7 @@ class SolarSystemSpec extends Specification {
       solarSystem
         .nameStar(firstExplicitName, instanceId, timestamp)
         .changes must beEqualTo(List(
-          StarNamed(instanceId, timestamp, starId, firstExplicitName)))
+          StarNamed(starId, firstExplicitName, instanceId, timestamp)))
     }
 
     "be rename-able" in new ExistingSolarSystemScope {
@@ -82,8 +82,8 @@ class SolarSystemSpec extends Specification {
         .nameStar(firstExplicitName, instanceId, timestamp)
         .nameStar(secondExplicitName, instanceId, timestamp)
         .changes must beEqualTo(List(
-          StarNamed(instanceId, timestamp, starId, firstExplicitName),
-          StarNamed(instanceId, timestamp, starId, secondExplicitName)))
+          StarNamed(starId, firstExplicitName, instanceId, timestamp),
+          StarNamed(starId, secondExplicitName, instanceId, timestamp)))
     }
   }
 
@@ -96,8 +96,8 @@ class SolarSystemSpec extends Specification {
         .nameStar(duplicateName, instanceId, timestamp)
         .resolveDuplicateStarName(conflictingStarId, resolvedName, instanceId, timestamp)
         .changes must beEqualTo(List(
-          StarNamed(instanceId, timestamp, starId, duplicateName),
-          StarNameDuplicateRenamed(instanceId, timestamp, starId, conflictingStarId, resolvedName)))
+          StarNamed(starId, duplicateName, instanceId, timestamp),
+          StarNameDuplicateRenamed(starId, conflictingStarId, resolvedName, instanceId, timestamp)))
     }
   }
 
@@ -107,7 +107,7 @@ class SolarSystemSpec extends Specification {
       solarSystem
         .namePlanet(firstPlanetId, firstPlanetName, instanceId, timestamp)
         .changes must beEqualTo(List(
-          PlanetNamed(instanceId, timestamp, starId, firstPlanetId, firstPlanetName)))
+          PlanetNamed(starId, firstPlanetId, firstPlanetName, instanceId, timestamp)))
     }
 
     "be rename-able" in new NamedFirstPlanetScope {
@@ -115,7 +115,7 @@ class SolarSystemSpec extends Specification {
       solarSystemWithNamedPlanet
         .namePlanet(firstPlanetId, newPlanetName, instanceId, timestamp)
         .changes must beEqualTo(List(
-          PlanetNamed(instanceId, timestamp, starId, firstPlanetId, newPlanetName)))
+          PlanetNamed(starId, firstPlanetId, newPlanetName, instanceId, timestamp)))
     }
 
     "have unique name" in new NamedFirstPlanetScope {

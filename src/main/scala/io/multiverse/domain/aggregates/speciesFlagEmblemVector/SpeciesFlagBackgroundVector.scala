@@ -21,7 +21,7 @@ case class SpeciesFlagEmblemVector private(changes: List[SpeciesFlagEmblemVector
    * @param event Event representing new head state.
    * @return Species flag emblem vector with event appended and new state applied.
    */
-  def applyEvent(event: SpeciesFlagEmblemVectorEvent): SpeciesFlagEmblemVector = unhandled(event)
+  def apply(event: SpeciesFlagEmblemVectorEvent): SpeciesFlagEmblemVector = unhandledEvent(event)
 }
 
 /**
@@ -33,21 +33,21 @@ object SpeciesFlagEmblemVector extends ExplicitAggregateFactory[SpeciesFlagEmble
    * @param speciesFlagEmblemVectorId Unique ID for new species assets.
    * @param hash References the binary assets.
    * @param instanceId Instance the event occurred in.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return New species assets.
    */
-  def define(speciesFlagEmblemVectorId:SpeciesFlagEmblemVectorId, hash:Hash, instanceId:InstanceId, timeStamp:Long):SpeciesFlagEmblemVector =
-    applyEvent(SpeciesFlagEmblemVectorDefined(instanceId, timeStamp, speciesFlagEmblemVectorId, hash))
+  def define(speciesFlagEmblemVectorId:SpeciesFlagEmblemVectorId, hash:Hash, instanceId:InstanceId, timestamp:Long):SpeciesFlagEmblemVector =
+    apply(SpeciesFlagEmblemVectorDefined(speciesFlagEmblemVectorId, hash, instanceId, timestamp))
 
   /**
    * Applies the given event as the head of the returned aggregate's state.
    * @param event Event representing new head state.
    * @return Species flag emblem vector with event appended and new state applied.
    */
-  def applyEvent(event: SpeciesFlagEmblemVectorEvent):SpeciesFlagEmblemVector = {
+  def apply(event: SpeciesFlagEmblemVectorEvent):SpeciesFlagEmblemVector = {
     event match {
       case event: SpeciesFlagEmblemVectorDefined => SpeciesFlagEmblemVector(Nil :+ event)
-      case event: SpeciesFlagEmblemVectorEvent => unhandled(event)
+      case event: SpeciesFlagEmblemVectorEvent => unhandledEvent(event)
     }
   }
 }

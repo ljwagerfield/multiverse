@@ -23,21 +23,21 @@ case class Species private(changes: List[SpeciesEvent], id: SpeciesId)
    * @param conflictingSpeciesId Conflicting species which is keeping its name.
    * @param newName New name for this star.
    * @param instanceId Instance invoking the command.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Solar system with resolved star name.
    */
-  def resolveDuplicateSpeciesName(conflictingSpeciesId:SpeciesId, newName:ShortAlphabeticName, instanceId:InstanceId, timeStamp:Long):Species =
-    applyEvent(SpeciesNameDuplicateRenamed(instanceId, timeStamp, id, conflictingSpeciesId, newName))
+  def resolveDuplicateSpeciesName(conflictingSpeciesId:SpeciesId, newName:ShortAlphabeticName, instanceId:InstanceId, timestamp:Long):Species =
+    apply(SpeciesNameDuplicateRenamed(id, conflictingSpeciesId, newName, instanceId, timestamp))
 
   /**
    * Applies the given event as the head of the returned aggregate's state.
    * @param event Event representing new head state.
    * @return Solar system with event appended and new state applied.
    */
-  def applyEvent(event: SpeciesEvent):Species = {
+  def apply(event: SpeciesEvent):Species = {
     event match {
       case event: SpeciesNameDuplicateRenamed => copy(changes =  changes :+ event)
-      case event: SpeciesEvent => unhandled(event)
+      case event: SpeciesEvent => unhandledEvent(event)
     }
   }
 }
@@ -55,7 +55,7 @@ object Species extends ExplicitAggregateFactory[Species, SpeciesEvent] {
    * @param planetId Planet where the species originate.
    * @param characteristics Attributes which affect the species ability.
    * @param instanceId Instance invoking the command.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Newly evolved species.
    */
   def evolve(speciesId:SpeciesId,
@@ -65,26 +65,26 @@ object Species extends ExplicitAggregateFactory[Species, SpeciesEvent] {
              planetId:PlanetId,
              characteristics:SpeciesCharacteristics,
              instanceId:InstanceId,
-             timeStamp:Long):Species =
-    applyEvent(SpeciesEvolved(
-      instanceId,
-      timeStamp,
+             timestamp:Long):Species =
+    apply(SpeciesEvolved(
       speciesId,
       name,
       flag,
       speciesAssetsId,
       planetId,
-      characteristics))
+      characteristics,
+      instanceId,
+      timestamp))
 
   /**
    * Applies the given event as the head of the returned aggregate's state.
    * @param event Event representing new head state.
    * @return Species with event appended and new state applied.
    */
-  def applyEvent(event: SpeciesEvent):Species = {
+  def apply(event: SpeciesEvent):Species = {
     event match {
       case event: SpeciesEvolved => Species(Nil :+ event, event.speciesId)
-      case event: SpeciesEvent => unhandled(event)
+      case event: SpeciesEvent => unhandledEvent(event)
     }
   }
 }

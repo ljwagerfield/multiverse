@@ -22,7 +22,7 @@ case class ShipAssets private(changes: List[ShipAssetsEvent])
    * @param event Event representing new head state.
    * @return Ship assets with event appended and new state applied.
    */
-  def applyEvent(event: ShipAssetsEvent): ShipAssets = unhandled(event)
+  def apply(event: ShipAssetsEvent): ShipAssets = unhandledEvent(event)
 }
 
 /**
@@ -35,21 +35,21 @@ object ShipAssets extends ExplicitAggregateFactory[ShipAssets, ShipAssetsEvent] 
    * @param size Ship size.
    * @param hash References the binary assets.
    * @param instanceId Instance the event occurred in.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return New ship assets.
    */
-  def define(shipAssetsId:ShipAssetsId, size:ShipSize, hash:Hash, instanceId:InstanceId, timeStamp:Long):ShipAssets =
-    applyEvent(ShipAssetsDefined(instanceId, timeStamp, shipAssetsId, size, hash))
+  def define(shipAssetsId:ShipAssetsId, size:ShipSize, hash:Hash, instanceId:InstanceId, timestamp:Long):ShipAssets =
+    apply(ShipAssetsDefined(shipAssetsId, size, hash, instanceId, timestamp))
 
   /**
    * Applies the given event as the head of the returned aggregate's state.
    * @param event Event representing new head state.
    * @return Ship assets with event appended and new state applied.
    */
-  def applyEvent(event: ShipAssetsEvent):ShipAssets = {
+  def apply(event: ShipAssetsEvent):ShipAssets = {
     event match {
       case event: ShipAssetsDefined => ShipAssets(Nil :+ event)
-      case event: ShipAssetsEvent => unhandled(event)
+      case event: ShipAssetsEvent => unhandledEvent(event)
     }
   }
 }

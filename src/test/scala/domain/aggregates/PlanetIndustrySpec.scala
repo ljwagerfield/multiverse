@@ -25,7 +25,7 @@ class PlanetIndustrySpec extends Specification {
         .init(planetId)
         .buildShip(shipSpecificationId, shipId, instanceId, timestamp)
         .changes must beEqualTo(List(
-          ShipBuildCommissioned(instanceId, timestamp, planetId, shipSpecificationId, shipId)))
+          ShipBuildCommissioned(planetId, shipSpecificationId, shipId, instanceId, timestamp)))
     }
   }
 

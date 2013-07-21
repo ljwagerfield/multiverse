@@ -2,7 +2,7 @@ package domain.collections
 
 import io.multiverse.domain.collections.user.{UserReport, UserCompensationStrategy, DuplicateEmail, UserConflict, UserSet}
 import io.multiverse.domain.aggregates.instance.InstanceId
-import io.multiverse.domain.aggregates.user.{User, UserId}
+import io.multiverse.domain.aggregates.user.{DeduplicateUser, RegisterUser, User, UserId}
 import java.util.UUID
 import org.specs2.specification.Scope
 import common.PersistenceSpecification
@@ -15,45 +15,46 @@ import io.multiverse.domain.aggregates.common.{Hash, Email}
 class UserSpec extends PersistenceSpecification {
   "user collection" should {
     "support registrations" in new UserScope {
-      val userA = User.register(userIdA, userEmailA, password, verificationCode, instanceId, timestamp)
-      val userB = User.register(userIdB, userEmailB, password, verificationCode, instanceId, timestamp)
-      val userC = User.register(userIdC, userEmailC, password, verificationCode, instanceId, timestamp)
+      val userA = RegisterUser(userIdA, userEmailA, password, verificationCode, instanceId, timestamp).evaluation
+      val userB = RegisterUser(userIdB, userEmailB, password, verificationCode, instanceId, timestamp).evaluation
+      val userC = RegisterUser(userIdC, userEmailC, password, verificationCode, instanceId, timestamp).evaluation
 
       applyState(
-        userA.changes ++ userB.changes ++ userC.changes,
+        userA ++ userB ++ userC,
         stores,
-        UserSet.createIn(_)
+        UserSet.createIn
       )
     }
 
     "track email availability" in new UserScope {
-      val userA = User.register(userIdA, userEmailA, password, verificationCode, instanceId, timestamp)
-      val userB = User.register(userIdB, userEmailB, password, verificationCode, instanceId, timestamp)
+      val userA = RegisterUser(userIdA, userEmailA, password, verificationCode, instanceId, timestamp).evaluation
+      val userB = RegisterUser(userIdB, userEmailB, password, verificationCode, instanceId, timestamp).evaluation
 
       verifyState(
-        userA.changes ++ userB.changes,
+        userA ++ userB,
         stores,
-        UserSet.createIn(_),
+        UserSet.createIn,
         store => {
           val userReport = UserReport.getFor(store)
-          userReport.isEmailTaken(userEmailA) must beEqualTo(true)
-          userReport.isEmailTaken(userEmailB) must beEqualTo(true)
-          userReport.isEmailTaken(userEmailC) must beEqualTo(false)
+          userReport isEmailTaken userEmailA must beTrue
+          userReport isEmailTaken userEmailB must beTrue
+          userReport isEmailTaken userEmailC must beFalse
         }
       )
     }
 
     "compensate duplicate emails" in new UserScope {
-      val userA = User.register(userIdA, userEmailA, password, verificationCode, instanceId, timestamp)
-      val userB = User.register(userIdB, userEmailA, password, verificationCode, instanceId, timestamp)
-      val userC = User.register(userIdC, userEmailA, password, verificationCode, instanceId, timestamp)
+      val userA = RegisterUser(userIdA, userEmailA, password, verificationCode, instanceId, timestamp).evaluation
+      val userB = RegisterUser(userIdB, userEmailA, password, verificationCode, instanceId, timestamp).evaluation
+      val userC = RegisterUser(userIdC, userEmailA, password, verificationCode, instanceId, timestamp).evaluation
 
-      verifyConflicts(
-        userA.changes ++ userB.changes ++ userC.changes,
-        List[UserConflict](DuplicateEmail(userIdB), DuplicateEmail(userIdC)),
+      verifyCompensation(
+        userA ++ userB ++ userC,
         stores,
-        UserSet.createIn(_),
-        UserCompensationStrategy.instance
+        UserSet.createIn,
+        UserCompensationStrategy.instance,
+        List[UserConflict](DuplicateEmail(userIdB), DuplicateEmail(userIdC)),
+        List(DeduplicateUser(userIdB, userIdA, instanceId, timestamp), DeduplicateUser(userIdC, userIdA, instanceId, timestamp))
       )
     }
   }

@@ -15,14 +15,14 @@ class SystemSpec extends Specification {
       newSystem
         .pauseGame(pauseMessage, instanceId, timestamp)
         .changes must beEqualTo(List(
-          GamePaused(instanceId, timestamp, systemId, pauseMessage)))
+          GamePaused(systemId, pauseMessage, instanceId, timestamp)))
     }
 
     "support superfluous resuming" in new SystemScope {
       newSystem
         .resumeGame(instanceId, timestamp)
         .changes must beEqualTo(List(
-          GameResumed(instanceId, timestamp, systemId)))
+          GameResumed(systemId, instanceId, timestamp)))
     }
   }
 
@@ -31,7 +31,7 @@ class SystemSpec extends Specification {
       pausedSystem
         .resumeGame(instanceId, timestamp)
         .changes must beEqualTo(List(
-          GameResumed(instanceId, timestamp, systemId)))
+          GameResumed(systemId, instanceId, timestamp)))
     }
 
     "support idempotent pausing" in new PausedSystemScope {
@@ -39,7 +39,7 @@ class SystemSpec extends Specification {
       pausedSystem
         .pauseGame(updatedPauseMessage, instanceId, timestamp)
         .changes must beEqualTo(List(
-          GamePaused(instanceId, timestamp, systemId, updatedPauseMessage)))
+          GamePaused(systemId, updatedPauseMessage, instanceId, timestamp)))
     }
   }
 

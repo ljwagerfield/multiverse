@@ -23,26 +23,26 @@ case class PlanetOwnership private(changes: List[PlanetOwnershipEvent], planetId
    * Sets the given species as the new owners of this planet. Any existing species are overthrown.
    * @param colonizationOrder Order which invoked the inbound ship.
    * @param instanceId Instance invoking the command.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Aggregate with inbound ship.
    */
-  def colonize(colonizationOrder: PlanetColonizationOrdered, instanceId:InstanceId, timeStamp:Long):PlanetOwnership = {
+  def colonize(colonizationOrder: PlanetColonizationOrdered, instanceId:InstanceId, timestamp:Long):PlanetOwnership = {
     require(colonizationOrder.planetId == planetId, "Ship colonization order must correspond to the planet represented by this aggregate.")
-    applyEvent(PlanetColonized(instanceId, timeStamp, planetId, colonizationOrder))
+    apply(PlanetColonized(planetId, colonizationOrder, instanceId, timestamp))
   }
 
   /**
    * Abandons the current inhabitants from the planet.
    * @param instanceId Instance invoking this command.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Aggregate with no inhabitants.
    */
-  def abandon(instanceId:InstanceId, timeStamp:Long): PlanetOwnership = {
+  def abandon(instanceId:InstanceId, timestamp:Long): PlanetOwnership = {
     if (isVacant) {
       this
     }
     else {
-      applyEvent(PlanetAbandoned(instanceId, timeStamp, planetId))
+      apply(PlanetAbandoned(planetId, instanceId, timestamp))
     }
   }
 
@@ -51,11 +51,11 @@ case class PlanetOwnership private(changes: List[PlanetOwnershipEvent], planetId
    * @param event Event representing new head state.
    * @return Aggregate with event appended and new state applied.
    */
-  def applyEvent(event: PlanetOwnershipEvent): PlanetOwnership = {
+  def apply(event: PlanetOwnershipEvent): PlanetOwnership = {
     event match {
       case event:PlanetColonized => copy(changes = changes :+ event, isVacant = false)
       case event:PlanetAbandoned => copy(changes = changes :+ event, isVacant = true)
-      case event:PlanetOwnershipEvent => unhandled(event)
+      case event:PlanetOwnershipEvent => unhandledEvent(event)
     }
   }
 }

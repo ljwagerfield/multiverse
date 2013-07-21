@@ -1,3 +1,7 @@
+# Refactor event inheritance so InstanceEvent is not inherited by other aggregate events
+
+# Refactor parameter order of commands and events so metadata appears last
+
 # Add unit tests
 
 # Add validation to aggregate roots

@@ -21,7 +21,7 @@ case class SpeciesAssets private(changes: List[SpeciesAssetsEvent])
    * @param event Event representing new head state.
    * @return Species assets with event appended and new state applied.
    */
-  def applyEvent(event: SpeciesAssetsEvent): SpeciesAssets = unhandled(event)
+  def apply(event: SpeciesAssetsEvent): SpeciesAssets = unhandledEvent(event)
 }
 
 /**
@@ -33,21 +33,21 @@ object SpeciesAssets extends ExplicitAggregateFactory[SpeciesAssets, SpeciesAsse
    * @param speciesAssetsId Unique ID for new species assets.
    * @param hash References the binary assets.
    * @param instanceId Instance the event occurred in.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return New species assets.
    */
-  def define(speciesAssetsId:SpeciesAssetsId, hash:Hash, instanceId:InstanceId, timeStamp:Long):SpeciesAssets =
-    applyEvent(SpeciesAssetsDefined(instanceId, timeStamp, speciesAssetsId, hash))
+  def define(speciesAssetsId:SpeciesAssetsId, hash:Hash, instanceId:InstanceId, timestamp:Long):SpeciesAssets =
+    apply(SpeciesAssetsDefined(speciesAssetsId, hash, instanceId, timestamp))
 
   /**
    * Applies the given event as the head of the returned aggregate's state.
    * @param event Event representing new head state.
    * @return Species assets with event appended and new state applied.
    */
-  def applyEvent(event: SpeciesAssetsEvent):SpeciesAssets = {
+  def apply(event: SpeciesAssetsEvent):SpeciesAssets = {
     event match {
       case event: SpeciesAssetsDefined => SpeciesAssets(Nil :+ event)
-      case event: SpeciesAssetsEvent => unhandled(event)
+      case event: SpeciesAssetsEvent => unhandledEvent(event)
     }
   }
 }

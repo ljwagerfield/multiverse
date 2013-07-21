@@ -5,28 +5,28 @@ import io.multiverse.domain.aggregates.common.{Email, Hash}
 
 /**
  * New user registered to play the game.
- * @param instanceId Instance the event occurred in.
- * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
  * @param userId Unique new user ID.
  * @param email Unique point of contact.
  * @param password Account password specified by user.
  * @param emailVerificationCode Code sent to provided email. Must be submitted back to application to verify the account.
+ * @param instanceId Instance the event occurred in.
+ * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
  */
-case class UserRegistered(instanceId: InstanceId, timeStamp: Long, userId: UserId, email: Email, password: Hash, emailVerificationCode: Hash) extends UserEvent
+case class UserRegistered(userId: UserId, email: Email, password: Hash, emailVerificationCode: Hash, instanceId: InstanceId, timestamp: Long) extends UserEvent
 
 /**
  * User verified their email by submitting a code which matched the one persisted in their registration event.
- * @param instanceId Instance the event occurred in.
- * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
  * @param userId User being verified.
+ * @param instanceId Instance the event occurred in.
+ * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
  */
-case class UserEmailVerified(instanceId: InstanceId, timeStamp: Long, userId: UserId) extends UserEvent
+case class UserEmailVerified(userId: UserId, instanceId: InstanceId, timestamp: Long) extends UserEvent
 
 /**
  * User was recognised as being a duplicate of another existing user. All future events will reference the canonical user.
  * @param instanceId Instance the event occurred in.
- * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+ * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
  * @param userId User being deduplicated.
  * @param canonicalUserId Canonical user the deduplicate is being removed for
  */
-case class UserDeduplicated(instanceId: InstanceId, timeStamp: Long, userId: UserId, canonicalUserId: UserId) extends UserEvent
+case class UserDeduplicated(userId: UserId, canonicalUserId: UserId, instanceId: InstanceId, timestamp: Long) extends UserEvent

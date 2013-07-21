@@ -28,7 +28,7 @@ class ShipSpecificationSpec extends Specification {
 			ShipSpecification
         .define(shipSpecificationId, speciesId, shipAssetsId, size, name, composition, instanceId, timestamp)
 				.changes must beEqualTo(List(
-          ShipSpecified(instanceId, timestamp, shipSpecificationId, speciesId, shipAssetsId, size, name, composition)))
+          ShipSpecified(shipSpecificationId, speciesId, shipAssetsId, size, name, composition, instanceId, timestamp)))
 		}
 	}
 

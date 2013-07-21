@@ -20,7 +20,7 @@ class SpeciesSpec extends Specification {
       Species
         .evolve(speciesId, name, flag, speciesAssetsId, planetId, characteristics, instanceId, timestamp)
         .changes must beEqualTo(List(
-          SpeciesEvolved(instanceId, timestamp, speciesId, name, flag, speciesAssetsId, planetId, characteristics)))
+          SpeciesEvolved(speciesId, name, flag, speciesAssetsId, planetId, characteristics, instanceId, timestamp)))
     }
   }
 
@@ -31,7 +31,7 @@ class SpeciesSpec extends Specification {
       species
         .resolveDuplicateSpeciesName(conflictingSpeciesId, newName, instanceId, timestamp)
         .changes must beEqualTo(List(
-          SpeciesNameDuplicateRenamed(instanceId, timestamp, speciesId, conflictingSpeciesId, newName)))
+          SpeciesNameDuplicateRenamed(speciesId, conflictingSpeciesId, newName, instanceId, timestamp)))
     }
   }
 

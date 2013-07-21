@@ -25,11 +25,11 @@ case class PlanetIndustry private(changes: List[PlanetIndustryEvent], planetId:P
    * @param shipSpecificationId Specification the new ship will be based on.
    * @param shipId Unique ID for the new ship.
    * @param instanceId Instance invoking this command.
-   * @param timeStamp Milliseconds elapsed since midnight 1970-01-01 UTC.
+   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
    * @return Aggregate with new ship build commissioned.
    */
-  def buildShip(shipSpecificationId:ShipSpecificationId, shipId:ShipId, instanceId:InstanceId, timeStamp:Long): PlanetIndustry =
-    applyEvent(ShipBuildCommissioned(instanceId, timeStamp, planetId, shipSpecificationId, shipId))
+  def buildShip(shipSpecificationId:ShipSpecificationId, shipId:ShipId, instanceId:InstanceId, timestamp:Long): PlanetIndustry =
+    apply(ShipBuildCommissioned(planetId, shipSpecificationId, shipId, instanceId, timestamp))
 
 
   /**
@@ -37,10 +37,10 @@ case class PlanetIndustry private(changes: List[PlanetIndustryEvent], planetId:P
    * @param event Event representing new head state.
    * @return Aggregate with event appended and new state applied.
    */
-  def applyEvent(event: PlanetIndustryEvent): PlanetIndustry = {
+  def apply(event: PlanetIndustryEvent): PlanetIndustry = {
     event match {
       case event:ShipBuildCommissioned => copy(changes = changes :+ event)
-      case event:PlanetIndustryEvent => unhandled(event)
+      case event:PlanetIndustryEvent => unhandledEvent(event)
     }
   }
 }
