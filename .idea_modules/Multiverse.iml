@@ -4,8 +4,8 @@
     <facet type="scala" name="Scala">
       <configuration>
         <option name="compilerLibraryLevel" value="Project" />
-        <option name="compilerLibraryName" value="SBT: scala:2.10.1" />
-        <option name="compilerOptions" value="-unchecked -deprecation" />
+        <option name="compilerLibraryName" value="SBT: scala:2.10.2" />
+        <option name="compilerOptions" value="-feature" />
         <option name="deprecationWarnings" value="true" />
         <option name="fsc" value="true" />
         <option name="uncheckedWarnings" value="true" />
@@ -27,14 +27,35 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="SBT: org.scala-lang:scala-library:2.10.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.scala-lang:scala-library:2.10.3:test" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-lang:scala-library:2.10.2" level="project" />
     <orderEntry type="library" name="SBT: commons-validator:commons-validator:1.4.0" level="project" />
     <orderEntry type="library" name="SBT: commons-beanutils:commons-beanutils:1.8.3" level="project" />
     <orderEntry type="library" name="SBT: commons-logging:commons-logging:1.1.1" level="project" />
     <orderEntry type="library" name="SBT: commons-digester:commons-digester:1.8" level="project" />
+    <orderEntry type="library" name="SBT: commons-io:commons-io:1.3.2" level="project" />
     <orderEntry type="library" name="SBT: commons-codec:commons-codec:1.8" level="project" />
-    <orderEntry type="library" scope="TEST" name="SBT: org.specs2:specs2_2.10:1.12.3:test" level="project" />
-    <orderEntry type="library" scope="TEST" name="SBT: org.specs2:specs2-scalaz-core_2.10.0-RC3:6.0.1:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.specs2:specs2_2.10:2.3.4:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.scala-lang:scala-compiler:2.10.3:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.scala-lang:scala-reflect:2.10.3:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.hamcrest:hamcrest-core:1.3:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.mockito:mockito-core:1.9.5:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.objenesis:objenesis:1.0:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.scalacheck:scalacheck_2.10:1.11.0:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.scala-sbt:test-interface:1.0:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: junit:junit:4.11:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.pegdown:pegdown:1.2.1:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.parboiled:parboiled-java:1.1.4:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.parboiled:parboiled-core:1.1.4:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.ow2.asm:asm:4.1:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.ow2.asm:asm-tree:4.1:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.ow2.asm:asm-analysis:4.1:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.ow2.asm:asm-util:4.1:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.specs2:classycle:1.4.1:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: com.chuusai:shapeless_2.10.2:2.0.0-M1:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.scalaz:scalaz-core_2.10:7.0.4:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.scalaz:scalaz-concurrent_2.10:7.0.4:test" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.scalaz:scalaz-effect_2.10:7.0.4:test" level="project" />
   </component>
 </module>
 

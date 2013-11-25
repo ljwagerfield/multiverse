@@ -2,147 +2,195 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20706842-5430-49ce-99d8-77a47d4b410c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/CommandPrerequisite.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/scala/common/CommandSpecification.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/CommandTarget.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/ConditionalTailCommand.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/ConstantCommand.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/ConstantTailCommand.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/DeduplicateUser.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/DynamicCommand.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/HeadCommand.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Lawrence.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/RegisterUser.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/TailCommand.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/UnconditionalCommand.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/UnconditionalTailCommand.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/VerifyUserEmail.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/compensation/DuplicateEmailCompensationStrategy.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/UserConflicts.scala" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dictionaries/Lawrence.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/EventSourced.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/UserRepository.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/user/DuplicateEmailCompensationStrategy.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/user/UserConflicts.scala" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/AggregateFactory.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/AggregateFactory.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/AggregateRoot.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/AggregateRoot.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/Blob.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/values/Blob.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/CommandPrerequisite.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/CommandPrerequisite.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/CommandTarget.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/CommandTarget.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/ConditionalTailCommand.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/ConditionalTailCommand.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/ConstantCommand.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/ConstantCommand.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/ConstantTailCommand.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/ConstantTailCommand.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/DynamicCommand.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/DynamicCommand.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/Email.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/values/Email.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/Entity.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/Entity.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/ExplicitAggregateFactory.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/ExplicitAggregateFactory.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/Hash.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/values/Hash.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/HeadCommand.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/HeadCommand.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/ImplicitAggregateFactory.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/ImplicitAggregateFactory.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/IntegralPercentage.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/values/IntegralPercentage.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/ShortAlphabeticName.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/values/ShortAlphabeticName.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/ShortAlphanumericName.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/values/ShortAlphanumericName.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/TailCommand.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/TailCommand.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/UnconditionalCommand.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/UnconditionalCommand.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/UnconditionalTailCommand.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/UnconditionalTailCommand.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/instance/Instance.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/Instance.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/instance/InstanceCommand.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/InstanceCommand.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/instance/InstanceEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/InstanceEvent.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/instance/InstanceEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/InstanceEvents.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/instance/InstanceId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/InstanceId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/instance/Version.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/Version.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetIndustry/PlanetIndustry.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/planetIndustry/PlanetIndustry.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetIndustry/PlanetIndustryEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/planetIndustry/PlanetIndustryEvent.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetIndustry/PlanetIndustryEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/planetIndustry/PlanetIndustryEvents.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetOwnership/PlanetOwnership.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/planetOwnership/PlanetOwnership.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetOwnership/PlanetOwnershipEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/planetOwnership/PlanetOwnershipEvent.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetOwnership/PlanetOwnershipEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/planetOwnership/PlanetOwnershipEvents.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/resource/Resource.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/resource/Resource.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/resource/ResourceEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/resource/ResourceEvent.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/resource/ResourceEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/resource/ResourceEvents.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/resource/ResourceId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/resource/ResourceId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/ship/Ship.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/ship/Ship.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/ship/ShipEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/ship/ShipEvent.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/ship/ShipEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/ship/ShipEvents.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/ship/ShipId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/ship/ShipId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/ship/StarOffset.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/ship/StarOffset.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipAssets/ShipAssets.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipAssets/ShipAssets.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipAssets/ShipAssetsEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipAssets/ShipAssetsEvent.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipAssets/ShipAssetsEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipAssets/ShipAssetsEvents.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipAssets/ShipAssetsId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipAssets/ShipAssetsId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/ArmourId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipResearch/ArmourId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/ColonizingUnitId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipResearch/ColonizingUnitId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/ComponentResearchFocus.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipResearch/ComponentResearchFocus.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/EngineId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipResearch/EngineId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/ProductionResearchFocus.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipResearch/ProductionResearchFocus.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/ShieldId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipResearch/ShieldId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/ShipResearch.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipResearch/ShipResearch.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/ShipResearchEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipResearch/ShipResearchEvent.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/ShipResearchEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipResearch/ShipResearchEvents.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/WeaponId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipResearch/WeaponId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipSpecification/QuantifiedColonizingUnitId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipSpecification/QuantifiedColonizingUnitId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipSpecification/QuantifiedWeaponId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipSpecification/QuantifiedWeaponId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipSpecification/ShipComposition.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipSpecification/ShipComposition.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipSpecification/ShipSize.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipSpecification/ShipSize.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipSpecification/ShipSpecification.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipSpecification/ShipSpecification.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipSpecification/ShipSpecificationEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipSpecification/ShipSpecificationEvent.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipSpecification/ShipSpecificationEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipSpecification/ShipSpecificationEvents.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipSpecification/ShipSpecificationId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/shipSpecification/ShipSpecificationId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/solarSystem/PlanetId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/solarSystem/PlanetId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/solarSystem/SolarSystem.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/solarSystem/SolarSystem.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/solarSystem/SolarSystemEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/solarSystem/SolarSystemEvent.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/solarSystem/SolarSystemEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/solarSystem/SolarSystemEvents.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/solarSystem/StarId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/solarSystem/StarId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/BonusResourceDependency.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/species/BonusResourceDependency.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/ResourceDependency.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/species/ResourceDependency.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/Species.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/species/Species.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/SpeciesBonus.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/species/SpeciesBonus.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/SpeciesCharacteristics.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/species/SpeciesCharacteristics.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/SpeciesEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/species/SpeciesEvent.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/SpeciesEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/species/SpeciesEvents.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/SpeciesFlag.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/species/SpeciesFlag.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/SpeciesId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/species/SpeciesId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesAssets/SpeciesAssets.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesAssets/SpeciesAssets.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesAssets/SpeciesAssetsEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesAssets/SpeciesAssetsEvent.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesAssets/SpeciesAssetsEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesAssets/SpeciesAssetsEvents.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesAssets/SpeciesAssetsId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesAssets/SpeciesAssetsId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagBackgroundVector/SpeciesFlagBackgroundVector.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesFlagBackgroundVector/SpeciesFlagBackgroundVector.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorEvent.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorEvents.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagEmblemVector/SpeciesFlagBackgroundVector.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesFlagEmblemVector/SpeciesFlagBackgroundVector.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagEmblemVector/SpeciesFlagEmblemVectorEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesFlagEmblemVector/SpeciesFlagEmblemVectorEvent.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagEmblemVector/SpeciesFlagEmblemVectorEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesFlagEmblemVector/SpeciesFlagEmblemVectorEvents.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagEmblemVector/SpeciesFlagEmblemVectorId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesFlagEmblemVector/SpeciesFlagEmblemVectorId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/system/System.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/system/System.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/system/SystemEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/system/SystemEvent.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/system/SystemEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/system/SystemEvents.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/system/SystemId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/system/SystemId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/DeduplicateUser.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/commands/DeduplicateUser.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/RegisterUser.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/commands/RegisterUser.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/User.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/User.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/UserCommand.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/UserCommand.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/UserEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/UserEvent.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/UserEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/UserEvents.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/UserId.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/UserId.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/VerifyUserEmail.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/commands/VerifyUserEmail.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/common/AggregateCompensationStrategy.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/AggregateCompensationStrategy.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/common/CompensationStrategy.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/CompensationStrategy.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/common/PersistedSet.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/PersistedSet.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/common/VolatilePersistedSet.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/VolatilePersistedSet.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/instance/FSInstancePaths.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/collections/FSInstancePaths.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/instance/FSInstanceReport.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/collections/FSInstanceReport.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/instance/FSInstanceSet.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/collections/FSInstanceSet.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/instance/GAEInstanceReport.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/collections/GAEInstanceReport.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/instance/GAEInstanceSet.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/collections/GAEInstanceSet.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/instance/InstanceReport.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/collections/InstanceReport.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/instance/InstanceSet.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/collections/InstanceSet.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/user/FSUserPaths.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/collections/FSUserPaths.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/user/FSUserReport.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/collections/FSUserReport.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/user/FSUserSet.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/collections/FSUserSet.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/user/GAEUserReport.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/collections/GAEUserReport.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/user/GAEUserSet.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/collections/GAEUserSet.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/user/UserCompensationStrategy.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/UserCompensationStrategy.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/user/UserConflict.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/UserConflict.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/user/UserReport.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/collections/UserReport.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/user/UserSet.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/collections/UserSet.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/common/CommandSpecification.scala" afterPath="$PROJECT_DIR$/src/test/scala/baseSpecifications/CommandSpecification.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/common/InstanceScope.scala" afterPath="$PROJECT_DIR$/src/test/scala/baseSpecifications/InstanceScope.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/common/PersistenceSpecification.scala" afterPath="$PROJECT_DIR$/src/test/scala/baseSpecifications/PersistenceSpecification.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/InstanceSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/InstanceSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/PlanetIndustrySpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/PlanetIndustrySpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/PlanetOwnershipSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/PlanetOwnershipSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/ResourceSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/ResourceSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/ShipAssetsSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/ShipAssetsSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/ShipResearchSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/ShipResearchSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/ShipSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/ShipSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/ShipSpecificationSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/ShipSpecificationSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SolarSystemSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/SolarSystemSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SpeciesAssetsSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/SpeciesAssetsSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SpeciesFlagBackgroundVectorSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/SpeciesFlagBackgroundVectorSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SpeciesFlagEmblemVectorSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/SpeciesFlagEmblemVectorSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SpeciesSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/SpeciesSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SystemSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/SystemSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/UserSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/UserSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/common/EmailSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/common/values/EmailSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/common/HashSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/common/values/HashSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/common/IntegralPercentageSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/common/values/IntegralPercentageSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/common/ShortAlphabeticNameSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/common/values/ShortAlphabeticNameSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/common/ShortAlphanumericNameSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/common/values/ShortAlphanumericNameSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/collections/InstanceSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/InstanceCollectionSpec.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/scala/domain/collections/UserSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/model/UserCollectionSpec.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/common/AggregateCompensationStrategy.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/common/AggregateCompensationStrategy.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/AggregateFactory.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/AggregateFactory.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/AggregateRoot.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/AggregateRoot.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/Architecture Notes.md" afterPath="$PROJECT_DIR$/docs/Architecture Notes.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/0.0/Backlog.md" afterPath="$PROJECT_DIR$/docs/0.0/Backlog.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/common/CompensationStrategy.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/common/CompensationStrategy.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/0.0/Completed.md" afterPath="$PROJECT_DIR$/docs/0.0/Completed.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/user/DuplicateEmailCompensationStrategy.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/user/DuplicateEmailCompensationStrategy.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/EventSourced.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/EventSourced.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/ExplicitAggregateFactory.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/ExplicitAggregateFactory.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/learning/GIT &amp; SBT.md" afterPath="$PROJECT_DIR$/docs/learning/GIT &amp; SBT.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/ImplicitAggregateFactory.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/common/ImplicitAggregateFactory.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/instance/Instance.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/instance/Instance.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/instance/InstanceCommand.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/instance/InstanceCommand.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/instance/InstanceEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/instance/InstanceEvent.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/instance/InstanceEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/instance/InstanceEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/InstanceSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/aggregates/InstanceSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/IdeaProject.iml" afterPath="$PROJECT_DIR$/.idea/IdeaProject.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea_modules/Multiverse-build.iml" afterPath="$PROJECT_DIR$/.idea_modules/Multiverse-build.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea_modules/Multiverse.iml" afterPath="$PROJECT_DIR$/.idea_modules/Multiverse.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/common/PersistenceSpecification.scala" afterPath="$PROJECT_DIR$/src/test/scala/common/PersistenceSpecification.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetIndustry/PlanetIndustry.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetIndustry/PlanetIndustry.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetIndustry/PlanetIndustryEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetIndustry/PlanetIndustryEvent.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetIndustry/PlanetIndustryEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetIndustry/PlanetIndustryEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/PlanetIndustrySpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/aggregates/PlanetIndustrySpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetOwnership/PlanetOwnership.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetOwnership/PlanetOwnership.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetOwnership/PlanetOwnershipEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetOwnership/PlanetOwnershipEvent.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetOwnership/PlanetOwnershipEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetOwnership/PlanetOwnershipEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/PlanetOwnershipSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/aggregates/PlanetOwnershipSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/resource/Resource.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/resource/Resource.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/resource/ResourceEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/resource/ResourceEvent.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/resource/ResourceEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/resource/ResourceEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/ResourceSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/aggregates/ResourceSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/ship/Ship.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/ship/Ship.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipAssets/ShipAssets.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipAssets/ShipAssets.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipAssets/ShipAssetsEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipAssets/ShipAssetsEvent.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipAssets/ShipAssetsEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipAssets/ShipAssetsEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/ShipAssetsSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/aggregates/ShipAssetsSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/ship/ShipEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/ship/ShipEvent.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/ship/ShipEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/ship/ShipEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/ShipResearch.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/ShipResearch.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/ShipResearchEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/ShipResearchEvent.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/ShipResearchEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/ShipResearchEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/ShipResearchSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/aggregates/ShipResearchSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/ShipSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/aggregates/ShipSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipSpecification/ShipSpecification.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipSpecification/ShipSpecification.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipSpecification/ShipSpecificationEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipSpecification/ShipSpecificationEvent.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipSpecification/ShipSpecificationEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipSpecification/ShipSpecificationEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/ShipSpecificationSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/aggregates/ShipSpecificationSpec.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/application/SimpleIO.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/application/SimpleIO.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/solarSystem/SolarSystem.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/solarSystem/SolarSystem.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/solarSystem/SolarSystemEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/solarSystem/SolarSystemEvent.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/solarSystem/SolarSystemEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/solarSystem/SolarSystemEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SolarSystemSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SolarSystemSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/Species.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/Species.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesAssets/SpeciesAssets.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesAssets/SpeciesAssets.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesAssets/SpeciesAssetsEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesAssets/SpeciesAssetsEvent.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesAssets/SpeciesAssetsEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesAssets/SpeciesAssetsEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SpeciesAssetsSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SpeciesAssetsSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/SpeciesEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/SpeciesEvent.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/SpeciesEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/SpeciesEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagBackgroundVector/SpeciesFlagBackgroundVector.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagBackgroundVector/SpeciesFlagBackgroundVector.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagEmblemVector/SpeciesFlagBackgroundVector.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagEmblemVector/SpeciesFlagBackgroundVector.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorEvent.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SpeciesFlagBackgroundVectorSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SpeciesFlagBackgroundVectorSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagEmblemVector/SpeciesFlagEmblemVectorEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagEmblemVector/SpeciesFlagEmblemVectorEvent.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagEmblemVector/SpeciesFlagEmblemVectorEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagEmblemVector/SpeciesFlagEmblemVectorEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SpeciesFlagEmblemVectorSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SpeciesFlagEmblemVectorSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SpeciesSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SpeciesSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/system/System.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/system/System.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/system/SystemEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/system/SystemEvent.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/system/SystemEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/system/SystemEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SystemSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/aggregates/SystemSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/User.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/User.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/UserCommand.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/UserCommand.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/user/UserCompensationStrategy.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/collections/user/UserCompensationStrategy.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/UserEvent.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/UserEvent.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/UserEvents.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/UserEvents.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/domain/aggregates/UserSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/aggregates/UserSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/domain/collections/UserSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/domain/collections/UserSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scala_settings.xml" afterPath="$PROJECT_DIR$/.idea/scala_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/io/multiverse/application/SolarSystemService.scala" afterPath="$PROJECT_DIR$/src/main/scala/io/multiverse/application/SolarSystemService.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/build.properties" afterPath="$PROJECT_DIR$/project/build.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.sbt" afterPath="$PROJECT_DIR$/build.sbt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/plugins.sbt" afterPath="$PROJECT_DIR$/project/plugins.sbt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Multiverse.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374261704404" ignored="false" />
-    <file path="/SBT" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374441174983" ignored="false" />
-    <file path="/Instance.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374262927455" ignored="false" />
-    <file path="/PlanetIndustry.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374262985260" ignored="false" />
-    <file path="/PlanetOwnership.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374263036859" ignored="false" />
-    <file path="/Resource.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374263065237" ignored="false" />
-    <file path="/a.dummy" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374263099556" ignored="false" />
-    <file path="/Command Architecture.md" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374322099969" ignored="false" />
-    <file path="/ConstantCommand.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374322563870" ignored="false" />
-    <file path="/ConstantTailCommand.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374343206279" ignored="false" />
-    <file path="/Architecture Notes.md" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374323311859" ignored="false" />
-    <file path="/HeadCommand.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374323525026" ignored="false" />
-    <file path="/ConditionalTailCommand.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374325109199" ignored="false" />
-    <file path="/UnconditionalTailCommand.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374325092714" ignored="false" />
-    <file path="/AggregateFactory.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374325128263" ignored="false" />
-    <file path="/RegisterUser.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374422803809" ignored="false" />
-    <file path="/ConditionalUserTailCommand.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374327872519" ignored="false" />
-    <file path="/DeduplicateUser.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374327954209" ignored="false" />
-    <file path="/DynamicCommand.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374329831156" ignored="false" />
-    <file path="/Backlog.md" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374333571465" ignored="false" />
-    <file path="/AggregateCompensationStrategy.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374335913074" ignored="false" />
-    <file path="/CompensationStrategy.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374335897424" ignored="false" />
-    <file path="/UserCompensationStrategy.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374337815406" ignored="false" />
-    <file path="/DuplicateEmailCompensationStrategy.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374440564272" ignored="false" />
-    <file path="/PersistenceSpecification.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374343081411" ignored="false" />
-    <file path="/UserSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374424338078" ignored="false" />
-    <file path="/CommandSpecification.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374415676905" ignored="false" />
-    <file path="/ShipSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374343946996" ignored="false" />
-    <file path="/PlanetIndustryEvent.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374440658782" ignored="false" />
-    <file path="/ResourceEvent.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374440715491" ignored="false" />
-    <file path="/ShipEvent.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374440744280" ignored="false" />
-    <file path="/ShipAssetsEvent.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374440765024" ignored="false" />
-    <file path="/ShipResearchEvent.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374440800408" ignored="false" />
-    <file path="/InstanceEvent.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374440878237" ignored="false" />
-    <file path="/ShipSpecificationEvent.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374440942957" ignored="false" />
-    <file path="/SolarSystemEvent.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374440973836" ignored="false" />
-    <file path="/SpeciesAssetsEvent.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374441051001" ignored="false" />
-    <file path="/SpeciesFlagBackgroundVectorEvent.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374441069137" ignored="false" />
-    <file path="/SpeciesFlagEmblemVectorEvent.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374441083470" ignored="false" />
-    <file path="/SystemEvent.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374441098691" ignored="false" />
-    <file path="/GIT &amp; SBT.md" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1374441449573" ignored="false" />
+    <file path="/Dummy.txt" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385336372076" ignored="false" />
+    <file path="/EventSourced.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385319629647" ignored="false" />
+    <file path="/ExplicitAggregateFactory.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385322843539" ignored="false" />
+    <file path="/AggregateCompensationStrategy.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385321927723" ignored="false" />
+    <file path="/AggregateFactory.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385321962174" ignored="false" />
+    <file path="/CompensationStrategy.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385321981460" ignored="false" />
+    <file path="/ImplicitAggregateFactory.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385322000361" ignored="false" />
+    <file path="/CommandConversions.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385409139685" ignored="false" />
+    <file path="/DynamicCommand.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385322127765" ignored="false" />
+    <file path="/SBT" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385409333597" ignored="false" />
+    <file path="/TailCommand.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385408933544" ignored="false" />
+    <file path="/Instance.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385322809783" ignored="false" />
+    <file path="/Resource.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385322949972" ignored="false" />
+    <file path="/User.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385323206168" ignored="false" />
+    <file path="/CommandSpecification.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385409509556" ignored="false" />
+    <file path="/UserSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385323322532" ignored="false" />
+    <file path="/InstanceSpec.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385409251249" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../Catapult/TheLab/RDF Visualization/Sources/rdfVisualization/.idea/workspace.xml" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385328351314" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../Catapult/TheLab/RDF Visualization/Sources/rdfVisualization/src/main/scala/org/catapult/futurecities/data/visualisation/VisualizationApplication.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385328347475" ignored="false" />
+    <file path="/VisualizationApplication.scala" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385328347475" ignored="false" />
+    <file path="/.gitignore" changelist="20706842-5430-49ce-99d8-77a47d4b410c" time="1385409902232" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +205,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -194,6 +241,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -203,91 +251,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="InstanceSpec.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/domain/model/InstanceSpec.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="18" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="GIT &amp; SBT.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/learning/GIT &amp; SBT.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="127" selection-start="165" selection-end="165" vertical-scroll-proportion="0.083606556">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShipResearchEvent.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/ShipResearchEvent.scala">
+      <file leaf-file-name="Instance.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/Instance.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="24" selection-start="270" selection-end="425" vertical-scroll-proportion="0.0">
+            <state line="11" column="11" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpeciesEvent.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/SpeciesEvent.scala">
+      <file leaf-file-name="CommandSpecification.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/baseSpecifications/CommandSpecification.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0">
+            <state line="34" column="16" selection-start="1280" selection-end="1280" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpeciesAssetsEvent.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesAssets/SpeciesAssetsEvent.scala">
+      <file leaf-file-name="AggregateRoot.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/AggregateRoot.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="19" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0">
+            <state line="7" column="62" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpeciesFlagEmblemVectorEvent.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagEmblemVector/SpeciesFlagEmblemVectorEvent.scala">
+      <file leaf-file-name="CommandConversions.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/CommandConversions.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+            <state line="33" column="26" selection-start="1187" selection-end="1187" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SystemEvent.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/system/SystemEvent.scala">
+      <file leaf-file-name="TailCommand.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/TailCommand.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="207" selection-end="281" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserEvent.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/UserEvent.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Backlog.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/0.0/Backlog.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="28" selection-start="242" selection-end="242" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Completed.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/0.0/Completed.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="88" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpeciesFlagBackgroundVectorEvent.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorEvent.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="11" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0">
+            <state line="7" column="3" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -311,22 +332,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetOwnership/PlanetOwnershipEvent.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/resource/ResourceEvent.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/ship/ShipEvent.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipAssets/ShipAssetsEvent.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/ShipResearchEvent.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipSpecification/ShipSpecificationEvent.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/solarSystem/SolarSystemEvent.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/SpeciesEvent.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesAssets/SpeciesAssetsEvent.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorEvent.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagEmblemVector/SpeciesFlagEmblemVectorEvent.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/system/SystemEvent.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/UserEvent.scala" />
-        <option value="$PROJECT_DIR$/docs/0.0/Backlog.md" />
-        <option value="$PROJECT_DIR$/docs/0.0/Completed.md" />
-        <option value="$PROJECT_DIR$/docs/learning/GIT &amp; SBT.md" />
+        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesFlagBackgroundVector/SpeciesFlagBackgroundVector.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/speciesFlagEmblemVector/SpeciesFlagBackgroundVector.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/system/System.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/user/User.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/baseSpecifications/PersistenceSpecification.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/domain/model/UserSpec.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/AggregateRoot.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/EventSource.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/TailCommand.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/ConditionalTailCommand.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/ConstantTailCommand.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/UnconditionalTailCommand.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/CommandConversions.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/baseSpecifications/CommandSpecification.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/domain/model/InstanceSpec.scala" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -334,8 +355,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1366" />
-    <option name="height" value="768" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -348,7 +369,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="2" />
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -359,11 +380,10 @@
       <hideEmptyPackages />
       <abbreviatePackageNames />
       <autoscrollToSource />
-      <autoscrollFromSource ProjectPane="true" />
+      <autoscrollFromSource ProjectPane="false" />
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -376,452 +396,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Multiverse" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="collections" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aggregates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="collections" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="collections" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserConflicts.scala" />
-              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="collections" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserCompensationStrategy.scala" />
-              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="collections" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="collections" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aggregates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aggregates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aggregates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="multiverse" />
@@ -874,24 +448,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="multiverse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="docs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="0.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -926,20 +482,23 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="preferences.customizations" />
+    <property name="options.splitter.main.proportions" value="0.16908212" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Scala" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
@@ -1012,15 +571,17 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="WS: Temp.sc" type="WorksheetRunConfiguration" factoryName="Worksheet" temporary="true">
+    <configuration default="false" name="WS: Experiments.sc" type="WorksheetRunConfiguration" factoryName="Worksheet" temporary="true">
       <module name="Multiverse" />
       <setting name="vmparams4" value="-Djline.terminal=NONE" />
       <setting name="worksheetOptions" value="" />
-      <setting name="workingDirectory" value="$PROJECT_DIR$" />
-      <setting name="worksheetField" value="$PROJECT_DIR$/docs/worksheets/Temp.sc" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$/docs/learning/" />
+      <setting name="worksheetField" value="$PROJECT_DIR$/docs/learning/Experiments.sc" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
+      <method>
+        <option name="Make" enabled="false" />
+      </method>
     </configuration>
     <configuration default="true" type="ScalaScriptConsoleRunConfiguration" factoryName="Scala Console">
       <module name="" />
@@ -1037,6 +598,14 @@
       <setting name="worksheetField" value="" />
       <method />
     </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
     <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
       <module name="" />
       <setting name="path" value="" />
@@ -1048,14 +617,6 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -1085,11 +646,23 @@
       <envs />
       <method />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Scala Console.Scala Console" />
-      <item index="1" class="java.lang.String" itemvalue="Specs2.UserModelSpec" />
-      <item index="2" class="java.lang.String" itemvalue="Specs2.acceptance.InstanceModelSpec::support sign-ins" />
-      <item index="3" class="java.lang.String" itemvalue="Worksheet.WS: Temp.sc" />
+    <configuration default="false" name="Console" type="ScalaScriptConsoleRunConfiguration" factoryName="Scala Console">
+      <module name="Multiverse" />
+      <setting name="vmparams4" value="-Djline.terminal=NONE" />
+      <setting name="consoleArgs" value="-usejavacp" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="Make" enabled="false" />
+      </method>
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Scala Console.Console" />
+      <item index="1" class="java.lang.String" itemvalue="Scala Console.Scala Console" />
+      <item index="2" class="java.lang.String" itemvalue="Specs2.UserModelSpec" />
+      <item index="3" class="java.lang.String" itemvalue="Specs2.acceptance.InstanceModelSpec::support sign-ins" />
+      <item index="4" class="java.lang.String" itemvalue="Worksheet.WS: Experiments.sc" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -1143,34 +716,44 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="768" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32169577" sideWeight="0.49969825" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33731344" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6686567" sideWeight="0.49924242" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915967" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38656718" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21907061" sideWeight="0.42662475" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985073" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32805756" sideWeight="0.49969825" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985073" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21818182" sideWeight="0.3313433" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.49969825" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="96" y="73" width="1488" height="881" />
+      <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34413967" sideWeight="0.49924242" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23147495" sideWeight="0.67830426" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915967" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21907061" sideWeight="0.42662475" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38656718" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867885" sideWeight="0.49969825" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985073" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="96" y="73" width="1488" height="881" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33291772" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.md" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USERS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1237,116 +820,112 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/planetOwnership/PlanetOwnershipEvent.scala">
+    <entry file="file://$PROJECT_DIR$/src/test/scala/domain/model/UserSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="5" selection-start="328" selection-end="328" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#57#115#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="83" column="28" selection-start="3264" selection-end="3264" vertical-scroll-proportion="0.73161036" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/resource/ResourceEvent.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/EventSource.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="5" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0">
+        <state line="22" column="0" selection-start="698" selection-end="698" vertical-scroll-proportion="0.42635658">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipSpecification/ShipSpecificationEvent.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/AggregateRoot.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="23" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0">
+        <state line="7" column="62" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/solarSystem/SolarSystemEvent.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/TailCommand.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="17" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0">
+        <state line="7" column="3" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/ship/ShipEvent.scala">
+    <entry file="file://$PROJECT_DIR$/src/test/scala/domain/model/InstanceCollectionSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="5" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0">
+        <state line="21" column="18" selection-start="895" selection-end="895" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipAssets/ShipAssetsEvent.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/UnconditionalTailCommand.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="5" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
+        <state line="11" column="84" selection-start="467" selection-end="467" vertical-scroll-proportion="0.34375">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/shipResearch/ShipResearchEvent.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/ConstantTailCommand.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="24" selection-start="270" selection-end="425" vertical-scroll-proportion="0.0">
+        <state line="9" column="103" selection-start="382" selection-end="382" vertical-scroll-proportion="0.27383366">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/species/SpeciesEvent.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/ConditionalTailCommand.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0">
+        <state line="11" column="52" selection-start="438" selection-end="438" vertical-scroll-proportion="0.31976745">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagBackgroundVector/SpeciesFlagBackgroundVectorEvent.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/CommandConversions.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="11" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0">
+        <state line="33" column="26" selection-start="1187" selection-end="1187" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesAssets/SpeciesAssetsEvent.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/common/commands/HeadCommand.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="19" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0">
+        <state line="10" column="6" selection-start="314" selection-end="314" vertical-scroll-proportion="0.30425963">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/speciesFlagEmblemVector/SpeciesFlagEmblemVectorEvent.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/commands/CreateInstance.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+        <state line="12" column="34" selection-start="637" selection-end="637" vertical-scroll-proportion="0.31976745">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/system/SystemEvent.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/model/instance/Instance.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="207" selection-end="281" vertical-scroll-proportion="0.0">
+        <state line="11" column="11" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/io/multiverse/domain/aggregates/user/UserEvent.scala">
+    <entry file="file://$PROJECT_DIR$/src/test/scala/baseSpecifications/CommandSpecification.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0">
+        <state line="34" column="16" selection-start="1280" selection-end="1280" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/0.0/Completed.md">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="88" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0">
+        <state line="19" column="28" selection-start="180" selection-end="180" vertical-scroll-proportion="0.379494">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/0.0/Backlog.md">
+    <entry file="file://$PROJECT_DIR$/src/test/scala/domain/model/InstanceSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="28" selection-start="242" selection-end="242" vertical-scroll-proportion="0.0">
+        <state line="25" column="18" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/learning/GIT &amp; SBT.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="127" selection-start="165" selection-end="165" vertical-scroll-proportion="0.083606556">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1368,7 +947,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Scala</last-edited>
+          <last-edited>Scala (Multiverse)|Scala</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1408,6 +987,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.4" />
               </list>
             </option>
           </splitter-proportions>

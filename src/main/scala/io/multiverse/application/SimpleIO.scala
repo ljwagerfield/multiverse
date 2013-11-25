@@ -2,9 +2,10 @@ package io.multiverse.application
 
 import io.multiverse.application.Loan._
 import scala.language.implicitConversions
-import java.io.{OutputStreamWriter, FileOutputStream}
+import java.io.{File, OutputStreamWriter, FileOutputStream}
 
 object SimpleIO {
+
   /**
    * Converts the given string into content.
    * @param content String to convert into content.
@@ -17,6 +18,7 @@ object SimpleIO {
    * @param content String content.
    */
   class StringContent(content: String) {
+
     /**
      * Atomically writes the given content to the specified file. Any existing content is cleared before the write.
      * @param filePath File to write to.
@@ -29,6 +31,21 @@ object SimpleIO {
           writer.write(content)
         })
       })
+    }
+
+    /**
+     * Atomically writes the given content to the specified file only if it does not already exist.
+     * @param filePath File to write to.
+     * @return True if file was written, otherwise false if already exists
+     */
+    def saveToNew(filePath: String): Boolean = {
+      if (new File(filePath).createNewFile()) {
+        saveTo(filePath)
+        true
+      }
+      else {
+        false
+      }
     }
   }
 }

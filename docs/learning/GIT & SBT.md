@@ -1,3 +1,11 @@
+# New IDEA projects
+
+1. Add the following line to project/plugins.sbt:
+
+addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.5.0-SNAPSHOT")
+
+2. Run the following SBT update code. Bare in mind this requires SBT to be installed on your machine, as you'll need to run this outside of the IDE (as the project won't be loadable by IDEA at this point!)
+
 # SBT
 
 ## Adding library dependencies
@@ -20,3 +28,11 @@ The following commands must be issued to SBT once the dependency has been added:
 - git add . (Stages all modified or new files which are not ignored. Modified & new, not deleted.)
 - git add -u (Stages all modified or deleted files. Modified & deleted, not new.)
 - git add -A (Stages all modified, new and deleted files.)
+
+# New repository
+
+git init
+git add .
+git commit -m 'message'
+git remote add origin <url>
+git push -u origin master
