@@ -1,6 +1,8 @@
 package domain.model
 
-import _root_.baseSpecifications.InstanceScope
+import baseSpecifications.CommandCombinators.{aggregateToTestChain, staticCommandToTestChain}
+import baseSpecifications.InstanceScope
+import io.multiverse.domain.model.planetIndustry.commands.BuildShip
 import io.multiverse.domain.model.planetIndustry.{ShipBuildCommissioned, PlanetIndustry}
 import io.multiverse.domain.model.ship.ShipId
 import io.multiverse.domain.model.shipSpecification.ShipSpecificationId
@@ -14,18 +16,16 @@ import org.specs2.mutable.Specification
 class PlanetIndustrySpec extends Specification {
   "planet industry" should {
     "be initialized" in new PlanetIndustryScope {
-      PlanetIndustry.init(planetId)
-        .changes must beEmpty
+      (PlanetIndustry(planetId)
+        yields Nil)
     }
 
     "build ships" in new PlanetIndustryScope {
       var shipSpecificationId = ShipSpecificationId(UUID.randomUUID)
       val shipId = ShipId(UUID.randomUUID)
-      PlanetIndustry
-        .init(planetId)
-        .buildShip(shipSpecificationId, shipId, instanceId, timestamp)
-        .changes must beEqualTo(List(
-          ShipBuildCommissioned(planetId, shipSpecificationId, shipId, instanceId, timestamp)))
+
+      (BuildShip(planetId, shipSpecificationId, shipId, instanceId, timestamp)
+        yields ShipBuildCommissioned(planetId, shipSpecificationId, shipId, instanceId, timestamp))
     }
   }
 

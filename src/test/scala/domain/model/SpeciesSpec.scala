@@ -1,6 +1,8 @@
 package domain.model
 
-import _root_.baseSpecifications.InstanceScope
+import baseSpecifications.CommandCombinators.{chainToTestChain, headCommandToTestChain}
+import baseSpecifications.InstanceScope
+import io.multiverse.domain.model.common.commands.CommandCombinators.headCommandToChain
 import io.multiverse.domain.model.resource.ResourceId
 import io.multiverse.domain.model.solarSystem.PlanetId
 import io.multiverse.domain.model.species._
@@ -10,6 +12,8 @@ import io.multiverse.domain.model.speciesFlagEmblemVector.SpeciesFlagEmblemVecto
 import java.util.UUID
 import org.specs2.mutable.Specification
 import io.multiverse.domain.model.common.values.ShortAlphabeticName
+import io.multiverse.domain.model.species.commands.{ResolveDuplicateSpeciesName, Evolve}
+import io.multiverse.domain.model.common.commands.Commit
 
 /**
  * Species specification.
@@ -17,10 +21,8 @@ import io.multiverse.domain.model.common.values.ShortAlphabeticName
 class SpeciesSpec extends Specification {
   "species" should {
     "be evolved" in new SpeciesScope {
-      Species
-        .evolve(speciesId, name, flag, speciesAssetsId, planetId, characteristics, instanceId, timestamp)
-        .changes must beEqualTo(List(
-          SpeciesEvolved(speciesId, name, flag, speciesAssetsId, planetId, characteristics, instanceId, timestamp)))
+      (Evolve(speciesId, name, flag, speciesAssetsId, planetId, characteristics, instanceId, timestamp)
+        yields SpeciesEvolved(speciesId, name, flag, speciesAssetsId, planetId, characteristics, instanceId, timestamp))
     }
   }
 
@@ -28,10 +30,9 @@ class SpeciesSpec extends Specification {
     "be resolved" in new EvolvedSpeciesScope {
       val conflictingSpeciesId = SpeciesId(UUID.randomUUID)
       val newName = ShortAlphabeticName("Martian")
-      species
-        .resolveDuplicateSpeciesName(conflictingSpeciesId, newName, instanceId, timestamp)
-        .changes must beEqualTo(List(
-          SpeciesNameDuplicateRenamed(speciesId, conflictingSpeciesId, newName, instanceId, timestamp)))
+      (species
+        after ResolveDuplicateSpeciesName(speciesId, conflictingSpeciesId, newName, instanceId, timestamp)
+        yields SpeciesNameDuplicateRenamed(speciesId, conflictingSpeciesId, newName, instanceId, timestamp))
     }
   }
 
@@ -56,6 +57,6 @@ class SpeciesSpec extends Specification {
    * Predefined test values for evolved species.
    */
   trait EvolvedSpeciesScope extends SpeciesScope {
-    val species = Species.evolve(speciesId, name, flag, speciesAssetsId, planetId, characteristics, instanceId, timestamp).markCommitted
+    val species = Evolve(speciesId, name, flag, speciesAssetsId, planetId, characteristics, instanceId, timestamp) after Commit()
   }
 }

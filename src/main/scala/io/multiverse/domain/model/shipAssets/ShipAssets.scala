@@ -1,56 +1,36 @@
 package io.multiverse.domain.model.shipAssets
 
-import io.multiverse.domain.model.instance.InstanceId
-import io.multiverse.domain.model.shipSpecification.ShipSize
-import io.multiverse.domain.model.common.{ExplicitAggregateFactory, AggregateRoot}
-import io.multiverse.domain.model.common.values.Hash
+import io.multiverse.domain.model.common.{Entity, Aggregate, AggregateRootBase, ExplicitAggregateFactory}
 
 /**
  * Binary media assets for a particular type of ship.
  * @param changes Events pending commitment.
  */
-case class ShipAssets private(changes: List[ShipAssetsEvent])
-  extends AggregateRoot[ShipAssets, ShipAssetsEvent] {
+case class ShipAssets private(changes: List[ShipAssetsEvent], id: ShipAssetsId)
+  extends AggregateRootBase[ShipAssets, ShipAssetsEvent] with Aggregate[ShipAssets] with Entity[ShipAssetsId] {
 
   /**
-   * Processes uncommitted events.
-   * @return Aggregate with no uncommitted events.
+   * State after committing to the changes.
    */
-  def markCommitted: ShipAssets = copy(changes = Nil)
-
-  /**
-   * Applies the given event as the head of the returned aggregate's state.
-   * @param event Event representing new head state.
-   * @return Ship assets with event appended and new state applied.
-   */
-  def apply(event: ShipAssetsEvent): ShipAssets = unhandledEvent(event)
+  lazy val committed: Aggregate[ShipAssets] = copy(changes = Nil)
 }
 
 /**
  * Ship assets factory.
  */
-object ShipAssets extends ExplicitAggregateFactory[ShipAssets, ShipAssetsEvent] {
-  /**
-   * Defines new binary assets for use in ship specifications.
-   * @param shipAssetsId Unique ID for new ship assets.
-   * @param size Ship size.
-   * @param hash References the binary assets.
-   * @param instanceId Instance the event occurred in.
-   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
-   * @return New ship assets.
-   */
-  def define(shipAssetsId:ShipAssetsId, size:ShipSize, hash:Hash, instanceId:InstanceId, timestamp:Long):ShipAssets =
-    apply(ShipAssetsDefined(shipAssetsId, size, hash, instanceId, timestamp))
+object ShipAssets extends ExplicitAggregateFactory[ShipAssets] {
 
   /**
-   * Applies the given event as the head of the returned aggregate's state.
-   * @param event Event representing new head state.
-   * @return Ship assets with event appended and new state applied.
+   * Creates a new instance of the aggregate from the given creation event.
+   * @param event Creation event.
+   * @return Aggregate.
    */
-  def apply(event: ShipAssetsEvent):ShipAssets = {
-    event match {
-      case event: ShipAssetsDefined => ShipAssets(Nil :+ event)
-      case event: ShipAssetsEvent => unhandledEvent(event)
-    }
+  def apply(event: ShipAssetsDefined): Aggregate[ShipAssets] = evaluate(event)
+
+  /**
+   * Evaluates the event's creational effect by outputting a new aggregate instance.
+   */
+  val evaluate: PartialFunction[ShipAssetsEvent, Aggregate[ShipAssets]] = {
+    case event: ShipAssetsDefined => ShipAssets(Nil :+ event, event.shipAssetsId)
   }
 }

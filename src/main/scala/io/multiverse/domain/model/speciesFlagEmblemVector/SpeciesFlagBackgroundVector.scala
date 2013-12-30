@@ -1,54 +1,37 @@
 package io.multiverse.domain.model.speciesFlagEmblemVector
 
-import io.multiverse.domain.model.instance.InstanceId
-import io.multiverse.domain.model.common.{ExplicitAggregateFactory, AggregateRoot}
-import io.multiverse.domain.model.common.values.Hash
+import io.multiverse.domain.model.common.{Entity, Aggregate, AggregateRootBase, ExplicitAggregateFactory}
 
 /**
  * Binary media assets for the emblem of a species flag.
  * @param changes Events pending commitment.
  */
-case class SpeciesFlagEmblemVector private(changes: List[SpeciesFlagEmblemVectorEvent])
-  extends AggregateRoot[SpeciesFlagEmblemVector, SpeciesFlagEmblemVectorEvent] {
+case class SpeciesFlagEmblemVector private(changes: List[SpeciesFlagEmblemVectorEvent], id: SpeciesFlagEmblemVectorId)
+  extends AggregateRootBase[SpeciesFlagEmblemVector, SpeciesFlagEmblemVectorEvent]
+  with Aggregate[SpeciesFlagEmblemVector] with Entity[SpeciesFlagEmblemVectorId] {
 
   /**
-   * Processes uncommitted events.
-   * @return Aggregate with no uncommitted events.
+   * State after committing to the changes.
    */
-  def markCommitted: SpeciesFlagEmblemVector = copy(changes = Nil)
-
-  /**
-   * Applies the given event as the head of the returned aggregate's state.
-   * @param event Event representing new head state.
-   * @return Species flag emblem vector with event appended and new state applied.
-   */
-  def apply(event: SpeciesFlagEmblemVectorEvent): SpeciesFlagEmblemVector = unhandledEvent(event)
+  lazy val committed: Aggregate[SpeciesFlagEmblemVector] = copy(changes = Nil)
 }
 
 /**
  * Species flag emblem vector factory.
  */
-object SpeciesFlagEmblemVector extends ExplicitAggregateFactory[SpeciesFlagEmblemVector, SpeciesFlagEmblemVectorEvent] {
-  /**
-   * Defines new binary assets for use in the emblems for species flags.
-   * @param speciesFlagEmblemVectorId Unique ID for new species assets.
-   * @param hash References the binary assets.
-   * @param instanceId Instance the event occurred in.
-   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
-   * @return New species assets.
-   */
-  def define(speciesFlagEmblemVectorId:SpeciesFlagEmblemVectorId, hash:Hash, instanceId:InstanceId, timestamp:Long):SpeciesFlagEmblemVector =
-    apply(SpeciesFlagEmblemVectorDefined(speciesFlagEmblemVectorId, hash, instanceId, timestamp))
+object SpeciesFlagEmblemVector extends ExplicitAggregateFactory[SpeciesFlagEmblemVector] {
 
   /**
-   * Applies the given event as the head of the returned aggregate's state.
-   * @param event Event representing new head state.
-   * @return Species flag emblem vector with event appended and new state applied.
+   * Creates a new instance of the aggregate from the given creation event.
+   * @param event Creation event.
+   * @return Aggregate.
    */
-  def apply(event: SpeciesFlagEmblemVectorEvent):SpeciesFlagEmblemVector = {
-    event match {
-      case event: SpeciesFlagEmblemVectorDefined => SpeciesFlagEmblemVector(Nil :+ event)
-      case event: SpeciesFlagEmblemVectorEvent => unhandledEvent(event)
-    }
+  def apply(event: SpeciesFlagEmblemVectorDefined): Aggregate[SpeciesFlagEmblemVector] = evaluate(event)
+
+  /**
+   * Evaluates the event's creational effect by outputting a new aggregate instance.
+   */
+  val evaluate: PartialFunction[SpeciesFlagEmblemVector#Event, Aggregate[SpeciesFlagEmblemVector]] = {
+    case event: SpeciesFlagEmblemVectorDefined => SpeciesFlagEmblemVector(Nil :+ event, event.speciesFlagEmblemVectorId)
   }
 }

@@ -1,6 +1,8 @@
 package domain.model
 
-import _root_.baseSpecifications.InstanceScope
+import baseSpecifications.CommandCombinators.headCommandToTestChain
+import baseSpecifications.InstanceScope
+import io.multiverse.domain.model.common.values.ShortAlphanumericName
 import io.multiverse.domain.model.shipAssets.ShipAssetsId
 import io.multiverse.domain.model.shipResearch.ArmourId
 import io.multiverse.domain.model.shipResearch.ColonizingUnitId
@@ -11,13 +13,12 @@ import io.multiverse.domain.model.shipSpecification.QuantifiedColonizingUnitId
 import io.multiverse.domain.model.shipSpecification.QuantifiedWeaponId
 import io.multiverse.domain.model.shipSpecification.ShipComposition
 import io.multiverse.domain.model.shipSpecification.ShipSize
-import io.multiverse.domain.model.shipSpecification.ShipSpecification
 import io.multiverse.domain.model.shipSpecification.ShipSpecificationId
 import io.multiverse.domain.model.shipSpecification.ShipSpecified
+import io.multiverse.domain.model.shipSpecification.commands.DefineShipSpecification
 import io.multiverse.domain.model.species.SpeciesId
 import java.util.UUID
 import org.specs2.mutable.Specification
-import io.multiverse.domain.model.common.values.ShortAlphanumericName
 
 /**
  * Ship specification specification.
@@ -25,10 +26,8 @@ import io.multiverse.domain.model.common.values.ShortAlphanumericName
 class ShipSpecificationSpec extends Specification {
 	"ship specification" should {
 		"be defined" in new ShipSpecificationScope {
-			ShipSpecification
-        .define(shipSpecificationId, speciesId, shipAssetsId, size, name, composition, instanceId, timestamp)
-				.changes must beEqualTo(List(
-          ShipSpecified(shipSpecificationId, speciesId, shipAssetsId, size, name, composition, instanceId, timestamp)))
+      (DefineShipSpecification(shipSpecificationId, speciesId, shipAssetsId, size, name, composition, instanceId, timestamp)
+				yields ShipSpecified(shipSpecificationId, speciesId, shipAssetsId, size, name, composition, instanceId, timestamp))
 		}
 	}
 

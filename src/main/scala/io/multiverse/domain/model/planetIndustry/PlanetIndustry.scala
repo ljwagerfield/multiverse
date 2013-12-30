@@ -1,10 +1,7 @@
 package io.multiverse.domain.model.planetIndustry
 
-import io.multiverse.domain.model.shipSpecification.ShipSpecificationId
-import io.multiverse.domain.model.ship.ShipId
-import io.multiverse.domain.model.instance.InstanceId
+import io.multiverse.domain.model.common.{Aggregate, AggregateRootBase, ImplicitAggregateFactory}
 import io.multiverse.domain.model.solarSystem.PlanetId
-import io.multiverse.domain.model.common.{ImplicitAggregateFactory, AggregateRoot}
 
 /**
  * Industry for a particular planet.
@@ -12,49 +9,32 @@ import io.multiverse.domain.model.common.{ImplicitAggregateFactory, AggregateRoo
  * @param planetId Planet whose industry this is.
  */
 case class PlanetIndustry private(changes: List[PlanetIndustryEvent], planetId:PlanetId)
-  extends AggregateRoot[PlanetIndustry, PlanetIndustryEvent] {
+  extends AggregateRootBase[PlanetIndustry, PlanetIndustryEvent] with Aggregate[PlanetIndustry] {
 
   /**
-   * Processes uncommitted events.
-   * @return Aggregate with no uncommitted events.
+   * State after committing to the changes.
    */
-  def markCommitted: PlanetIndustry = copy(changes = Nil)
+  lazy val committed: Aggregate[PlanetIndustry] = copy(changes = Nil)
 
   /**
-   * Commissions a new ship build.
-   * @param shipSpecificationId Specification the new ship will be based on.
-   * @param shipId Unique ID for the new ship.
-   * @param instanceId Instance invoking this command.
-   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
-   * @return Aggregate with new ship build commissioned.
+   * Evaluates the event's effects by applying any changes to the new resulting instance.
    */
-  def buildShip(shipSpecificationId:ShipSpecificationId, shipId:ShipId, instanceId:InstanceId, timestamp:Long): PlanetIndustry =
-    apply(ShipBuildCommissioned(planetId, shipSpecificationId, shipId, instanceId, timestamp))
-
-
-  /**
-   * Applies the given event as the head of the returned aggregate's state.
-   * @param event Event representing new head state.
-   * @return Aggregate with event appended and new state applied.
-   */
-  def apply(event: PlanetIndustryEvent): PlanetIndustry = {
-    event match {
-      case event:ShipBuildCommissioned => copy(changes = changes :+ event)
-      case event:PlanetIndustryEvent => unhandledEvent(event)
-    }
+  override val evaluate: PartialFunction[PlanetIndustry#Event, Aggregate[PlanetIndustry]] = {
+    case event:ShipBuildCommissioned => copy(changes = changes :+ event)
   }
 }
 
 /**
  * Planet industry factory.
  */
-object PlanetIndustry extends ImplicitAggregateFactory[PlanetIndustry, PlanetIndustryEvent] {
+object PlanetIndustry extends ImplicitAggregateFactory[PlanetIndustry] {
+
   /**
    * Initializes industry for the given planet.
    * @param planetId Planet whose industry this is.
    * @return Aggregate representing the initialized planet industry.
    */
-  def init(planetId:PlanetId):PlanetIndustry =
+  def apply(planetId: PlanetId): Aggregate[PlanetIndustry] =
     PlanetIndustry(Nil, planetId)
 
   /**
@@ -62,5 +42,6 @@ object PlanetIndustry extends ImplicitAggregateFactory[PlanetIndustry, PlanetInd
    * @param initialEvent Initial event in the aggregate's history.
    * @return Prototypical instance.
    */
-  def getPrototype(initialEvent: PlanetIndustryEvent): PlanetIndustry = init(initialEvent.planetId)
+  def getPrototype(initialEvent: PlanetIndustryEvent): Aggregate[PlanetIndustry] =
+    PlanetIndustry(initialEvent.planetId)
 }

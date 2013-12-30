@@ -1,10 +1,12 @@
 package domain.model
 
-import _root_.baseSpecifications.InstanceScope
-import io.multiverse.domain.model.speciesAssets.{SpeciesAssetsDefined, SpeciesAssets, SpeciesAssetsId}
+import baseSpecifications.CommandCombinators.headCommandToTestChain
+import baseSpecifications.InstanceScope
+import io.multiverse.domain.model.common.values.Hash
+import io.multiverse.domain.model.speciesAssets.commands.DefineSpeciesAssets
+import io.multiverse.domain.model.speciesAssets.{SpeciesAssetsDefined, SpeciesAssetsId}
 import java.util.UUID
 import org.specs2.mutable.Specification
-import io.multiverse.domain.model.common.values.Hash
 
 /**
  * Species flag background vector specification.
@@ -15,10 +17,8 @@ class SpeciesAssetsSpec extends Specification {
       val speciesAssetsId = SpeciesAssetsId(UUID.randomUUID())
       val assetsHash = Hash.empty
 
-      SpeciesAssets
-        .define(speciesAssetsId, assetsHash, instanceId, timestamp)
-        .changes must beEqualTo(List(
-          SpeciesAssetsDefined(speciesAssetsId, assetsHash, instanceId, timestamp)))
+      (DefineSpeciesAssets(speciesAssetsId, assetsHash, instanceId, timestamp)
+        yields SpeciesAssetsDefined(speciesAssetsId, assetsHash, instanceId, timestamp))
     }
   }
 }

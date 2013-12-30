@@ -1,9 +1,10 @@
 package io.multiverse.domain.model.user.commands
 
-import io.multiverse.domain.model.instance.InstanceId
-import io.multiverse.domain.model.user.{UserRegistered, UserEvent, User, UserCommand, UserId}
-import io.multiverse.domain.model.common.values.{Hash, Email}
 import io.multiverse.domain.model.common.commands.HeadCommand
+import io.multiverse.domain.model.common.values.{Hash, Email}
+import io.multiverse.domain.model.instance.InstanceId
+import io.multiverse.domain.model.user.{UserRegistered, User, UserCommand, UserId}
+import io.multiverse.domain.model.common.Aggregate
 
 /**
  * Creates a new user.
@@ -19,22 +20,11 @@ case class RegisterUser(userId: UserId,
                         password: Hash,
                         emailVerificationCode: Hash,
                         instanceId: InstanceId,
-                        timestamp: Long) extends UserCommand with HeadCommand[User, UserEvent] {
+                        timestamp: Long) extends UserCommand with HeadCommand[User] {
 
   /**
-   * Constant result.
+   * The evaluation of this command as a new aggregate.
    */
-  private val event = UserRegistered(userId, email, password, emailVerificationCode, instanceId, timestamp)
-
-  /**
-   * Evaluates the effect of this command.
-   * @return Evaluation of the events caused by invoking this command.
-   */
-  def evaluation: List[UserEvent] = List(event)
-
-  /**
-   * Applies this command to a new aggregate.
-   * @return New aggregate with command applied.
-   */
-  def realization: User = User.apply(event)
+  lazy val evaluation: Aggregate[User] =
+    User(UserRegistered(userId, email, password, emailVerificationCode, instanceId, timestamp))
 }

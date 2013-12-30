@@ -1,3 +1,5 @@
+# Refactor aggregate commands into command classes with prerequisites
+
 # Refactor event inheritance so InstanceEvent is not inherited by other aggregate events
 
 # Refactor parameter order of commands and events so metadata appears last

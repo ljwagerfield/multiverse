@@ -9,15 +9,15 @@ import io.multiverse.domain.model.instance.{UserSignedOut, InstanceEvent, Instan
  * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
  */
 case class SignOut(instanceId: InstanceId, timestamp: Long)
-  extends InstanceCommand with UnconditionalTailCommand[Instance, InstanceEvent, SignOut] {
+  extends InstanceCommand with UnconditionalTailCommand[Instance] {
 
   /**
-   * Evaluates the effect of this command against the given aggregate.
-   * @param aggregate Aggregate to evaluate command against.
-   * @return Evaluation of the events caused by invoking this command against the given aggregate.
+   * Produces the sequence of events caused by the successful invocation of this command.
+   * @param aggregateRoot Aggregate to invoke command against.
+   * @return Event sequence.
    */
-  protected def evaluationForValidInput(aggregate: Instance): List[InstanceEvent] =
-    if (aggregate.signedInUser.isEmpty)
+  protected def eventsFor(aggregateRoot: Instance): List[InstanceEvent] =
+    if (aggregateRoot.signedInUser.isEmpty)
       Nil // Idempotent command.
     else
       List(UserSignedOut(instanceId, timestamp))

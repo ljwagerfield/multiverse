@@ -1,7 +1,6 @@
 package io.multiverse.domain.model.shipSpecification
 
-import io.multiverse.domain.model.instance.{InstanceId, InstanceEvent}
-import io.multiverse.domain.model.species.SpeciesId
+import io.multiverse.domain.model.instance.InstanceId
 
 /**
  * Event relating to a ship specification.

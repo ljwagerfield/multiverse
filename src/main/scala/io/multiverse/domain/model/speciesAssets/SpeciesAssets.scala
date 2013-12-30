@@ -1,54 +1,36 @@
 package io.multiverse.domain.model.speciesAssets
 
-import io.multiverse.domain.model.instance.InstanceId
-import io.multiverse.domain.model.common.{ExplicitAggregateFactory, AggregateRoot}
-import io.multiverse.domain.model.common.values.Hash
+import io.multiverse.domain.model.common.{Entity, Aggregate, AggregateRootBase, ExplicitAggregateFactory}
 
 /**
  * Binary media assets for a particular type of species.
  * @param changes Events pending commitment.
  */
-case class SpeciesAssets private(changes: List[SpeciesAssetsEvent])
-  extends AggregateRoot[SpeciesAssets, SpeciesAssetsEvent] {
+case class SpeciesAssets private(changes: List[SpeciesAssetsEvent], id: SpeciesAssetsId)
+  extends AggregateRootBase[SpeciesAssets, SpeciesAssetsEvent] with Aggregate[SpeciesAssets] with Entity[SpeciesAssetsId] {
 
   /**
-   * Processes uncommitted events.
-   * @return Aggregate with no uncommitted events.
+   * State after committing to the changes.
    */
-  def markCommitted: SpeciesAssets = copy(changes = Nil)
-
-  /**
-   * Applies the given event as the head of the returned aggregate's state.
-   * @param event Event representing new head state.
-   * @return Species assets with event appended and new state applied.
-   */
-  def apply(event: SpeciesAssetsEvent): SpeciesAssets = unhandledEvent(event)
+  lazy val committed: Aggregate[SpeciesAssets] = copy(changes = Nil)
 }
 
 /**
  * Species assets factory.
  */
-object SpeciesAssets extends ExplicitAggregateFactory[SpeciesAssets, SpeciesAssetsEvent] {
-  /**
-   * Defines new binary assets for use in new species.
-   * @param speciesAssetsId Unique ID for new species assets.
-   * @param hash References the binary assets.
-   * @param instanceId Instance the event occurred in.
-   * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
-   * @return New species assets.
-   */
-  def define(speciesAssetsId:SpeciesAssetsId, hash:Hash, instanceId:InstanceId, timestamp:Long):SpeciesAssets =
-    apply(SpeciesAssetsDefined(speciesAssetsId, hash, instanceId, timestamp))
+object SpeciesAssets extends ExplicitAggregateFactory[SpeciesAssets] {
 
   /**
-   * Applies the given event as the head of the returned aggregate's state.
-   * @param event Event representing new head state.
-   * @return Species assets with event appended and new state applied.
+   * Creates a new instance of the aggregate from the given creation event.
+   * @param event Creation event.
+   * @return Aggregate.
    */
-  def apply(event: SpeciesAssetsEvent):SpeciesAssets = {
-    event match {
-      case event: SpeciesAssetsDefined => SpeciesAssets(Nil :+ event)
-      case event: SpeciesAssetsEvent => unhandledEvent(event)
-    }
+  def apply(event: SpeciesAssetsDefined): Aggregate[SpeciesAssets] = evaluate(event)
+
+  /**
+   * Evaluates the event's creational effect by outputting a new aggregate instance.
+   */
+  val evaluate: PartialFunction[SpeciesAssets#Event, Aggregate[SpeciesAssets]] = {
+    case event: SpeciesAssetsDefined => SpeciesAssets(Nil :+ event, event.speciesAssetsId)
   }
 }

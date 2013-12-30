@@ -1,59 +1,57 @@
 package domain.model
 
-import _root_.baseSpecifications.CommandSpecification
-
-import io.multiverse.domain.model.instance.InstanceId
-import io.multiverse.domain.model.common.commands.CommandConversions.{aggregateRootToChain, headCommandToChain, chainToAggregateRoot}
-import io.multiverse.domain.model.user.{User, UserEvent, UserDeduplicated, UserEmailVerified, UserRegistered, UserId}
-import java.util.UUID
-import org.specs2.specification.Scope
-import io.multiverse.domain.model.user.commands.{RegisterUser, VerifyUserEmail, DeduplicateUser}
+import _root_.baseSpecifications.CommandCombinators.{chainToTestChain, headCommandToTestChain}
+import io.multiverse.domain.model.common.commands.CommandCombinators.headCommandToChain
+import io.multiverse.domain.model.common.commands.Commit
 import io.multiverse.domain.model.common.values.{Hash, Email}
+import io.multiverse.domain.model.instance.InstanceId
+import io.multiverse.domain.model.user.commands.{RegisterUser, VerifyUserEmail, DeduplicateUser}
+import io.multiverse.domain.model.user.{UserDeduplicated, UserEmailVerified, UserRegistered, UserId}
+import java.util.UUID
+import org.specs2.mutable.Specification
+import org.specs2.specification.Scope
 
 /**
  * User specification.
  */
-class UserSpec extends CommandSpecification {
+class UserSpec extends Specification {
   "user" should {
     "be registered" in new UserScope {
-      assertSuccess[User, UserEvent, RegisterUser](
-        RegisterUser(userId, email, password, verificationCode, instanceId, timestamp),
-        List(UserRegistered(userId, email, password, verificationCode, instanceId, timestamp)))
+      (RegisterUser(userId, email, password, verificationCode, instanceId, timestamp)
+        yields UserRegistered(userId, email, password, verificationCode, instanceId, timestamp))
     }
   }
 
   "registered user" should {
     "verify their email address with a valid code" in new RegisteredUserScope {
-      assertSuccess[User, UserEvent, VerifyUserEmail](
-        registeredUser,
-        VerifyUserEmail(userId, verificationCode, instanceId, timestamp),
-        List(UserEmailVerified(userId, instanceId, timestamp)))
+      (registeredUser
+        after VerifyUserEmail(userId, verificationCode, instanceId, timestamp)
+        yields UserEmailVerified(userId, instanceId, timestamp))
     }
 
     "not verify their email address with an invalid code" in new RegisteredUserScope {
       val invalidCode = Hash(List.fill(Hash.size)(1.toByte))
-      assertFailure[User, UserEvent, VerifyUserEmail](
-        registeredUser,
-        VerifyUserEmail(userId, invalidCode, instanceId, timestamp),
-        c => List(VerifyUserEmail.VerificationCodeMatch(c)))
+      (registeredUser
+        cannot VerifyUserEmail(userId, invalidCode, instanceId, timestamp)
+        because VerifyUserEmail.VerificationCodeMatch)
     }
 
     "support de-duplication with a single canonical user" in new RegisteredUserScope {
       val canonicalUser = UserId(UUID.randomUUID)
-      assertUnconditional[User, UserEvent, DeduplicateUser](
-        registeredUser,
-        DeduplicateUser(userId, canonicalUser, instanceId, timestamp),
-        List(UserDeduplicated(userId, canonicalUser, instanceId, timestamp)))
+      (registeredUser
+        after DeduplicateUser(userId, canonicalUser, instanceId, timestamp)
+        yields UserDeduplicated(userId, canonicalUser, instanceId, timestamp))
     }
 
     "support idempotent de-duplication with the same canonical user" in new DeduplicatedUserScope {
-      assertIdempotent[User, UserEvent, DeduplicateUser](
-        deduplicatedUser,
-        DeduplicateUser(userId, canonicalUser, instanceId, timestamp))
+      (deduplicatedUser
+        after DeduplicateUser(userId, canonicalUser, instanceId, timestamp)
+        yields Nil)
     }
 
     "not support self-referential de-duplication" in new RegisteredUserScope {
-      DeduplicateUser(userId, userId, instanceId, timestamp) must throwA[Exception]
+      (DeduplicateUser(userId, userId, instanceId, timestamp)
+        must throwA[Exception])
     }
   }
 
@@ -73,7 +71,7 @@ class UserSpec extends CommandSpecification {
    * Predefined test values for registered user.
    */
   trait RegisteredUserScope extends UserScope {
-    val registeredUser = headCommandToChain(RegisterUser(userId, email, password, verificationCode, instanceId, timestamp)).markCommitted
+    val registeredUser = RegisterUser(userId, email, password, verificationCode, instanceId, timestamp) after Commit()
   }
 
   /**
@@ -81,6 +79,8 @@ class UserSpec extends CommandSpecification {
    */
   trait DeduplicatedUserScope extends RegisteredUserScope {
     val canonicalUser = UserId(UUID.randomUUID)
-    val deduplicatedUser = (aggregateRootToChain(registeredUser) /> DeduplicateUser(userId, canonicalUser, instanceId, timestamp)).markCommitted
+    val deduplicatedUser = (registeredUser
+      after DeduplicateUser(userId, canonicalUser, instanceId, timestamp)
+      after Commit())
   }
 }

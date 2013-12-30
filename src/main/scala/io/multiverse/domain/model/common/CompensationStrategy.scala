@@ -1,16 +1,16 @@
 package io.multiverse.domain.model.common
 
-import io.multiverse.domain.model.common.commands.UnconditionalCommand
+import io.multiverse.domain.model.common.commands.UnconditionalTailCommand
 import io.multiverse.domain.model.instance.InstanceId
 
 /**
  * Resolves data inconsistencies resulting from multi-master replication.
- * @tparam A Aggregate type.
- * @tparam E Event type.
+ * @tparam A Aggregate meta type.
  * @tparam Conflict Conflict type to resolve.
  * @tparam Command Command type used to compensate conflicts.
  */
-trait CompensationStrategy[A <: AggregateRoot[A, E], E, Conflict, Command <: UnconditionalCommand[A, E]] {
+trait CompensationStrategy[A <: AggregateMeta, Conflict, Command <: UnconditionalTailCommand[A]] {
+
   /**
    * Attempts to resolve the provided conflicts.
    * @param conflicts Conflicts to resolve.

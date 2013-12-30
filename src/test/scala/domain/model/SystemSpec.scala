@@ -1,6 +1,10 @@
 package domain.model
 
-import _root_.baseSpecifications.InstanceScope
+import baseSpecifications.CommandCombinators.chainToTestChain
+import baseSpecifications.InstanceScope
+import io.multiverse.domain.model.common.commands.CommandCombinators.aggregateToChain
+import io.multiverse.domain.model.common.commands.Commit
+import io.multiverse.domain.model.system.commands.{ResumeGame, PauseGame}
 import io.multiverse.domain.model.system.{GameResumed, GamePaused, SystemId, System}
 import java.util.UUID
 import org.specs2.mutable.Specification
@@ -12,34 +16,30 @@ class SystemSpec extends Specification {
 
   "new system" should {
     "support pausing" in new SystemScope {
-      newSystem
-        .pauseGame(pauseMessage, instanceId, timestamp)
-        .changes must beEqualTo(List(
-          GamePaused(systemId, pauseMessage, instanceId, timestamp)))
+      (newSystem
+        after PauseGame(systemId, pauseMessage, instanceId, timestamp)
+        yields GamePaused(systemId, pauseMessage, instanceId, timestamp))
     }
 
     "support superfluous resuming" in new SystemScope {
-      newSystem
-        .resumeGame(instanceId, timestamp)
-        .changes must beEqualTo(List(
-          GameResumed(systemId, instanceId, timestamp)))
+      (newSystem
+        after ResumeGame(systemId, instanceId, timestamp)
+        yields GameResumed(systemId, instanceId, timestamp))
     }
   }
 
   "paused system" should {
     "support resuming" in new PausedSystemScope {
-      pausedSystem
-        .resumeGame(instanceId, timestamp)
-        .changes must beEqualTo(List(
-          GameResumed(systemId, instanceId, timestamp)))
+      (pausedSystem
+        after ResumeGame(systemId, instanceId, timestamp)
+        yields GameResumed(systemId, instanceId, timestamp))
     }
 
     "support idempotent pausing" in new PausedSystemScope {
       val updatedPauseMessage = "Paused for testing 2"
-      pausedSystem
-        .pauseGame(updatedPauseMessage, instanceId, timestamp)
-        .changes must beEqualTo(List(
-          GamePaused(systemId, updatedPauseMessage, instanceId, timestamp)))
+      (pausedSystem
+        after PauseGame(systemId, updatedPauseMessage, instanceId, timestamp)
+        yields GamePaused(systemId, updatedPauseMessage, instanceId, timestamp))
     }
   }
 
@@ -49,13 +49,13 @@ class SystemSpec extends Specification {
   trait SystemScope extends InstanceScope {
     val systemId = SystemId(UUID.randomUUID)
     val pauseMessage = "Paused for testing"
-    val newSystem = System.init(systemId)
+    val newSystem = System(systemId)
   }
 
   /**
    * Predefined test values for paused systems.
    */
   trait PausedSystemScope extends SystemScope {
-    val pausedSystem = newSystem.pauseGame(pauseMessage, instanceId, timestamp).markCommitted
+    val pausedSystem = newSystem after PauseGame(systemId, pauseMessage, instanceId, timestamp) after Commit()
   }
 }

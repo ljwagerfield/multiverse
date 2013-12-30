@@ -6,7 +6,7 @@ import io.multiverse.domain.stores.PersistenceStore
  * Persisted collection used to apply state between aggregates.
  * @tparam E Event type.
  */
-trait PersistedSet[E] {
+trait PersistedSet[-E] {
   /**
    * Identifies where this model is hosted.
    */

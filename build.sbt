@@ -17,3 +17,5 @@ libraryDependencies += "commons-validator" % "commons-validator" % "1.4.0"
 libraryDependencies += "commons-io" % "commons-io" % "1.3.2"
 
 libraryDependencies += "commons-codec" % "commons-codec" % "1.8"
+
+libraryDependencies += "org.scalaz" %% "scalaz-core" % "7.0.5"

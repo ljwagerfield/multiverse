@@ -1,12 +1,12 @@
 package domain.model
 
-import _root_.baseSpecifications.InstanceScope
-import io.multiverse.domain.model.speciesFlagBackgroundVector.{SpeciesFlagBackgroundVectorDefined,
-                                                                           SpeciesFlagBackgroundVectorId,
-                                                                           SpeciesFlagBackgroundVector}
+import baseSpecifications.CommandCombinators.headCommandToTestChain
+import baseSpecifications.InstanceScope
+import io.multiverse.domain.model.common.values.Hash
+import io.multiverse.domain.model.speciesFlagBackgroundVector.commands.DefineSpeciesFlagBackgroundVector
+import io.multiverse.domain.model.speciesFlagBackgroundVector.{SpeciesFlagBackgroundVectorDefined, SpeciesFlagBackgroundVectorId}
 import java.util.UUID
 import org.specs2.mutable.Specification
-import io.multiverse.domain.model.common.values.Hash
 
 /**
  * Species flag background vector specification.
@@ -17,10 +17,8 @@ class SpeciesFlagBackgroundVectorSpec extends Specification {
       val flagBackgroundId = SpeciesFlagBackgroundVectorId(UUID.randomUUID())
       val vectorHash = Hash.empty
 
-      SpeciesFlagBackgroundVector
-        .define(flagBackgroundId, vectorHash, instanceId, timestamp)
-        .changes must beEqualTo(List(
-          SpeciesFlagBackgroundVectorDefined(flagBackgroundId, vectorHash, instanceId, timestamp)))
+      (DefineSpeciesFlagBackgroundVector(flagBackgroundId, vectorHash, instanceId, timestamp)
+        yields SpeciesFlagBackgroundVectorDefined(flagBackgroundId, vectorHash, instanceId, timestamp))
     }
   }
 }

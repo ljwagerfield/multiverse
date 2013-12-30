@@ -1,6 +1,6 @@
 package io.multiverse.domain.model.instance.commands
 
-import io.multiverse.domain.model.common.commands.{CommandPrerequisite, ConditionalTailCommand}
+import io.multiverse.domain.model.common.commands.{TailCommand, CommandPrerequisite}
 import io.multiverse.domain.model.instance.{UserSignedIn, InstanceCommand, InstanceEvent, Instance, InstanceId}
 import io.multiverse.domain.model.user.UserId
 
@@ -11,20 +11,20 @@ import io.multiverse.domain.model.user.UserId
  * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
  */
 case class SignIn(userId: UserId, instanceId: InstanceId, timestamp: Long)
-  extends InstanceCommand with ConditionalTailCommand[Instance, InstanceEvent, SignIn] {
+  extends InstanceCommand with TailCommand[Instance] {
 
   /**
-   * Command prerequisites.
+   * Predicates that must pass for the command to be successfully evaluated.
    */
   val prerequisites = List(SignIn.SignedInUserSingularity(this))
 
   /**
-   * Evaluates the effect of this command against the given aggregate, assuming no failing prerequisites.
-   * @param aggregate Aggregate to evaluate command against.
-   * @return Evaluation of the events caused by invoking this command against the given aggregate.
+   * Produces the sequence of events caused by the successful invocation of this command.
+   * @param aggregateRoot Aggregate to invoke command against.
+   * @return Event sequence.
    */
-  protected def evaluationForValidInput(aggregate: Instance): List[InstanceEvent] =
-    if (aggregate.signedInUser.isDefined)
+  protected def eventsFor(aggregateRoot: Instance): List[InstanceEvent] =
+    if (aggregateRoot.signedInUser.isDefined)
       Nil
     else
       List(UserSignedIn(instanceId, userId, timestamp))
@@ -37,8 +37,9 @@ object SignIn {
 
   /**
    * Instances only support a single signed-in user.
+   * @param command Command to validate.
    */
-  case class SignedInUserSingularity(command: SignIn) extends CommandPrerequisite[Instance, SignIn] {
+  case class SignedInUserSingularity(command: SignIn) extends CommandPrerequisite[Instance] {
 
     /**
      * Tests the validity of the prerequisite given the aggregate state.
@@ -48,5 +49,4 @@ object SignIn {
     def isValid(aggregate: Instance): Boolean =
       aggregate.signedInUser.forall(_ == command.userId)
   }
-
 }

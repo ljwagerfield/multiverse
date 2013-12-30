@@ -1,6 +1,6 @@
 package io.multiverse.domain.model.shipResearch
 
-import io.multiverse.domain.model.instance.{InstanceId, InstanceEvent}
+import io.multiverse.domain.model.instance.InstanceId
 import io.multiverse.domain.model.species.SpeciesId
 
 /**

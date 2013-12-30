@@ -1,18 +1,15 @@
 package io.multiverse.domain.model.common.commands
 
-import io.multiverse.domain.model.common.AggregateRoot
+import io.multiverse.domain.model.common.{AggregateMeta, Aggregate}
 
 /**
- * Command with an evaluation that describes the creation of a new aggregate. These commands are constant and
- * unconditional by nature.
- * @tparam A Aggregate type.
- * @tparam E Event type.
+ * Command with an evaluation that describes the creation of a new aggregate. These commands are static by nature.
+ * @tparam A Aggregate meta type.
  */
-trait HeadCommand[A <: AggregateRoot[A, E], E] extends ConstantCommand[A, E] {
+trait HeadCommand[A <: AggregateMeta]  {
 
   /**
-   * Applies this command to a new aggregate.
-   * @return New aggregate with command applied.
+   * The evaluation of this command as a new aggregate.
    */
-  def realization: A
+  val evaluation: Aggregate[A]
 }

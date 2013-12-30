@@ -1,7 +1,7 @@
 package io.multiverse.domain.model.user
 
-import io.multiverse.domain.model.common.{CommandTarget, ExplicitAggregateFactory, AggregateRoot, Entity}
 import io.multiverse.domain.model.common.values.Hash
+import io.multiverse.domain.model.common.{Aggregate, AggregateRootBase, ExplicitAggregateFactory, Entity}
 
 /**
  * Registered user.
@@ -13,40 +13,38 @@ case class User private(changes: List[UserEvent],
                         isVerified: Boolean,
                         emailVerificationCode: Option[Hash],
                         canonicalUserId: Option[UserId])
-  extends Entity[UserId] with AggregateRoot[User, UserEvent] with CommandTarget[UserCommand] {
+  extends AggregateRootBase[User, UserEvent] with Aggregate[User] with Entity[UserId] {
 
   /**
-   * Clears the backlog of uncommitted events.
-   * @return Aggregate with no uncommitted events.
+   * State after committing to the changes.
    */
-  def markCommitted: User = copy(changes = Nil)
+  lazy val committed: Aggregate[User] = copy(changes = Nil)
 
   /**
-   * Applies the given event as the head of the returned aggregate's state.
-   * @param event Event representing new head state.
-   * @return User with event appended and new state applied.
+   * Evaluates the event's effects by applying any changes to the new resulting instance.
    */
-  def apply(event: UserEvent): User = event match {
+  override val evaluate: PartialFunction[User#Event, Aggregate[User]] = {
     case event: UserEmailVerified => copy(changes = changes :+ event, isVerified = true, emailVerificationCode = None)
     case event: UserDeduplicated => copy(changes = changes :+ event, canonicalUserId = Some(event.canonicalUserId))
-    case event: UserEvent => unhandledEvent(event)
   }
 }
 
 /**
  * User factory.
  */
-object User extends ExplicitAggregateFactory[User, UserEvent] {
+object User extends ExplicitAggregateFactory[User] {
 
   /**
-   * Applies the given event as the head of the returned aggregate's state.
-   * @param event Event representing new head state.
-   * @return User with event appended and new state applied.
+   * Creates a new instance of the aggregate from the given creation event.
+   * @param event Creation event.
+   * @return Aggregate.
    */
-  def apply(event: UserEvent): User = {
-    event match {
-      case event: UserRegistered => User(Nil :+ event, event.userId, isVerified = false, Some(event.emailVerificationCode), None)
-      case event: UserEvent => unhandledEvent(event)
-    }
+  def apply(event: UserRegistered): Aggregate[User] = evaluate(event)
+
+  /**
+   * Evaluates the event's creational effect by outputting a new aggregate instance.
+   */
+  val evaluate: PartialFunction[User#Event, Aggregate[User]] = {
+    case event: UserRegistered => User(Nil :+ event, event.userId, isVerified = false, Some(event.emailVerificationCode), None)
   }
 }

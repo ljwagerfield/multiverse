@@ -1,6 +1,6 @@
 package io.multiverse.domain.model.solarSystem
 
-import io.multiverse.domain.model.instance.{InstanceId, InstanceEvent}
+import io.multiverse.domain.model.instance.InstanceId
 
 /**
  * Event relating to a specific solar system.

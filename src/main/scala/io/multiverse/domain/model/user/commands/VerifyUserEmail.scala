@@ -1,9 +1,9 @@
 package io.multiverse.domain.model.user.commands
 
-import io.multiverse.domain.model.instance.InstanceId
-import io.multiverse.domain.model.user.{commands, UserEmailVerified, UserEvent, User, UserCommand, UserId}
+import io.multiverse.domain.model.common.commands.{TailCommand, CommandPrerequisite}
 import io.multiverse.domain.model.common.values.Hash
-import io.multiverse.domain.model.common.commands.{CommandPrerequisite, ConditionalTailCommand}
+import io.multiverse.domain.model.instance.InstanceId
+import io.multiverse.domain.model.user.{UserEmailVerified, User, UserCommand, UserId}
 
 /**
  * Verifies the user's email using the provided code.
@@ -12,20 +12,20 @@ import io.multiverse.domain.model.common.commands.{CommandPrerequisite, Conditio
  * @param timestamp Milliseconds elapsed since midnight 1970-01-01 UTC.
  */
 case class VerifyUserEmail(userId: UserId, code: Hash, instanceId: InstanceId, timestamp: Long)
-  extends UserCommand with ConditionalTailCommand[User, UserEvent, VerifyUserEmail] {
+  extends UserCommand with TailCommand[User] {
 
   /**
-   * Command prerequisites.
+   * Predicates that must pass for the command to be successfully evaluated.
    */
   val prerequisites = List(VerifyUserEmail.VerificationCodeMatch(this))
 
   /**
-   * Evaluates the effect of this command against the given aggregate, assuming no failing prerequisites.
-   * @param aggregate Aggregate to evaluate command against.
-   * @return Evaluation of the events caused by invoking this command against the given aggregate.
+   * Produces the sequence of events caused by the successful invocation of this command.
+   * @param aggregateRoot Aggregate to invoke command against.
+   * @return Event sequence.
    */
-  protected def evaluationForValidInput(aggregate: User): List[UserEvent] =
-    if (aggregate.isVerified)
+  protected def eventsFor(aggregateRoot: User#Root): List[User#Event] =
+    if (aggregateRoot.isVerified)
       Nil // Idempotent command.
     else
       List(UserEmailVerified(userId, instanceId, timestamp))
@@ -38,8 +38,9 @@ object VerifyUserEmail {
 
   /**
    * Requires the provided email verification code to match the code generated at registration.
+   * @param command Command to validate.
    */
-  case class VerificationCodeMatch(command: VerifyUserEmail) extends CommandPrerequisite[User, VerifyUserEmail] {
+  case class VerificationCodeMatch(command: VerifyUserEmail) extends CommandPrerequisite[User] {
 
     /**
      * Tests the validity of the prerequisite given the aggregate state.

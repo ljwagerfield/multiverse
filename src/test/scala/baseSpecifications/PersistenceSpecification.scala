@@ -1,10 +1,10 @@
 package baseSpecifications
 
-import org.specs2.mutable.Specification
-import io.multiverse.domain.stores.PersistenceStore
-import io.multiverse.domain.model.common.{VolatilePersistedSet, PersistedSet, CompensationStrategy, AggregateRoot}
+import io.multiverse.domain.model.common.commands.UnconditionalTailCommand
+import io.multiverse.domain.model.common.{VolatilePersistedSet, PersistedSet, CompensationStrategy}
 import io.multiverse.domain.model.instance.InstanceId
-import io.multiverse.domain.model.common.commands.UnconditionalCommand
+import io.multiverse.domain.stores.PersistenceStore
+import org.specs2.mutable.Specification
 
 /**
  * Base class for persistence model specifications.
@@ -54,20 +54,19 @@ trait PersistenceSpecification extends Specification {
    * @param expectedConflicts Conflicts expected from denormalizing the given events.
    * @param stores Stores to apply events into.
    * @param getModel Returns a new model for the given store.
-   * @tparam A Aggregate type.
    * @tparam E Event type.
-   * @tparam Conflict Conflict type.
-   * @tparam Command Command type.
+   * @tparam Conflict Conflict type to resolve.
+   * @tparam Command Command type used to compensate conflicts.
    */
-  def verifyCompensation[A <: AggregateRoot[A, E], E, Conflict, Command <: UnconditionalCommand[A, E]](
-                                                changes: List[E],
-                                                stores: List[PersistenceStore],
-                                                getModel: PersistenceStore => VolatilePersistedSet[E, Conflict],
-                                                compensationStrategy: CompensationStrategy[A, E, Conflict, Command],
-                                                expectedConflicts: List[Conflict],
-                                                expectedCompensations: List[Command],
-                                                instanceId: InstanceId,
-                                                timestamp: Long) {
+  def verifyCompensation[E, Conflict, Command <: UnconditionalTailCommand[_]](
+    changes: List[E],
+    stores: List[PersistenceStore],
+    getModel: PersistenceStore => VolatilePersistedSet[E, Conflict],
+    compensationStrategy: CompensationStrategy[_, Conflict, Command],
+    expectedConflicts: List[Conflict],
+    expectedCompensations: List[Command],
+    instanceId: InstanceId,
+    timestamp: Long) {
     for(model <- stores.map(getModel)) {
       try {
         model.apply(changes)

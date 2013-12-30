@@ -1,7 +1,7 @@
 package domain.model
 
-import _root_.baseSpecifications.PersistenceSpecification
-import io.multiverse.domain.model.common.commands.CommandConversions.headCommandToChain
+import baseSpecifications.PersistenceSpecification
+import io.multiverse.domain.model.common.commands.CommandCombinators.headCommandToChain
 import io.multiverse.domain.model.instance.collections.{InstanceReport, InstanceSet}
 import io.multiverse.domain.model.instance.commands.{SignOut, SignIn, CreateInstance}
 import io.multiverse.domain.model.instance.{InstanceId, Version}
@@ -16,7 +16,7 @@ import org.specs2.specification.Scope
 class InstanceCollectionSpec extends PersistenceSpecification {
   "instance collection" should {
     "support sign-ins" in new InstanceScope {
-      val instanceA = CreateInstance(version, instanceAId, timestamp) /> SignIn(userA, instanceAId, timestamp)
+      val instanceA = CreateInstance(version, instanceAId, timestamp) after SignIn(userA, instanceAId, timestamp)
 
       verifyState(
         instanceA.changes,
@@ -32,8 +32,8 @@ class InstanceCollectionSpec extends PersistenceSpecification {
     }
 
     "support sign-ins to multiple instances from the same user" in new InstanceScope {
-      val instanceA = CreateInstance(version, instanceAId, timestamp) /> SignIn(userA, instanceAId, timestamp)
-      val instanceB = CreateInstance(version, instanceBId, timestamp) /> SignIn(userA, instanceBId, timestamp)
+      val instanceA = CreateInstance(version, instanceAId, timestamp) after SignIn(userA, instanceAId, timestamp)
+      val instanceB = CreateInstance(version, instanceBId, timestamp) after SignIn(userA, instanceBId, timestamp)
 
       verifyState(
         instanceA.changes ++ instanceB.changes,
@@ -52,8 +52,8 @@ class InstanceCollectionSpec extends PersistenceSpecification {
     }
 
     "support sign-ins from multiple users" in new InstanceScope {
-      val instanceA = CreateInstance(version, instanceAId, timestamp) /> SignIn(userA, instanceAId, timestamp)
-      val instanceB = CreateInstance(version, instanceBId, timestamp) /> SignIn(userB, instanceBId, timestamp)
+      val instanceA = CreateInstance(version, instanceAId, timestamp) after SignIn(userA, instanceAId, timestamp)
+      val instanceB = CreateInstance(version, instanceBId, timestamp) after SignIn(userB, instanceBId, timestamp)
 
       verifyState(
         instanceA.changes ++ instanceB.changes,
@@ -70,8 +70,10 @@ class InstanceCollectionSpec extends PersistenceSpecification {
     }
 
     "support sign-outs" in new InstanceScope {
-      val instanceA = CreateInstance(version, instanceAId, timestamp) /> SignIn(userA, instanceAId, timestamp)
-      val instanceB = CreateInstance(version, instanceBId, timestamp) /> SignIn(userB, instanceBId, timestamp) /> SignOut(instanceBId, timestamp)
+      val instanceA = CreateInstance(version, instanceAId, timestamp) after SignIn(userA, instanceAId, timestamp)
+      val instanceB = (CreateInstance(version, instanceBId, timestamp)
+        after SignIn(userB, instanceBId, timestamp)
+        after SignOut(instanceBId, timestamp))
 
       verifyState(
         instanceA.changes ++ instanceB.changes,

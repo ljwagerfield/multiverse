@@ -1,6 +1,7 @@
 package domain.model
 
 import _root_.baseSpecifications.PersistenceSpecification
+import io.multiverse.domain.model.common.commands.CommandCombinators.headCommandToAggregate
 import io.multiverse.domain.model.common.values.{Hash, Email}
 import io.multiverse.domain.model.instance.InstanceId
 import io.multiverse.domain.model.user.collections.{UserSet, UserReport}
@@ -16,9 +17,9 @@ import org.specs2.specification.Scope
 class UserCollectionSpec extends PersistenceSpecification {
   "user collection" should {
     "support registrations" in new UserScope {
-      val userA = RegisterUser(userIdA, userEmailA, password, verificationCode, instanceId, timestamp).evaluation
-      val userB = RegisterUser(userIdB, userEmailB, password, verificationCode, instanceId, timestamp).evaluation
-      val userC = RegisterUser(userIdC, userEmailC, password, verificationCode, instanceId, timestamp).evaluation
+      val userA = RegisterUser(userIdA, userEmailA, password, verificationCode, instanceId, timestamp).changes
+      val userB = RegisterUser(userIdB, userEmailB, password, verificationCode, instanceId, timestamp).changes
+      val userC = RegisterUser(userIdC, userEmailC, password, verificationCode, instanceId, timestamp).changes
 
       applyState(
         userA ++ userB ++ userC,
@@ -28,8 +29,8 @@ class UserCollectionSpec extends PersistenceSpecification {
     }
 
     "track email availability" in new UserScope {
-      val userA = RegisterUser(userIdA, userEmailA, password, verificationCode, instanceId, timestamp).evaluation
-      val userB = RegisterUser(userIdB, userEmailB, password, verificationCode, instanceId, timestamp).evaluation
+      val userA = RegisterUser(userIdA, userEmailA, password, verificationCode, instanceId, timestamp).changes
+      val userB = RegisterUser(userIdB, userEmailB, password, verificationCode, instanceId, timestamp).changes
 
       verifyState(
         userA ++ userB,
@@ -45,9 +46,9 @@ class UserCollectionSpec extends PersistenceSpecification {
     }
 
     "compensate duplicate emails" in new UserScope {
-      val userA = RegisterUser(userIdA, userEmailA, password, verificationCode, instanceId, timestamp).evaluation
-      val userB = RegisterUser(userIdB, userEmailA, password, verificationCode, instanceId, timestamp).evaluation
-      val userC = RegisterUser(userIdC, userEmailA, password, verificationCode, instanceId, timestamp).evaluation
+      val userA = RegisterUser(userIdA, userEmailA, password, verificationCode, instanceId, timestamp).changes
+      val userB = RegisterUser(userIdB, userEmailA, password, verificationCode, instanceId, timestamp).changes
+      val userC = RegisterUser(userIdC, userEmailA, password, verificationCode, instanceId, timestamp).changes
 
       verifyCompensation(
         userA ++ userB ++ userC,

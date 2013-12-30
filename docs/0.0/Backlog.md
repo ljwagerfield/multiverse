@@ -1,10 +1,8 @@
-# Refactor aggregate commands into command classes with prerequisites [WIP]
-
 # Add repositories for storing and retrieving aggregates [WIP]
 
-# Add command classes for optimistic (re)writes and compensations [WIP]
-
 # Add acceptance tests [WIP]
+
+# Add StyleCheck rule for comments and single space between variable and type declaration
 
 # Add pre-conditions to commands for aggregate ID
 

@@ -1,6 +1,11 @@
 package domain.model
 
-import _root_.baseSpecifications.InstanceScope
+import baseSpecifications.CommandCombinators.{aggregateToTestChain, chainToTestChain}
+import baseSpecifications.InstanceScope
+import io.multiverse.domain.model.common.commands.CommandCombinators.aggregateToChain
+import io.multiverse.domain.model.common.commands.Commit
+import io.multiverse.domain.model.planetOwnership.commands.Abandon
+import io.multiverse.domain.model.planetOwnership.commands.Colonize
 import io.multiverse.domain.model.planetOwnership.{PlanetAbandoned, PlanetColonized, PlanetOwnership}
 import io.multiverse.domain.model.ship.PlanetColonizationOrdered
 import io.multiverse.domain.model.ship.ShipId
@@ -14,42 +19,40 @@ import org.specs2.mutable.Specification
 class PlanetOwnershipSpec extends Specification {
   "planet" should {
     "have an initial ownership" in new PlanetOwnershipScope {
-      PlanetOwnership.init(planetId)
-        .changes must beEmpty
+      (PlanetOwnership(planetId)
+        yields Nil)
     }
 
     "be colonized by a ship" in new InitializedPlanetOwnershipScope {
       val colonizationOrder = PlanetColonizationOrdered(ShipId(UUID.randomUUID), planetId, instanceId, timestamp)
       val invalidColonizationOrder = PlanetColonizationOrdered(ShipId(UUID.randomUUID), PlanetId(UUID.randomUUID), instanceId, timestamp)
 
-      planetOwnership
-        .colonize(colonizationOrder, instanceId, timestamp)
-        .changes must beEqualTo(List(
-          PlanetColonized(planetId, colonizationOrder, instanceId, timestamp)))
+      (Colonize(planetId, invalidColonizationOrder, instanceId, timestamp)
+        must throwA[Exception])
 
-      planetOwnership
-        .colonize(invalidColonizationOrder, instanceId, timestamp) must throwA[Exception]
+      (planetOwnership
+        after Colonize(planetId, colonizationOrder, instanceId, timestamp)
+        yields PlanetColonized(planetId, colonizationOrder, instanceId, timestamp))
     }
 
     "be abandoned by its inhabitants" in new ColonizedPlanetOwnershipScope {
-      colonizedOwnership
-        .abandon(instanceId, timestamp)
-        .changes must beEqualTo(List(
-          PlanetAbandoned(planetId, instanceId, timestamp)))
+      (colonizedOwnership
+        after Abandon(planetId, instanceId, timestamp)
+        yields PlanetAbandoned(planetId, instanceId, timestamp))
     }
 
     "support idempotent abandonment" in new ColonizedPlanetOwnershipScope {
-      colonizedOwnership
-        .abandon(instanceId, timestamp)
-        .markCommitted
-        .abandon(instanceId, timestamp + 1)
-        .changes must beEmpty
+      (colonizedOwnership
+        after Abandon(planetId, instanceId, timestamp)
+        after Commit()
+        after Abandon(planetId, instanceId, timestamp + 1)
+        yields Nil)
     }
 
     "be superfluously abandoned by no inhabitants" in new InitializedPlanetOwnershipScope {
-      planetOwnership
-        .abandon(instanceId, timestamp)
-        .changes must beEmpty
+      (planetOwnership
+        after Abandon(planetId, instanceId, timestamp)
+        yields Nil)
     }
   }
 
@@ -64,7 +67,7 @@ class PlanetOwnershipSpec extends Specification {
    * Predefined test values for initialized planet ownership.
    */
   trait InitializedPlanetOwnershipScope extends PlanetOwnershipScope {
-    val planetOwnership = PlanetOwnership.init(planetId)
+    val planetOwnership = PlanetOwnership(planetId)
   }
   
   /**
@@ -72,6 +75,6 @@ class PlanetOwnershipSpec extends Specification {
    */
   trait ColonizedPlanetOwnershipScope extends InitializedPlanetOwnershipScope {
     val colonizationOrder = PlanetColonizationOrdered(ShipId(UUID.randomUUID), planetId, instanceId, timestamp)
-    val colonizedOwnership = planetOwnership.colonize(colonizationOrder, instanceId, timestamp).markCommitted
+    val colonizedOwnership = planetOwnership after Colonize(planetId, colonizationOrder, instanceId, timestamp) after Commit()
   }
 }
