@@ -20,7 +20,7 @@ object InstanceSet {
   def supportedStores: List[Class[_ <: PersistenceStore]] = List(classOf[GoogleAppEngineStore], classOf[FileSystemStore])
 
   /**
-   * Creates an instance model in the provided store. Method has not effect if the model already exists.
+   * Creates an instance model in the provided store. Method has no effect if the model already exists.
    * @param store Persistence store.
    * @return Model for the given store.
    */

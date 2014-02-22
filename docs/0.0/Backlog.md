@@ -1,5 +1,7 @@
 # Add repositories for storing and retrieving aggregates [WIP]
 
+# Add DSL for storing aggregates [WIP]
+
 # Add acceptance tests [WIP]
 
 # Add StyleCheck rule for comments and single space between variable and type declaration

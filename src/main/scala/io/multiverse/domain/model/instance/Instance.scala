@@ -4,7 +4,7 @@ import io.multiverse.domain.model.common.{Entity, Aggregate, AggregateRootBase, 
 import io.multiverse.domain.model.user.UserId
 
 /**
- * Running instance of the application
+ * Running instance of the application. An instance belongs to zero-to-one users and cannot be re-owned by other users.
  * @param changes Events pending commitment.
  * @param id Unique instance ID.
  * @param signedInUser User currently signed-into the instance.
