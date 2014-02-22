@@ -1,23 +1,26 @@
-# Refactor aggregate commands into command classes with prerequisites
+Completed work
+==============
 
-# Refactor event inheritance so InstanceEvent is not inherited by other aggregate events
+-   Refactor aggregate commands into command classes with prerequisites
 
-# Refactor parameter order of commands and events so metadata appears last
+-   Refactor event inheritance so InstanceEvent is not inherited by other aggregate events
 
-# Add unit tests
+-   Refactor parameter order of commands and events so metadata appears last
 
-# Add validation to aggregate roots
+-   Add unit tests
 
-# Re-evaluate ping events for write model
+-   Add validation to aggregate roots
 
-# Add redundant validation events to aggregates
+-   Re-evaluate ping events for write model
 
-# Add aggregate roots for each aggregate namespace
+-   Add redundant validation events to aggregates
 
-# Add event timestamps to support reaction timing
+-   Add aggregate roots for each aggregate namespace
 
-# Setup code quality checks on Maven verify
+-   Add event timestamps to support reaction timing
 
-# Bring project into a compilable state
+-   Setup code quality checks on Maven verify
 
-# Refactor comments
+-   Bring project into a compilable state
+
+-   Refactor comments
