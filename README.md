@@ -36,4 +36,4 @@ For testing:
 Old ideas
 ---------
 
-Please do not pay too much attention to the query architecture - I have handled this far better in recent (*private :(*) projects, but have not had the chance to merge the architecture back here.
+Please do not pay too much attention to the query architecture - I have handled this far better in recent (*private*) projects, but have not had the chance to merge the architecture back here.
