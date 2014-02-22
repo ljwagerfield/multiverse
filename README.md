@@ -19,12 +19,19 @@ Most of my recent work has been around the DDDD framework, specifically in defin
 4.  **HeadCommand:** Command with an evaluation that describes the creation of a new aggregate. These commands are static by nature.
 
 There has also been some work on creating a DSL for the above. For example:
-"not verify their email address with an invalid code" in new RegisteredUserScope {
-      val invalidCode = Hash(List.fill(Hash.size)(1.toByte))
-      (registeredUser
+
+    val canonicalUser = UserId(UUID.randomUUID)
+    val registeredUser = RegisterUser(userId, email, password, verificationCode, instanceId, timestamp) after Commit()
+    val deduplicatedUser = (registeredUser
+        after DeduplicateUser(userId, canonicalUser, instanceId, timestamp)
+        after Commit())
+        
+For testing:
+
+    val invalidCode = Hash(List.fill(Hash.size)(1.toByte))
+    (registeredUser
         cannot VerifyUserEmail(userId, invalidCode, instanceId, timestamp)
         because VerifyUserEmail.VerificationCodeMatch)
-    }
 
 Old ideas
 ---------
